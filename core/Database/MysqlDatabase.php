@@ -17,7 +17,7 @@ class MysqlDatabase extends Database
 	 * @param string $db_pass
 	 * @param string $db_host
 	 */
-	public function __construct($db_name, $db_user = 'root', $db_pass = 'root', $db_host = 'localhost')
+	public function __construct($db_name, $db_user = '', $db_pass = '', $db_host = '')
 	{
 		$this->db_name = $db_name;
 		$this->db_user = $db_user;
@@ -32,7 +32,7 @@ class MysqlDatabase extends Database
 	private function getPDO()
 	{
 		if ($this->pdo === null) {
-			$pdo = new PDO('mysql:dbname=netflix', 'root', 'root');
+			$pdo = new PDO('mysql:dbname=', '', '');
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$this->pdo = $pdo;
 		}

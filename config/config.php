@@ -2,8 +2,8 @@
 
 return array
 (
-	"db_user" => "root",
-	"db_pass" => "root",
-	"db_host" => "localhost",
-	"db_name" => "netflix"
+	"db_user" => "",
+	"db_pass" => "",
+	"db_host" => "",
+	"db_name" => ""
 );
