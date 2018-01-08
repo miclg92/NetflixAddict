@@ -66,14 +66,27 @@ body {
 	color: #FFF;
 }
 
-/* SLIDER */
-
 #main_page h2{
 	margin-top: 80px;
 	margin-bottom: 20px;
 	text-align: center;
 }
 
+/* FLASH ACTU */
+#flash_news{
+	width: 90%;
+	height: 100%;
+	margin: 80px auto 30px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 50px #FFF;
+}
+
+#flash_news h2{
+	color: #FF0000;
+	margin-top: 10px;
+}
+
+/* SLIDER */
 .carousel-inner{
 	margin-bottom: 100px;
 }
@@ -81,6 +94,10 @@ body {
 .carousel-inner img{
 	margin: 0 auto;
 	width: 30%;
+}
+
+.carousel-inner img:hover{
+	opacity: 0.4;
 }
 
 .carousel-caption h2,
@@ -91,14 +108,35 @@ body {
 
 /* DIAPOSITIVES */
 #series_list{
-	width: 90%;
 	margin: auto;
 }
 
 #series_list img {
-	border: 2px solid #000000;
-	margin-bottom: 10px;
+	 border: 2px solid #000000;
+	 margin-bottom: 10px;
 }
+
+#series_list img:hover {
+	opacity: 0.4;
+}
+
+#pagination{
+	float: right;
+}
+
+.pagination li a,
+.pagination li span{
+	background-color: #3a3a3a;
+	color: #FFF;
+}
+
+.pagination li.active a{
+	background-color: #FF0000;
+	color: #FFF;
+	border: 1px solid #ddd;
+}
+
+
 
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */

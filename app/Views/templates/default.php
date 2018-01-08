@@ -52,8 +52,8 @@
 			<nav class="navbar navbar-inverse navbar-static-top">
 				<div class="container-fluid">
 					<ul id="menu" class="nav navbar-nav">
-						<li> <a href="#">Accueil</a> </li>
-						<li> <a href="#">Actualités</a> </li>
+						<li class="active"> <a href="index.php">Accueil</a> </li>
+						<li> <a href="index.php?p=news.index">Actualités</a> </li>
 						<li> <a href="#">Forum</a> </li>
 						<li> <a href="#">Contact</a> </li>
 					</ul>
@@ -65,7 +65,6 @@
 					</form>
 				</div>
 			</nav>
-			
 			
 			<section id="container">
 				<div id="content">

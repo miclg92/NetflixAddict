@@ -22,10 +22,10 @@ class SerieTable extends Table
 	}
 	
 	/**
-	 * Récupère toutes les series
+	 * Récupère toutes les series par popularité
 	 * @return array
 	 */
-	public function all()
+	public function allByPopularity()
 	{
 		return $this->query("
 			SELECT *
@@ -34,6 +34,35 @@ class SerieTable extends Table
 		");
 	}
 	
+	/**
+	 * Récupère toutes les series par ordre alphabétique
+	 * @return array
+	 */
+	public function allByAlphabetic()
+	{
+		return $this->query("
+			SELECT *
+			FROM series
+			ORDER BY title
+		");
+	}
+	
+	/**
+	 * Récupère toutes les series par année
+	 * @return array
+	 */
+	public function allByYear()
+	{
+		return $this->query("
+			SELECT *
+			FROM series
+			ORDER BY year DESC
+		");
+	}
+	
+	/**
+	 * @return mixed
+	 */
 	public function mostFollowedSeries()
 	{
 		return $this->query("

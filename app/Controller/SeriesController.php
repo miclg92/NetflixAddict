@@ -51,11 +51,13 @@ class SeriesController extends AppController
 //			$x = $x + 100;
 //			$y = $y + 100;
 //		}
-		$series = $this->Serie->all();
+		$seriesByPopularity = $this->Serie->allByPopularity();
+		$seriesByAlphabetic = $this->Serie->allByAlphabetic();
+		$seriesByYear = $this->Serie->allByYear();
 		$mostFollowedSeries = $this->Serie->mostFollowedSeries();
 //		var_dump($firstSerie);
 //		die();
-		$this->render('series.index', compact('series', 'mostFollowedSeries'));
+		$this->render('series.index', compact('seriesByPopularity', 'seriesByAlphabetic', 'seriesByYear', 'mostFollowedSeries'));
 	}
 	
 }
