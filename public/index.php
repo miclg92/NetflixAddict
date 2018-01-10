@@ -6,6 +6,15 @@ define ('ROOT', dirname(__DIR__));
 require ROOT . '/app/App.php';
 App::load();
 
+//// Mise en place de TWIG
+//$loader = new Twig_Loader_Filesystem('templates');
+//$twig = new Twig_Environment($loader, array(
+//	'cache' => false
+//));
+//echo $twig->render('index.twig', array(
+//	'moteur_name' => 'Twig'
+//));
+
 // Redirige vers l'action indiquée après ?p= dans la barre d'adresse
 if(isset($_GET['p']))
 {

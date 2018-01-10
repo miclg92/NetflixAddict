@@ -61,6 +61,7 @@ class SerieTable extends Table
 	}
 	
 	/**
+	 * Récupère les 5 séries ayant le plus de followers sur Betaseries
 	 * @return mixed
 	 */
 	public function mostFollowedSeries()
@@ -69,6 +70,18 @@ class SerieTable extends Table
 			SELECT *
 			FROM series
 			ORDER BY followers DESC LIMIT 5
+		");
+	}
+	
+	/**
+	 * Récupère l'id des séries
+	 * @return mixed
+	 */
+	public function serieId()
+	{
+		return $this->query("
+			SELECT id
+			FROM series
 		");
 	}
 

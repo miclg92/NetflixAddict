@@ -18,10 +18,12 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<!-- Accès aux différents fichiers CSS -->
 		<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/serie.css" media="screen" />
 		<!-- Accès aux différentes polices Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+		<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
 		
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,21 +40,48 @@
 			<header>
 				<div class="row">
 					<div id="main_title" class="col-md-8 col-sm-12">
-						<h1>NETFLIX ' ADDICT</h1>
+						<a href="index.php">
+							<h1>NETFLIX ' ADDICT</h1>
+						</a>
 						<h2>Le site des inconditionnels de séries Netflix</h2>
 					</div>
 					<div id="login_btns" class="col-md-4 col-sm-12">
-						<a class="btn" href="#" role="button">Connexion</a>
-						<a class="btn" href="#" role="button">Inscription</a>
+						<button data-toggle="modal" href="index.php?p=users.register" data-target="#registration_form" class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>
+							Inscription
+						</button>
+						<div class="modal fade" id="registration_form">
+							<div class="modal-dialog modal-md">
+								<div class="modal-content"></div>
+							</div>
+						</div>
+						
+						<button data-toggle="modal" href="index.php?p=users.login" data-target="#login_form" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i>
+							Connexion
+						</button>
+						<div class="modal fade" id="login_form">
+							<div class="modal-dialog modal-md">
+								<div class="modal-content"></div>
+							</div>
+						</div>
 					</div>
+					
+					<!-- A DEPLACER DANS L ESPACE ADMIN QUAND IL SERA FAIT -->
+					<div id="update_series">
+						<a id="animer" href="index.php?p=series.updateSeriesList" >Mettre à jour les séries</a>
+						<div id="pourcentage" class="pull-right"></div>
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-danger"></div>
+						</div>
+					</div>
+					
+					
 				</div>
-				
 			</header>
 			
 			<nav class="navbar navbar-inverse navbar-static-top">
 				<div class="container-fluid">
 					<ul id="menu" class="nav navbar-nav">
-						<li class="active"> <a href="index.php">Accueil</a> </li>
+						<li> <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a> </li>
 						<li> <a href="index.php?p=news.index">Actualités</a> </li>
 						<li> <a href="#">Forum</a> </li>
 						<li> <a href="#">Contact</a> </li>
@@ -79,21 +108,37 @@
 			</footer>
 		</div>
 			
-			
 
-			<!-- TINY MCE -->
-			<script>
-				tinymce.init({
-					selector: '#add-post form div textarea',
-					content_css: "css/main.css,css/admin.css",
-					menubar: false,
-					plugins: [
-						'advlist autolink link lists charmap print preview hr anchor pagebreak spellchecker',
-						'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-						'save table contextmenu directionality emoticons template paste textcolor'
-					]
+		<!-- TINY MCE -->
+		<script>
+			tinymce.init({
+				selector: '#add-post form div textarea',
+				content_css: "css/main.css,css/admin.css",
+				menubar: false,
+				plugins: [
+					'advlist autolink link lists charmap print preview hr anchor pagebreak spellchecker',
+					'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+					'save table contextmenu directionality emoticons template paste textcolor'
+				]
+			});
+		</script>
+		
+		<script>
+			function timer(n) {
+				$(".progress-bar").css("width", n + "%");
+				$("#pourcentage").text(n + "%");
+				if(n < 100) {
+					setTimeout(function() {
+						timer(n + 10);
+					}, 200);
+				}
+			}
+			$(function (){
+				$("#animer").click(function() {
+					timer(0);
 				});
-			</script>
+			});
+		</script>
 			
 	</body>
 

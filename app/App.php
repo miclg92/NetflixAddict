@@ -7,7 +7,7 @@ use Core\Database\MysqlDatabase;
  */
 class App
 {
-	public $title = 'Billet simple pour l\'Alaska, Roman en ligne de Jean Forteroche';
+	public $title = 'Netflix Addict';
 	private static $db_instance;
 	private static $_instance;
 	

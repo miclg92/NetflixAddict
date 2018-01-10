@@ -8,10 +8,10 @@ class SerieEntity extends Entity
 	 * @return string
 	 * Permet de récupérer l'url d'un épisode
 	 */
-//	public function getUrl()
-//	{
-//		return 'index.php?p=series.show&id=' . $this->id;
-//	}
+	public function getUrl()
+	{
+		return 'index.php?p=series.show&id=' . $this->id;
+	}
 	
 //	/**
 //	 * @return string

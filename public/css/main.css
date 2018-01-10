@@ -4,7 +4,7 @@ body {
 	font-family: 'Mukta', sans-serif;
 }
 
-.container {
+.container{
 	width: 90%;
 	padding-right: 10px;
 	padding-left: 10px;
@@ -25,9 +25,12 @@ body {
 #main_title h1{
 	width: 100%;
 	margin-top: 10px;
-	color: #FF0000;
+	color: #f40e0e;
 	font-size: 5em;
 	font-weight: bold;
+}
+#main_title a:hover{
+	text-decoration: none;
 }
 
 #main_title h2{
@@ -39,7 +42,7 @@ body {
 	margin-bottom: 30px;
 }
 
-#login_btns .btn{
+#login_btns button{
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.3em;
@@ -48,10 +51,14 @@ body {
 }
 
 #login_btns .btn:hover{
-	color: #FF0000;
+	color: #f40e0e;
 }
 
 /* MENU */
+.navbar{
+	margin-bottom: 100px;
+}
+
 #menu{
 	font-size: 1.4em;
 }
@@ -66,7 +73,7 @@ body {
 	color: #FFF;
 }
 
-#main_page h2{
+#bloc_content h2{
 	margin-top: 80px;
 	margin-bottom: 20px;
 	text-align: center;
@@ -82,7 +89,7 @@ body {
 }
 
 #flash_news h2{
-	color: #FF0000;
+	color: #f40e0e;
 	margin-top: 10px;
 }
 
@@ -131,12 +138,36 @@ body {
 }
 
 .pagination li.active a{
-	background-color: #FF0000;
+	background-color: #f40e0e;
 	color: #FFF;
 	border: 1px solid #ddd;
 }
 
+/* PROVISOIRE.... REGISTRATION FORM */
+#registration_form,
+#login_form{
+	color: #000000;
+}
 
+/* PROVISOIRE.... BUTTON UPDATE SERIES */
+#update_series{
+	float: right;
+	margin-right: 20px;
+}
+
+#update_series a{
+	color: #f40e0e;
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+
+#pourcentage{
+	margin-left: 10px;
+}
+
+.progress{
+	margin-top: 10px;
+}
 
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */

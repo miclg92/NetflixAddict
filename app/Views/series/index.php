@@ -1,6 +1,6 @@
 <!-- Contenu de la page d'accueil -->
 
-<div id="main_page">
+<div id="bloc_content">
 	
 	<div id="flash_news" class="row">
 		<h2 class="col-xs-12">Flash actu</h2>
@@ -11,11 +11,9 @@
 	
 	<h2>Top 5 des séries les plus suivies</h2>
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-keyboard="true">
-		
-		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
-				<a href="#">
+				<a href="<?= $mostFollowedSeries[0]->url ?>">
 					<img src="<?= $mostFollowedSeries[0]->image ?>" class="thumbnail">
 					<div class="carousel-caption">
 						<h2>N°1</h2>
@@ -25,7 +23,7 @@
 				</a>
 			</div>
 			<div class="item">
-				<a href="#">
+				<a href="<?= $mostFollowedSeries[1]->url ?>">
 					<img src="<?= $mostFollowedSeries[1]->image ?>" class="thumbnail">
 					<div class="carousel-caption">
 						<h2>N°2</h2>
@@ -35,7 +33,7 @@
 				</a>
 			</div>
 			<div class="item">
-				<a href="#">
+				<a href="<?= $mostFollowedSeries[2]->url ?>">
 					<img src="<?= $mostFollowedSeries[2]->image ?>" class="thumbnail">
 					<div class="carousel-caption">
 						<h2>N°3</h2>
@@ -45,7 +43,7 @@
 				</a>
 			</div>
 			<div class="item">
-				<a href="#">
+				<a href="<?= $mostFollowedSeries[3]->url ?>">
 					<img src="<?= $mostFollowedSeries[3]->image ?>" class="thumbnail">
 					<div class="carousel-caption">
 						<h2>N°4</h2>
@@ -55,7 +53,7 @@
 				</a>
 			</div>
 			<div class="item">
-				<a href="#">
+				<a href="<?= $mostFollowedSeries[4]->url ?>">
 					<img src="<?= $mostFollowedSeries[4]->image ?>" class="thumbnail">
 					<div class="carousel-caption">
 						<h2>N°5</h2>
@@ -66,7 +64,7 @@
 			</div>
 		</div>
 		
-		<!-- Indicators -->
+		<!-- indicateurs de diapo -->
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -75,7 +73,7 @@
 			<li data-target="#carousel-example-generic" data-slide-to="4"></li>
 		</ol>
 		
-		<!-- Controls -->
+		<!-- Flèches de navigation -->
 		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
@@ -101,35 +99,28 @@
 	<div id="bloc_series_list">
 		<div id="series_list" class="row">
 			<?php foreach($seriesByPopularity as $serie): ?>
-				<a href="#">
+				<a href="<?= $serie->url ?>">
 					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="<?= $serie->image ?>">
 				</a>
 			<?php endforeach; ?>
 		</div>
 		<div id="pagination"> </div>
 	</div>
-	
-
 </div>
 
 <script>
-	
 	var show_per_page = 12;
 	var current_page = 0;
-	
 	function set_display(first, last) {
 		$('#series_list').children().css('display', 'none');
 		$('#series_list').children().slice(first, last).css('display', 'block');
 	}
-	
 	function previous(){
 		if($('.active').prev('.page_link').length) go_to_page(current_page - 1);
 	}
-	
 	function next(){
 		if($('.active').next('.page_link').length) go_to_page(current_page + 1);
 	}
-	
 	function go_to_page(page_num){
 		current_page = page_num;
 		start_from = current_page * show_per_page;
@@ -138,7 +129,6 @@
 		$('.active').removeClass('active');
 		$('#id' + page_num).addClass('active');
 	}
-	
 	$(document).ready(function() {
 		
 		var number_of_pages = Math.ceil($('#series_list').children().length / show_per_page);
@@ -156,7 +146,5 @@
 		
 		$('#pagination').html(nav);
 		set_display(0, show_per_page);
-		
 	});
-
 </script>
