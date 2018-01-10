@@ -82,14 +82,32 @@
 				<div class="container-fluid">
 					<ul id="menu" class="nav navbar-nav">
 						<li> <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a> </li>
-						<li> <a href="index.php?p=news.index">Actualités</a> </li>
-						<li> <a href="#">Forum</a> </li>
-						<li> <a href="#">Contact</a> </li>
+						<li> <a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+								 Actualités</a> </li>
+						<li> <a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i>
+								 Forum</a> </li>
+						<li> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+								Contact</a> </li>
+						<li> <a href="#"><i class="fa fa-user" aria-hidden="true"></i>
+								Mon compte</a> </li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-key" aria-hidden="true"></i>
+								 Administration du site <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Actualités</a></li>
+								<li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> Commentaires</a></li>
+								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Compte Administrateur</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="index.php?p=series.updateSeriesList"><i class="fa fa-spinner" aria-hidden="true"></i>
+										 Mise à jour des Séries</a></li>
+							</ul>
+						</li>
 					</ul>
 					<form class="navbar-form navbar-right inline-form">
 						<div id="searchbar" class="form-group">
 							<input type="search" class="input-sm form-control" placeholder="Recherche">
-							<button type="submit" class="btn btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+							<button type="submit" class="btn btn-sm"><i class="fa fa-search" aria-hidden="true"></i>
+								Chercher</button>
 						</div>
 					</form>
 				</div>
@@ -103,7 +121,8 @@
 			
 			<footer>
 				<div class="row">
-					<p class="col-lg-12"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2018 - Données recueillies auprès de Betaseries (API) - Les Séries sont la propriété de Netflix - Ce site est la propriété de ses auteurs</p>
+					<p class="col-lg-12"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2018</p>
+					<p class="col-lg-12">Données recueillies auprès de Betaseries (API) - Les Séries sont la propriété de Netflix - Ce site est la propriété de ses auteurs</p>
 				</div>
 			</footer>
 		</div>

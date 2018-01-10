@@ -109,7 +109,7 @@ hr{
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.3em;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 #flash_news a:hover{
@@ -210,11 +210,13 @@ hr{
 
 /* FOOTER */
 footer{
-	color: #8a8a8a;
-	background-color: #3a3a3a;
+	color: #FFF;
+	background-image: linear-gradient(to bottom,#3c3c3c 0,#222 100%);
 	font-size: 1.2em;
 	margin-top: 200px;
-	height: 200px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	/*height: 200px;*/
 }
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
