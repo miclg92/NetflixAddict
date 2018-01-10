@@ -7,6 +7,15 @@
 		<div class="col-xs-12">
 			<p>Ici la dernière actualité publiée...</p>
 		</div>
+		<div class="col-xs-12">
+			<div class="flash_news_btn col-xs-6">
+				<a type="button" class="news_btn col-xs-6" href="index.php?p=news.show">Lire cette actu</a>
+			</div>
+			<div class="flash_news_btn col-xs-6">
+				<a type="button" class="news_btn col-xs-6" href="index.php?p=news.index">Toutes les actus</a>
+			</div>
+		</div>
+		
 	</div>
 	
 	<h2>Top 5 des séries les plus suivies</h2>
@@ -84,6 +93,8 @@
 		</a>
 	</div>
 	
+	<hr>
+	
 	<h2>Toutes les séries disponibles sur Netflix</h2>
 	<div class="dropdown">
 		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -104,7 +115,7 @@
 				</a>
 			<?php endforeach; ?>
 		</div>
-		<div id="pagination"> </div>
+		<div id="pagination"></div>
 	</div>
 </div>
 

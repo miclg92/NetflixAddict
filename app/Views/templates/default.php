@@ -102,8 +102,8 @@
 			</section>
 			
 			<footer>
-				<div class="col-lg-12" id="about_me">
-				
+				<div class="row">
+					<p class="col-lg-12"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2018 - Données recueillies auprès de Betaseries (API) - Les Séries sont la propriété de Netflix - Ce site est la propriété de ses auteurs</p>
 				</div>
 			</footer>
 		</div>

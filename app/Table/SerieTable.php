@@ -84,5 +84,18 @@ class SerieTable extends Table
 			FROM series
 		");
 	}
+	
+	/**
+	 * @param $post_id Récupère les commentaires liés à la série consultée
+	 * @return mixed
+	 */
+	public function getSerieComments($serie_id){
+		$result = $this->query("
+			SELECT *
+			FROM comments
+			WHERE serie_id = ?
+			ORDER BY date_comment DESC", [$serie_id]);
+		return $result;
+	}
 
 }

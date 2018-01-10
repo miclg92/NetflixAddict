@@ -4,7 +4,6 @@ namespace App\Controller;
 use Core\Controller\Controller;
 use Core\HTML\BootstrapForm;
 
-
 class SeriesController extends AppController
 {
 	public function __construct()
@@ -93,7 +92,9 @@ class SeriesController extends AppController
 		} elseif($serie->status == "Ended"){
 			$status = "Terminée";
 		}
-		$this->render('series.show', compact('serie','status'));
+	
+		$comments = $this->Serie->getSerieComments($serieId);
+		$this->render('series.show', compact('serie','status', 'comments'));
 	}
 	
 }

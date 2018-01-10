@@ -15,6 +15,12 @@ body {
 	text-align: center;
 }
 
+hr{
+	color: #FFF;
+	width: 100%;
+	margin: 50px auto;
+}
+
 /* HEADER */
 #main_title{
 	font-family: 'Indie Flower', sans-serif;
@@ -56,7 +62,7 @@ body {
 
 /* MENU */
 .navbar{
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 }
 
 #menu{
@@ -91,6 +97,24 @@ body {
 #flash_news h2{
 	color: #f40e0e;
 	margin-top: 10px;
+	font-size: 2em;
+}
+
+#flash_news .flash_news_btn{
+	margin: 20px auto;
+}
+
+#flash_news .flash_news_btn a{
+	float: none;
+	background-color: #3a3a3a;
+	color: #FFF;
+	font-size: 1.3em;
+	border-radius: 10px;
+}
+
+#flash_news a:hover{
+	color: #f40e0e;
+	text-decoration: none;
 }
 
 /* SLIDER */
@@ -169,6 +193,29 @@ body {
 	margin-top: 10px;
 }
 
+/* Bouton Retour */
+.return{
+	margin-bottom: 50px;
+}
+
+.return a{
+	color: #f40e0e;
+	font-size: 1.2em;
+	float: left;
+}
+
+.return a:hover{
+	text-decoration: none;
+}
+
+/* FOOTER */
+footer{
+	color: #8a8a8a;
+	background-color: #3a3a3a;
+	font-size: 1.2em;
+	margin-top: 200px;
+	height: 200px;
+}
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
 
