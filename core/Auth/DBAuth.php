@@ -37,8 +37,9 @@ class DBAuth
 		$user = $this->db->prepare('
 			SELECT *
 			FROM users
-			WHERE confirmed_at IS NOT NULL AND username = ?', [$username], null, true);
-		
+			WHERE username = ?', [$username], null, true);
+//		WHERE confirmed_at IS NOT NULL AND username = ?', [$username], null, true);
+
 		if($user){
 			$verifiedPass = password_verify($password, $user->password);
 			if($verifiedPass === true ){

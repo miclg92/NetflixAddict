@@ -33,8 +33,8 @@ class SeriesController extends AppController
 
 		$x = 1;
 		$y = 100;
-//		while($y <= $totalShowsNb){
-		while($y <= 200){
+//		while($x <= $totalShowsNb){
+		while($x <= 200){
 			$netflix_list = file_get_contents("https://api.betaseries.com/shows/list?key=c1085ededab1&v=3.0&start=$x&limit=$y&order=followers&fields=id,title,description,creation,seasons,episodes,followers,network,status,images");
 			$netflix_array = json_decode($netflix_list, true);
 			$netflix_shows = $netflix_array['shows'];
@@ -56,6 +56,7 @@ class SeriesController extends AppController
 							]);
 						}
 //						else{
+//
 //							$this->Serie->update($serieId, [
 //								'id_beta' => $show['id'],
 //								'title' => $show['title'],

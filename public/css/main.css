@@ -5,10 +5,17 @@ body {
 }
 
 .container{
-	width: 90%;
+	width: 95%;
+	display: flex; /* Fixe le pied de page en bas */
+	flex-direction: column; /* Fixe le pied de page en bas */
+	min-height: 100vh; /* Fixe le pied de page en bas */
 	padding-right: 10px;
 	padding-left: 10px;
 	margin: auto;
+}
+
+#container{
+	flex: 1; /* Fixe le pied de page en bas */
 }
 
 [class*="col-"]{
@@ -19,6 +26,11 @@ hr{
 	color: #FFF;
 	width: 100%;
 	margin: 50px auto;
+}
+
+.alert{
+	width: auto;
+	margin: 0 auto;
 }
 
 /* HEADER */
@@ -48,7 +60,7 @@ hr{
 	margin-bottom: 30px;
 }
 
-#login_btns button{
+#login_btns .btn{
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.3em;
@@ -218,6 +230,7 @@ footer{
 	padding-bottom: 10px;
 	/*height: 200px;*/
 }
+
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
 

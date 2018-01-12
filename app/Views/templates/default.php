@@ -19,6 +19,7 @@
 		<!-- Accès aux différents fichiers CSS -->
 		<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/serie.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/form.css" media="screen" />
 		<!-- Accès aux différentes polices Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
@@ -46,33 +47,42 @@
 						<h2>Le site des inconditionnels de séries Netflix</h2>
 					</div>
 					<div id="login_btns" class="col-md-4 col-sm-12">
-						<button data-toggle="modal" href="index.php?p=users.register" data-target="#registration_form" class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>
-							Inscription
-						</button>
-						<div class="modal fade" id="registration_form">
-							<div class="modal-dialog modal-md">
-								<div class="modal-content"></div>
-							</div>
+						
+						<div id="register_btn">
+							<a href="index.php?p=users.register" class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i> Inscription</a>
+<!--							<button data-toggle="modal" href="index.php?p=users.register" data-target="#registration_form" class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>-->
+<!--								Inscription-->
+<!--							</button>-->
+<!--							<div class="modal fade" id="registration_form">-->
+<!--								<div class="modal-dialog modal-md">-->
+<!--									<div class="modal-content">-->
+<!--									-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</div>-->
 						</div>
 						
-						<button data-toggle="modal" href="index.php?p=users.login" data-target="#login_form" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i>
-							Connexion
-						</button>
-						<div class="modal fade" id="login_form">
-							<div class="modal-dialog modal-md">
-								<div class="modal-content"></div>
-							</div>
+						<div id="login_btn">
+							<a href="index.php?p=users.login" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+<!--							<button data-toggle="modal" href="index.php?p=users.login" data-target="#login_form" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i>-->
+<!--								Connexion-->
+<!--							</button>-->
+<!--							<div class="modal fade" id="login_form">-->
+<!--								<div class="modal-dialog modal-md">-->
+<!--									<div class="modal-content"></div>-->
+<!--								</div>-->
+<!--							</div>-->
 						</div>
 					</div>
 					
 					<!-- A DEPLACER DANS L ESPACE ADMIN QUAND IL SERA FAIT -->
-					<div id="update_series">
-						<a id="animer" href="index.php?p=series.updateSeriesList" >Mettre à jour les séries</a>
-						<div id="pourcentage" class="pull-right"></div>
-						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-danger"></div>
-						</div>
-					</div>
+<!--					<div id="update_series">-->
+<!--						<a id="animer" href="index.php?p=series.updateSeriesList" >Mettre à jour les séries</a>-->
+<!--						<div id="pourcentage" class="pull-right"></div>-->
+<!--						<div class="progress progress-striped active">-->
+<!--							<div class="progress-bar progress-bar-danger"></div>-->
+<!--						</div>-->
+<!--					</div>-->
 					
 					
 				</div>
@@ -112,6 +122,16 @@
 					</form>
 				</div>
 			</nav>
+			
+			<?php if(isset($_SESSION['flash'])): ?>
+				<?php foreach($_SESSION['flash'] as $type => $message): ?>
+					<div class="alert alert-<?= $type; ?> alert-dismissible text-center" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span class="glyphicon glyphicon-remove"></span></button>
+						<?= $message; ?>
+					</div>
+				<?php endforeach; ?>
+				<?php unset($_SESSION['flash']); ?>
+			<?php endif; ?>
 			
 			<section id="container">
 				<div id="content">

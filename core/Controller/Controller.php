@@ -7,7 +7,7 @@ class Controller
 	protected $viewPath; // Chemin vers le dossier qui contient les vues
 	protected $template;
 	
-	/* Afficher les vues pour le visiteur */
+	/* Afficher les vues pour le visiteur et charge la vue DEFAULT*/
 	protected function render($view, $variables = [])
 	{
 		ob_start();
@@ -15,6 +15,16 @@ class Controller
 		require($this->viewPath . str_replace('.', '/', $view) . '.php');
 		$content = ob_get_clean();
 		require($this->viewPath . 'templates/' . $this->template . '.php');
+	}
+	
+	/* Afficher les vues pour les modals */
+	protected function renderModal($view, $variables = [])
+	{
+		ob_start();
+		extract($variables); // Variables $posts, $categories, $comments....
+		require($this->viewPath . str_replace('.', '/', $view) . '.php');
+		$content = ob_get_clean();
+		require($this->viewPath . 'templates/' . 'modal' . '.php');
 	}
 	
 	protected function forbidden()
