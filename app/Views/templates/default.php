@@ -1,3 +1,26 @@
+<?php
+use \Core\Auth\DBAuth;
+
+if(isset($_COOKIE['remember'])){
+	$remember_token = $_COOKIE['remember'];
+	$parts = explode('==', $remember_token);
+	$user_id = $parts[0];
+	$auth = new DBAuth(App::getDb());
+	$user = $auth->loginWithId($user_id);
+	
+	if($user){
+		$expected = $user_id . '==' . $user->remember_token . sha1($user_id . 'ratonslaveurs');
+		if($expected == $remember_token){
+			$_SESSION['auth'] = $user->id;
+			$_SESSION['user'] = $user;
+			setcookie('remember', $remember_token, time() + 60 * 60 * 24 * 7, '/', null, null, true);
+		}
+	} else{
+		setcookie('remember', NULL, -1, '/', null, null, true);
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -20,6 +43,7 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/serie.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/form.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/mySeries.css" media="screen" />
 		<!-- Accès aux différentes polices Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
@@ -47,32 +71,28 @@
 						<h2>Le site des inconditionnels de séries Netflix</h2>
 					</div>
 					<div id="login_btns" class="col-md-4 col-sm-12">
+						<?php
+						if(isset($_SESSION['auth'])){
+							?>
+							<div class="logout_btn">
+								<a href="index.php?p=users.logout" class="btn"><i class="fa fa-sign-out" aria-hidden="true"></i> Deconnexion</a>
+								<a href="index.php?p=users.account" class="btn">Bonjour  <?= $_SESSION['user']->username;?></a>
+							</div>
+							<?php
+						} else {
+							?>
+							<div class="register_btn">
+								<a href="index.php?p=users.register" class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i> Inscription</a>
+							</div>
+							
+							<div class="login_btn">
+								<a href="index.php?p=users.login" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+							</div>
+							<?php
+						}
+						?>
 						
-						<div id="register_btn">
-							<a href="index.php?p=users.register" class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i> Inscription</a>
-<!--							<button data-toggle="modal" href="index.php?p=users.register" data-target="#registration_form" class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>-->
-<!--								Inscription-->
-<!--							</button>-->
-<!--							<div class="modal fade" id="registration_form">-->
-<!--								<div class="modal-dialog modal-md">-->
-<!--									<div class="modal-content">-->
-<!--									-->
-<!--									</div>-->
-<!--								</div>-->
-<!--							</div>-->
-						</div>
 						
-						<div id="login_btn">
-							<a href="index.php?p=users.login" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
-<!--							<button data-toggle="modal" href="index.php?p=users.login" data-target="#login_form" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i>-->
-<!--								Connexion-->
-<!--							</button>-->
-<!--							<div class="modal fade" id="login_form">-->
-<!--								<div class="modal-dialog modal-md">-->
-<!--									<div class="modal-content"></div>-->
-<!--								</div>-->
-<!--							</div>-->
-						</div>
 					</div>
 					
 					<!-- A DEPLACER DANS L ESPACE ADMIN QUAND IL SERA FAIT -->
@@ -94,24 +114,38 @@
 						<li> <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a> </li>
 						<li> <a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
 								 Actualités</a> </li>
-						<li> <a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i>
-								 Forum</a> </li>
 						<li> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
 								Contact</a> </li>
-						<li> <a href="#"><i class="fa fa-user" aria-hidden="true"></i>
-								Mon compte</a> </li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-key" aria-hidden="true"></i>
-								 Administration du site <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Actualités</a></li>
-								<li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> Commentaires</a></li>
-								<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Compte Administrateur</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="index.php?p=series.updateSeriesList"><i class="fa fa-spinner" aria-hidden="true"></i>
-										 Mise à jour des Séries</a></li>
-							</ul>
-						</li>
+						
+						<?php
+						if(isset($_SESSION['auth'])){
+							if($_SESSION['user']->flag == 1){
+								?>
+								<li> <a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i>
+										Mon compte</a> </li>
+								<li> <a href="index.php?p=series.favorites"><i class="fa fa-film" aria-hidden="true"></i>
+										Mes séries</a> </li>
+								<?php
+							} elseif($_SESSION['user']->flag == 2) {
+								?>
+								<li> <a href="#"><i class="fa fa-user" aria-hidden="true"></i>
+										Mon compte</a> </li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-key" aria-hidden="true"></i>
+										Administration du site <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Actualités</a></li>
+										<li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> Commentaires</a></li>
+										<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Compte Administrateur</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="index.php?p=series.updateSeriesList"><i class="fa fa-spinner" aria-hidden="true"></i>
+												Mise à jour des Séries</a></li>
+									</ul>
+								</li>
+								<?php
+							}
+						}
+						?>
 					</ul>
 					<form class="navbar-form navbar-right inline-form">
 						<div id="searchbar" class="form-group">
@@ -146,8 +180,18 @@
 				</div>
 			</footer>
 		</div>
+		
+		
+		<script src="js/jquery.cloud9carousel.js"></script>
+		<script src="js/jquery.reflection.js"></script>
+		<script src="js/.js"></script>
+		
+		<script>
+			$(function () { // Attends le chargement de la page
 			
-
+			});
+		</script>
+		
 		<!-- TINY MCE -->
 		<script>
 			tinymce.init({
@@ -162,6 +206,7 @@
 			});
 		</script>
 		
+		<!-- Barre de progression -->
 		<script>
 			function timer(n) {
 				$(".progress-bar").css("width", n + "%");

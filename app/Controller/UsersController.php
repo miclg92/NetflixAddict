@@ -122,7 +122,7 @@ class UsersController extends AppController
 					$this->render('users.account');
 				} elseif($_SESSION['user']->flag == 2){
 					$_SESSION['flash']['success']= "Vous êtes maintenant connecté en tant qu'Administrateur.";
-					$this->render('posts.account');
+					$this->render('users.account');
 				}
 			} else {
 				$errors = true;
@@ -146,10 +146,6 @@ class UsersController extends AppController
 		$_SESSION['flash']['success'] = "Vous êtes bien déconnecté. A bientôt !";
 		header('location: index.php');
 	}
-	
-	
-	
-	
 	
 	public function account()
 	{

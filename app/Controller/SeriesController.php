@@ -10,6 +10,8 @@ class SeriesController extends AppController
 	{
 		parent::__construct();
 		$this->loadModel('Serie');
+		$this->loadModel('Comment');
+		$this->loadModel('Favorite');
 	}
 	
 	public function index()
@@ -92,10 +94,67 @@ class SeriesController extends AppController
 			$status = "En cours";
 		} elseif($serie->status == "Ended"){
 			$status = "Terminée";
-		}
-	
+		};
+		
+		$isFavorite = $this->Favorite->checkSerieAsFavorite($serieId);
+		if(isset($_POST['followSerie'])){
+			if ($isFavorite == 0) {
+				$this->Favorite->create([
+					'user_id' => $_SESSION['auth'],
+					'serie_id' => $serieId
+				]);
+				header("Refresh:0");
+			}
+		}elseif(isset($_POST['stopFollowSerie'])){
+			$this->Favorite->deleteFromFavorite($_POST['serieId']);
+			header("Refresh:0");
+		};
+		
+		if(!empty($_POST)) {
+			if (empty($_POST['comment'])) {
+				$errors = true;
+			} else {
+				$comment = $this->Comment->create([
+					'author' => $_SESSION['user']->username,
+					'comment' => $_POST['comment'],
+					'serie_id' => $_POST['id']
+				]);
+				
+				if ($comment) {
+					header("Refresh:0");
+					$_SESSION['flash']['success']= "Votre commentaire a bien été publié.";
+				}
+			}
+		};
+		
+		if(isset($_POST['signal_comment'])){
+			$this->Comment->update($_POST['id'], [
+				'is_signaled' => 1,
+				'signaled_at' => date('Y-m-d H:i:s')
+			]);
+			header("Refresh:0");
+			$_SESSION['flash']['success']= "Ce commentaire a bien été signalé, et il sera traité dans les plus brefs délais.";
+		};
+		
+		$form = new BootstrapForm($_POST);
+		$errors = false;
 		$comments = $this->Serie->getSerieComments($serieId);
-		$this->render('series.show', compact('serie','status', 'comments'));
+		$this->render('series.show', compact('serie','status', 'comments', 'form', 'errors', 'isFavorite'));
 	}
+	
+	public function favorites()
+	{
+		$favoriteSeries = $this->Serie->showFavoriteSeries($_SESSION['auth']);
+		$this->render('series.favorites', compact('favoriteSeries'));
+	}
+	
+	public function deleteFavorite(){
+		if(!empty($_POST)){
+			$this->Favorite->deleteFromFavorite($_POST['serieId']);
+		}
+		header('location: index.php?p=series.favorites');
+		$_SESSION['flash']['danger']= 'Cette série a été retirée de "Mes séries".';
+	}
+	
 	
 }

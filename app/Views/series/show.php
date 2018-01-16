@@ -7,11 +7,27 @@
 				Retour</a></p>
 	</div>
 	
-	<div id="follow_serie">
-		<button id="follow_serie_btn">+</button>
-		<p id="follow_serie_text">Suivre cette Série</p>
-	</div>
-	
+	<?php if($isFavorite == 0){
+	?>
+		<form method="post" action="#">
+			<div id="follow_serie">
+				<button type="submit" name="followSerie" id="follow_serie_btn">+</button>
+				<p id="follow_serie_text">Suivre cette Série</p>
+			</div>
+		</form>
+	<?php
+	} else{
+	?>
+		<form method="post" action="?p=series.deleteFavorite" class="col-xs-12">
+			<div id="stop_follow_serie" class="col-xs-12">
+				<input type="hidden" name="serieId" value="<?= $serie->id ?>">
+				<button type="submit" name="stopFollowSerie" id="stop_follow_serie_btn">X</button>
+				<p id="stop_follow_serie_text">Ne plus suivre cette Série</p>
+			</div>
+		</form>
+	<?php
+	}
+	?>
 	
 	<div id="serie" class="row">
 		<div id="serie_image" class="col-md-5 col-xs-12">
@@ -21,8 +37,8 @@
 		<div id="serie_details" class="col-md-7 col-xs-12">
 			<p class="col-md-3"><?= $serie->seasons?> saisons</p>
 			<p class="col-md-3"><?= $serie->episodes?> épisodes</p>
-			<p class="col-md-3"><?= $serie->followers?> adeptes</p>
-			<p class="col-md-3">Etat : <?= $status?></p>
+			<p class="col-md-3"><?= $serie->followers?> followers</p>
+			<p class="col-md-3">Statut : <?= $status?></p>
 		</div>
 		
 		<div id="serie_title" class="col-md-7 col-xs-12">
@@ -54,10 +70,21 @@
 		<?php
 		if(isset($_SESSION['auth'])){
 			?>
-			<form class="col-xs-12" method="post">
+			<div class="comments_rules row">
+				<p class="col-xs-12">Avant de laisser un commentaire, merci de prendre connaissance des règles de bonne conduite.</p>
+				<p class="col-xs-12">En cas de manquement, un administrateur pourrait vous contacter, et votre compte pourrait être suspendu.</p>
+				<ol class="col-xs-12">
+					<li>- Netflix'Addict ne permet pas la diffusion de séries en streaming</li>
+					<li>- Il est interdit de diffuser des liens de partages illégaux</li>
+					<li>- Courtoisie et respect entre membres indispensables</li>
+					<li>- Eviter les SPOILERS... Pensez à ceux qui n'ont pas terminé la série</li>
+					<li>- Signalez les commentaires inappropriés à l'aide du bouton prévu à cet effet</li>
+				</ol>
+			</div>
+			<form class="col-xs-12 center-block" method="post">
 				<input type= "hidden" name="id" value="<?= $serie->id ?>">
-				<?= $form->input('comment', 'Commentaire : ');?>
-				<button class="btn_post">Publier</button>
+				<?= $form->input('comment', 'Votre commentaire : ');?>
+				<button class="btn">Publier</button>
 				<?php if($errors): ?>
 					<div class="errors">
 						Merci de renseigner votre commentaire.
@@ -67,43 +94,19 @@
 			<?php
 		} else {
 			?>
-			<p class="no_show col-xs-12">Envie de laisser un commentaire ?</p>
+			<p class="col-xs-12">Envie de laisser un commentaire ?</p>
 			<br>
-			<div class="no_show col-xs-12">
-				<div id="login_btns" class="col-xs-12">
-					<button data-toggle="modal" href="index.php?p=users.login" data-target="#login_form" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i>
-						Connectez-vous
-					</button>
-					<div class="modal fade" id="login_form">
-						<div class="modal-dialog modal-md">
-							<div class="modal-content"></div>
-						</div>
+			<div id="link_login_btns" class="col-xs-12">
+					<div class="register_btn col-xs-6">
+						<a href="index.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus" aria-hidden="true"></i> Inscrivez-vous</a>
 					</div>
-					
-					<button data-toggle="modal" href="index.php?p=users.register" data-target="#registration_form" class="btn"><i class="fa fa-user-plus" aria-hidden="true"></i>
-						Inscrivez-vous
-					</button>
-					<div class="modal fade" id="registration_form">
-						<div class="modal-dialog modal-md">
-							<div class="modal-content"></div>
-						</div>
+					<div class="login_btn col-xs-6">
+						<a href="index.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in" aria-hidden="true"></i> Connectez-vous</a>
 					</div>
-				</div>
 			</div>
 			<?php
 		}
 		?>
-		<div class="comments_rules row">
-			<p class="col-xs-12">Avant de laisser un commentaire, merci de prendre connaissance des règles de bonne conduite.</p>
-			<p class="col-xs-12">En cas de manquement, un administrateur pourrait vous contacter, et votre compte pourrait être suspendu.</p>
-			<ol class="col-xs-12">
-				<li>Netflix'Addict ne permet pas la diffusion de séries en streaming</li>
-				<li>Il est interdit de diffuser des liens de partages illégaux</li>
-				<li>Courtoisie et respect entre membres indispensables</li>
-				<li>Eviter les SPOILERS... Pensez à ceux qui n'ont pas terminé la série</li>
-				<li>Signalez les commentaires inappropriés à l'aide du bouton prévu à cet effet</li>
-			</ol>
-		</div>
 	</div>
 	
 	<hr>
@@ -112,81 +115,52 @@
 		<h3 class="col-xs-12">Tous les commentaires relatifs à la série <span>"<?= $serie->title?>"</span></h3>
 		
 		<?php
-	if(!empty($comments)){
+		if(!empty($comments)){
+			?>
+			<?php foreach($comments as $comment): ?>
+				<form method="post">
+					<input type= "hidden" name="id" value="<?= $comment->id ?>">
+					<div id="full_comment" class="col-xs-12">
+						<div id="comments_details" class="col-xs-12">
+							<p class="col-sm-2 col-xs-4"><i class="fa fa-user" aria-hidden="true"></i> <?= $comment->author?></p>
+							<p class="col-md-3 col-sm-4 col-xs-7"><i class="fa fa-calendar" aria-hidden="true"></i>
+								 <?= $comment->date_comment?></p>
+							<?php
+							if(isset($_SESSION['user'])) {
+								if($comment->is_signaled == 1){
+								?>
+									<button type="submit" name="signal_comment" disabled class="btn-signal col-md-3 col-sm-4 col-xs-4"><i class="fa fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
+								    Commentaire signalé
+									</button>
+								<?php
+								} else{
+								?>
+									<button type="submit" name="signal_comment" class="btn-signal col-sm-2 col-xs-2"><i class="fa fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
+									Signaler
+									</button>
+								<?php
+								}
+							} else{
+								?>
+								<button type="submit" name="signal_comment" disabled class="btn-signal col-lg-5 col-md-6 col-xs-8"><i class="fa fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
+									Pour signaler ce commentaire, veuillez vous connecter
+								</button>
+								<?php
+							}
+							?>
+						</div>
+						<div id="comments_content" class="col-xs-12">
+							<p class="col-xs-12"><?= $comment->comment?></p>
+						</div>
+					</div>
+				</form>
+			<?php endforeach; ?>
+			<?php
+		} else{
 		?>
-		<?php foreach($comments as $comment): ?>
-			<form method="post">
-				<input type= "hidden" name="id" value="<?= $comment->id ?>">
-			</form>
-		
-			<div id="full_comment" class="col-xs-12">
-				<div id="comments_details" class="col-xs-12">
-					<p class="col-xs-2"><i class="fa fa-user" aria-hidden="true"></i> <?= $comment->author?></p>
-					<p class="col-xs-2"><i class="fa fa-calendar" aria-hidden="true"></i>
-						 <?= $comment->date_comment?></p>
-					<button type="submit" name="signal_comment" class="btn-signal col-xs-2"><i class="fa fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
-						 Signaler</button>
-				</div>
-				<div id="comments_content" class="col-xs-12">
-					<p class="col-xs-12"><?= $comment->comment?></p>
-				</div>
-			</div>
-					
-					
-<!--					--><?php
-//					if(isset($_SESSION['user'])) {
-//						if ($_SESSION['user']->flag == 1) {
-//							?>
-<!--							<form action="" method="post" style="display: inline;">-->
-<!--								<p class="comment_text"><em>--><?//= $comment->comment; ?><!--</em>-->
-<!--									<input type="hidden" name="id" value="--><?//= $comment->id; ?><!--">-->
-<!--									--><?php
-//									if($comment->is_signaled == 1){
-//										?>
-<!--										<button type="button" name="signal_comment" disabled class="btn-disabled">Commentaire signalé. En cours de traitement...</button>-->
-<!--										--><?php
-//									} else{
-//										?>
-<!--										<button type="submit" name="signal_comment" class="btn-signal">Signaler ce commentaire</button>-->
-<!--										--><?php
-//									}
-//									?>
-<!--							</form>-->
-<!--							--><?php
-//						} elseif ($_SESSION['user']->flag == 2) {
-//							?>
-<!--							<p class="comment_text"><em>--><?//= $comment->comment; ?><!--</p>-->
-<!--							--><?php
-//						}
-//					}	else {
-//						?>
-<!--						<form action="" method="post" style="display: inline;">-->
-<!--							<p class="comment_text"><em>--><?//= $comment->comment; ?><!--</em>-->
-<!--								<input type="hidden" name="id" value="--><?//= $comment->id; ?><!--">-->
-<!--								--><?php
-//								if($comment->is_signaled == 1){
-//									?>
-<!--									<button type="button" name="signal_comment" disabled class="btn-disabled">Commentaire signalé. En cours de traitement...</button>-->
-<!--									--><?php
-//								} else{
-//									?>
-<!--									<button type="submit" name="signal_comment" class="btn-signal">Signaler ce commentaire</button>-->
-<!--									--><?php
-//								}
-//								?>
-<!--						</form>-->
-<!--						--><?php
-//					}
-//					?>
-		<?php endforeach; ?>
+			<p class="no_show col-xs-12">Aucun commentaire pour l'instant, soyez le premier ;-)</p>
 		<?php
-	}else{
-	?>
-		<p class="no_show col-xs-12">Aucun commentaire pour l'instant, soyez le premier ;-)</p>
+		}
+		?>
 	</div>
-	<?php
-	}
-	?>
-	
-	<hr>
-	
+</div>

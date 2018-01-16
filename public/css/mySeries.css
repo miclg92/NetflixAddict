@@ -1,0 +1,18 @@
+#mySeries{
+	margin-top: 50px;
+}
+
+#mySerie{
+	margin-bottom: 30px;
+}
+
+#mySerieDetails p,
+#mySerieDetails h3,
+#mySerieDetails form{
+	text-align: left;
+}
+
+#stop_follow_serie{
+	padding: 0;
+	justify-content: flex-start;
+}

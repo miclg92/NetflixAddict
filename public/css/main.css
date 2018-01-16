@@ -63,7 +63,7 @@ hr{
 #login_btns .btn{
 	background-color: #3a3a3a;
 	color: #FFF;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	margin-left: 10px;
 	float: right;
 }
@@ -129,24 +129,30 @@ hr{
 	text-decoration: none;
 }
 
-/* SLIDER */
-.carousel-inner{
-	margin-bottom: 100px;
-}
-
-.carousel-inner img{
+/* CAROUSEL 3D (Page Home) */
+#showcase {
 	margin: 0 auto;
-	width: 30%;
+	height: 600px;
+	text-align: center;
+	visibility: hidden;
+}
+#showcase img {
+	margin: 0 auto;
+	cursor: pointer;
 }
 
-.carousel-inner img:hover{
-	opacity: 0.4;
+.nav {
+	text-align: center;
 }
-
-.carousel-caption h2,
-.carousel-caption h3,
-.carousel-caption p{
-	text-shadow: 2px 0 0 #000000, 0 2px 0 #000000, 0 -2px 0 #000000, -2px 0 0 #000000, 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, -2px -2px 0 #000000;
+.nav button {
+	width: 64px;
+	height: 36px;
+	color: #FFF;
+	background-color: #3a3a3a;
+	font-size: 2em;
+	font-weight: bold;
+	margin: 5px;
+	border-radius: 5px;
 }
 
 /* DIAPOSITIVES */
@@ -240,6 +246,7 @@ footer{
 	.carousel-inner img{
 		width: 40%;
 	}
+	
 }
 
 /* Tablette 768px to 992px */
@@ -250,8 +257,14 @@ footer{
 		padding-bottom: 0;
 	}
 	
-	#login_btns .btn{
-		float: none;
+	#login_btns{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+	
+	#menu{
+		font-size: 1.1em;
 	}
 	
 	.carousel-inner img{

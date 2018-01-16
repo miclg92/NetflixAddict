@@ -102,5 +102,7 @@ class UserTable extends Table
 			WHERE flag = 1', []);
 		return $mails;
 	}
+	
+	
 
 }

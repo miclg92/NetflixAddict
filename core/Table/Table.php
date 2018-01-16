@@ -111,6 +111,7 @@ class Table
 		return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
 	}
 	
+	
 	/**
 	 * @param $fields
 	 * Créé un élément d'une table

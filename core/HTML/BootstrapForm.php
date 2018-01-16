@@ -38,9 +38,11 @@ class BootstrapForm extends Form
 	 * @return string
 	 */
 	public function checkbox ($name, $label, $value){
+		
 		$label = '<label>' . $label . '</label>';
-		$input = '<input type="checkbox" name="' . $name . '" value="' . $value . '" class="form-control">';
-		return $this->surround($label . $input);
+		$input = '<input type="checkbox" name="' . $name . '" value="' . $value . '" class="form-control checkbox">';
+		$checkboxDiv = '<div class="checkbox">' . $label . $input . '</div>';
+		return $this->surround($checkboxDiv);
 	}
 	
 	/**

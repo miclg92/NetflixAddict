@@ -1,5 +1,6 @@
+/* REGISTRATION FORM - LOGIN FORM -  */
 .form{
-	width: 40%;
+	width: 50%;
 	margin: auto;
 	color: #000000;
 	background-color: #FFF;
@@ -45,6 +46,17 @@
 	text-decoration: none;
 }
 
+.form .checkbox{
+	display: flex;
+	flex-direction: row;
+	width: auto;
+	height: auto;
+}
+
+.checkbox input[type=checkbox]{
+	margin-left: 0;
+}
+
 .errors{
 	color: #FF0000;
 	background-color: #edbcb6;
@@ -52,4 +64,31 @@
 	padding: 10px;
 	border-radius: 10px;
 	text-align: center;
+}
+
+
+/* -------------------------------- MEDIA QUERIES -------------------------------- */
+
+/* Laptop 992px to 1200px */
+@media all and (max-width: 1200px){
+
+
+}
+
+/* Tablette 768px to 992px */
+@media all and (max-width: 992px) {
+	
+	.form{
+		width: 60%;
+	}
+	
+}
+
+/* Smartphone lower than 768px */
+@media all and (max-width: 768px) {
+	
+	.form{
+		width: 80%;
+	}
+
 }

@@ -15,83 +15,104 @@
 				<a type="button" class="news_btn col-xs-6" href="index.php?p=news.index">Toutes les actus</a>
 			</div>
 		</div>
-		
 	</div>
 	
 	<h2>Top 5 des séries les plus suivies</h2>
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-keyboard="true">
-		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-				<a href="<?= $mostFollowedSeries[0]->url ?>">
-					<img src="<?= $mostFollowedSeries[0]->image ?>" class="thumbnail">
-					<div class="carousel-caption">
-						<h2>N°1</h2>
-						<h3><?= $mostFollowedSeries[0]->title ?> (<?= $mostFollowedSeries[0]->year ?>)</h3>
-						<p><?= $mostFollowedSeries[0]->seasons ?> saisons / <?= $mostFollowedSeries[0]->episodes ?> épisodes</p>
-					</div>
-				</a>
-			</div>
-			<div class="item">
-				<a href="<?= $mostFollowedSeries[1]->url ?>">
-					<img src="<?= $mostFollowedSeries[1]->image ?>" class="thumbnail">
-					<div class="carousel-caption">
-						<h2>N°2</h2>
-						<h3><?= $mostFollowedSeries[1]->title ?> (<?= $mostFollowedSeries[1]->year ?>)</h3>
-						<p><?= $mostFollowedSeries[1]->seasons ?> saisons / <?= $mostFollowedSeries[1]->episodes ?> épisodes</p>
-					</div>
-				</a>
-			</div>
-			<div class="item">
-				<a href="<?= $mostFollowedSeries[2]->url ?>">
-					<img src="<?= $mostFollowedSeries[2]->image ?>" class="thumbnail">
-					<div class="carousel-caption">
-						<h2>N°3</h2>
-						<h3><?= $mostFollowedSeries[2]->title ?> (<?= $mostFollowedSeries[2]->year ?>)</h3>
-						<p><?= $mostFollowedSeries[2]->seasons ?> saisons / <?= $mostFollowedSeries[2]->episodes ?> épisodes</p>
-					</div>
-				</a>
-			</div>
-			<div class="item">
-				<a href="<?= $mostFollowedSeries[3]->url ?>">
-					<img src="<?= $mostFollowedSeries[3]->image ?>" class="thumbnail">
-					<div class="carousel-caption">
-						<h2>N°4</h2>
-						<h3><?= $mostFollowedSeries[3]->title ?> (<?= $mostFollowedSeries[3]->year ?>)</h3>
-						<p><?= $mostFollowedSeries[3]->seasons ?> saisons / <?= $mostFollowedSeries[3]->episodes ?> épisodes</p>
-					</div>
-				</a>
-			</div>
-			<div class="item">
-				<a href="<?= $mostFollowedSeries[4]->url ?>">
-					<img src="<?= $mostFollowedSeries[4]->image ?>" class="thumbnail">
-					<div class="carousel-caption">
-						<h2>N°5</h2>
-						<h3><?= $mostFollowedSeries[4]->title ?> (<?= $mostFollowedSeries[4]->year ?>)</h3>
-						<p><?= $mostFollowedSeries[4]->seasons ?> saisons / <?= $mostFollowedSeries[4]->episodes ?> épisodes</p>
-					</div>
-				</a>
-			</div>
-		</div>
-		
-		<!-- indicateurs de diapo -->
-		<ol class="carousel-indicators">
-			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-			<li data-target="#carousel-example-generic" data-slide-to="4"></li>
-		</ol>
-		
-		<!-- Flèches de navigation -->
-		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
-		</a>
+	<div id="showcase" class="col-xs-12 center-block">
+			<a href="<?= $mostFollowedSeries[0]->url ?>">
+				<img src="<?= $mostFollowedSeries[0]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block">
+			</a>
+			<a href="<?= $mostFollowedSeries[1]->url ?>">
+				<img src="<?= $mostFollowedSeries[1]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
+			</a>
+			<a href="<?= $mostFollowedSeries[2]->url ?>">
+				<img src="<?= $mostFollowedSeries[2]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
+			</a>
+			<a href="<?= $mostFollowedSeries[3]->url ?>">
+				<img src="<?= $mostFollowedSeries[3]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
+			</a>
+			<a href="<?= $mostFollowedSeries[4]->url ?>">
+				<img src="<?= $mostFollowedSeries[4]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
+			</a>
 	</div>
+	<div class="nav">
+		<button class="left">←</button>
+		<button class="right">→</button>
+	</div>
+	
+<!--	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-keyboard="true">-->
+<!--		<div class="carousel-inner" role="listbox">-->
+<!--			<div class="item active">-->
+<!--				<a href="--><?//= $mostFollowedSeries[0]->url ?><!--">-->
+<!--					<img src="--><?//= $mostFollowedSeries[0]->image ?><!--" class="thumbnail">-->
+<!--					<div class="carousel-caption">-->
+<!--						<h2>N°1</h2>-->
+<!--						<h3>--><?//= $mostFollowedSeries[0]->title ?><!-- (--><?//= $mostFollowedSeries[0]->year ?><!--)</h3>-->
+<!--						<p>--><?//= $mostFollowedSeries[0]->seasons ?><!-- saisons / --><?//= $mostFollowedSeries[0]->episodes ?><!-- épisodes</p>-->
+<!--					</div>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--			<div class="item">-->
+<!--				<a href="--><?//= $mostFollowedSeries[1]->url ?><!--">-->
+<!--					<img src="--><?//= $mostFollowedSeries[1]->image ?><!--" class="thumbnail">-->
+<!--					<div class="carousel-caption">-->
+<!--						<h2>N°2</h2>-->
+<!--						<h3>--><?//= $mostFollowedSeries[1]->title ?><!-- (--><?//= $mostFollowedSeries[1]->year ?><!--)</h3>-->
+<!--						<p>--><?//= $mostFollowedSeries[1]->seasons ?><!-- saisons / --><?//= $mostFollowedSeries[1]->episodes ?><!-- épisodes</p>-->
+<!--					</div>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--			<div class="item">-->
+<!--				<a href="--><?//= $mostFollowedSeries[2]->url ?><!--">-->
+<!--					<img src="--><?//= $mostFollowedSeries[2]->image ?><!--" class="thumbnail">-->
+<!--					<div class="carousel-caption">-->
+<!--						<h2>N°3</h2>-->
+<!--						<h3>--><?//= $mostFollowedSeries[2]->title ?><!-- (--><?//= $mostFollowedSeries[2]->year ?><!--)</h3>-->
+<!--						<p>--><?//= $mostFollowedSeries[2]->seasons ?><!-- saisons / --><?//= $mostFollowedSeries[2]->episodes ?><!-- épisodes</p>-->
+<!--					</div>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--			<div class="item">-->
+<!--				<a href="--><?//= $mostFollowedSeries[3]->url ?><!--">-->
+<!--					<img src="--><?//= $mostFollowedSeries[3]->image ?><!--" class="thumbnail">-->
+<!--					<div class="carousel-caption">-->
+<!--						<h2>N°4</h2>-->
+<!--						<h3>--><?//= $mostFollowedSeries[3]->title ?><!-- (--><?//= $mostFollowedSeries[3]->year ?><!--)</h3>-->
+<!--						<p>--><?//= $mostFollowedSeries[3]->seasons ?><!-- saisons / --><?//= $mostFollowedSeries[3]->episodes ?><!-- épisodes</p>-->
+<!--					</div>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--			<div class="item">-->
+<!--				<a href="--><?//= $mostFollowedSeries[4]->url ?><!--">-->
+<!--					<img src="--><?//= $mostFollowedSeries[4]->image ?><!--" class="thumbnail">-->
+<!--					<div class="carousel-caption">-->
+<!--						<h2>N°5</h2>-->
+<!--						<h3>--><?//= $mostFollowedSeries[4]->title ?><!-- (--><?//= $mostFollowedSeries[4]->year ?><!--)</h3>-->
+<!--						<p>--><?//= $mostFollowedSeries[4]->seasons ?><!-- saisons / --><?//= $mostFollowedSeries[4]->episodes ?><!-- épisodes</p>-->
+<!--					</div>-->
+<!--				</a>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		-->
+<!--		<!-- indicateurs de diapo -->
+<!--		<ol class="carousel-indicators">-->
+<!--			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
+<!--			<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
+<!--			<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+<!--			<li data-target="#carousel-example-generic" data-slide-to="3"></li>-->
+<!--			<li data-target="#carousel-example-generic" data-slide-to="4"></li>-->
+<!--		</ol>-->
+<!--		-->
+<!--		<!-- Flèches de navigation -->
+<!--		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
+<!--			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+<!--			<span class="sr-only">Previous</span>-->
+<!--		</a>-->
+<!--		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
+<!--			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+<!--			<span class="sr-only">Next</span>-->
+<!--		</a>-->
+<!--	</div>-->
 	
 	<hr>
 	
@@ -119,6 +140,49 @@
 	</div>
 </div>
 
+<!-- CAROUSEL -->
+<script>
+	$(function() {
+		var showcase = $("#showcase");
+		showcase.Cloud9Carousel( {
+			yPos: 42,
+			yRadius: 48,
+			mirrorOptions: {
+				gap: 12,
+				height: 0.2
+			},
+			buttonLeft: $(".nav > .left"),
+			buttonRight: $(".nav > .right"),
+			autoPlay: true,
+			bringToFront: true,
+//			onRendered: showcaseUp<a href="https://www.jqueryscript.net/time-clock/">date</a>d,
+			onLoaded: function() {
+				showcase.css( 'visibility', 'visible' );
+				showcase.css( 'display', 'none' );
+				showcase.fadeIn( 1500 )
+			}
+		} );
+		
+		$('.nav > button').click( function( e ) {
+			var b = $(e.target).addClass( 'down' );
+			setTimeout( function() { b.removeClass( 'down' ) }, 80 )
+		} );
+		
+		$(document).keydown( function( e ) {
+			switch( e.keyCode ) {
+				/* left arrow */
+				case 37:
+					$('.nav > .left').click();
+					break;
+				/* right arrow */
+				case 39:
+					$('.nav > .right').click();
+			}
+		} )
+	})
+</script>
+
+<!-- PAGINATION -->
 <script>
 	var show_per_page = 12;
 	var current_page = 0;

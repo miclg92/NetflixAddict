@@ -1,5 +1,6 @@
 <div id="bloc_content">
 	<form method="post" action="#" class="form">
+		<a href="index.php" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></a>
 		<h3>CONNEXION</h3>
 		<hr>
 		<h4>Indiquez votre pseudo et votre mot de passe</h4>
@@ -12,6 +13,7 @@
 		</div>
 		<div class="text-center">
 			<button id="login_form_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</button>
+			<a href="index.php" type="button" id="login_form_btn" type="submit" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
 		</div>
 		
 		
