@@ -19,21 +19,21 @@
 	
 	<h2>Top 5 des séries les plus suivies</h2>
 	<div id="showcase" class="col-xs-12 center-block">
-			<a href="<?= $mostFollowedSeries[0]->url ?>">
-				<img src="<?= $mostFollowedSeries[0]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block">
-			</a>
-			<a href="<?= $mostFollowedSeries[1]->url ?>">
-				<img src="<?= $mostFollowedSeries[1]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
-			</a>
-			<a href="<?= $mostFollowedSeries[2]->url ?>">
-				<img src="<?= $mostFollowedSeries[2]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
-			</a>
-			<a href="<?= $mostFollowedSeries[3]->url ?>">
-				<img src="<?= $mostFollowedSeries[3]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
-			</a>
-			<a href="<?= $mostFollowedSeries[4]->url ?>">
-				<img src="<?= $mostFollowedSeries[4]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
-			</a>
+		<a href="<?= $mostFollowedSeries[0]->url ?>">
+			<img src="<?= $mostFollowedSeries[0]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block">
+		</a>
+		<a href="<?= $mostFollowedSeries[1]->url ?>">
+			<img src="<?= $mostFollowedSeries[1]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
+		</a>
+		<a href="<?= $mostFollowedSeries[2]->url ?>">
+			<img src="<?= $mostFollowedSeries[2]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
+		</a>
+		<a href="<?= $mostFollowedSeries[3]->url ?>">
+			<img src="<?= $mostFollowedSeries[3]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
+		</a>
+		<a href="<?= $mostFollowedSeries[4]->url ?>">
+			<img src="<?= $mostFollowedSeries[4]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
+		</a>
 	</div>
 	<div class="nav">
 		<button class="left">←</button>

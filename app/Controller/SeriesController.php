@@ -96,18 +96,20 @@ class SeriesController extends AppController
 			$status = "Terminée";
 		};
 		
-		$isFavorite = $this->Favorite->checkSerieAsFavorite($serieId);
-		if(isset($_POST['followSerie'])){
-			if ($isFavorite == 0) {
-				$this->Favorite->create([
-					'user_id' => $_SESSION['auth'],
-					'serie_id' => $serieId
-				]);
+		if(isset($_SESSION['auth'])){
+			$isFavorite = $this->Favorite->checkSerieAsFavorite($serieId, $_SESSION['auth']);
+			if(isset($_POST['followSerie'])){
+				if ($isFavorite == 0) {
+					$this->Favorite->create([
+						'user_id' => $_SESSION['auth'],
+						'serie_id' => $serieId
+					]);
+					header("Refresh:0");
+				}
+			}elseif(isset($_POST['stopFollowSerie'])){
+				$this->Favorite->deleteFromFavorite($_POST['serieId']);
 				header("Refresh:0");
 			}
-		}elseif(isset($_POST['stopFollowSerie'])){
-			$this->Favorite->deleteFromFavorite($_POST['serieId']);
-			header("Refresh:0");
 		};
 		
 		if(!empty($_POST)) {

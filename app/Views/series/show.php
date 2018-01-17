@@ -9,25 +9,27 @@
 	
 	<?php
 	if(isset($_SESSION['auth'])){
-		if($isFavorite == 0){
-		?>
-			<form method="post" action="#">
-				<div id="follow_serie">
-					<button type="submit" name="followSerie" id="follow_serie_btn">+</button>
-					<p id="follow_serie_text">Suivre cette Série</p>
-				</div>
-			</form>
-		<?php
-		} else{
-			?>
-			<form method="post" action="?p=series.deleteFavorite" class="col-xs-12">
-				<div id="stop_follow_serie" class="col-xs-12">
-					<input type="hidden" name="serieId" value="<?= $serie->id ?>">
-					<button type="submit" name="stopFollowSerie" id="stop_follow_serie_btn">X</button>
-					<p id="stop_follow_serie_text">Ne plus suivre cette Série</p>
-				</div>
-			</form>
-		<?php
+		if($_SESSION['user']->flag == 1){
+			if($isFavorite == 0){
+				?>
+				<form method="post" action="#">
+					<div id="follow_serie">
+						<button type="submit" name="followSerie" id="follow_serie_btn">+</button>
+						<p id="follow_serie_text">Suivre cette Série</p>
+					</div>
+				</form>
+				<?php
+			} else{
+				?>
+				<form method="post" action="?p=series.deleteFavorite" class="col-xs-12">
+					<div id="stop_follow_serie" class="col-xs-12">
+						<input type="hidden" name="serieId" value="<?= $serie->id ?>">
+						<button type="submit" name="stopFollowSerie" id="stop_follow_serie_btn">X</button>
+						<p id="stop_follow_serie_text">Ne plus suivre cette Série</p>
+					</div>
+				</form>
+				<?php
+			}
 		}
 	} else{
 	?>

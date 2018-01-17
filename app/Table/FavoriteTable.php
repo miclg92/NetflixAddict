@@ -7,17 +7,31 @@ class FavoriteTable extends Table
 {
 	protected $table = 'favorites';
 	
+//	/**
+//	 * @param $username
+//	 * Vérifie si une série est dans la liste des favorites
+//	 * @return mixed
+//	 */
+//	public function checkSerieAsFavorite($serie_id)
+//	{
+//		$result = $this->query('
+//			SELECT COUNT(*) AS nbFavorite
+//			FROM favorites
+//			WHERE serie_id = ?', [$serie_id], true);
+//		return $result->nbFavorite;
+//	}
+	
 	/**
 	 * @param $username
 	 * Vérifie si une série est dans la liste des favorites
 	 * @return mixed
 	 */
-	public function checkSerieAsFavorite($serie_id)
+	public function checkSerieAsFavorite($serie_id, $user_id)
 	{
 		$result = $this->query('
 			SELECT COUNT(*) AS nbFavorite
 			FROM favorites
-			WHERE serie_id = ?', [$serie_id], true);
+			WHERE serie_id = ? AND user_id = ?', [$serie_id, $user_id], true);
 		return $result->nbFavorite;
 	}
 	
