@@ -44,6 +44,7 @@ if(isset($_COOKIE['remember'])){
 		<link rel="stylesheet" type="text/css" href="css/serie.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/form.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/mySeries.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/news.css" media="screen" />
 		<!-- Accès aux différentes polices Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
@@ -134,7 +135,7 @@ if(isset($_COOKIE['remember'])){
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-key" aria-hidden="true"></i>
 										Administration du site <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Actualités</a></li>
+										<li><a href="index.php?p=admin.news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Actualités</a></li>
 										<li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> Commentaires</a></li>
 										<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Compte Administrateur</a></li>
 										<li role="separator" class="divider"></li>

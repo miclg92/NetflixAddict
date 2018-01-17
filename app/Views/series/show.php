@@ -3,7 +3,7 @@
 <div id="bloc_content">
 	
 	<div class="row">
-		<p class="col-xs-2 return"><a href="index.php"><i class="fa fa-reply" aria-hidden="true"></i>
+		<p class="col-xs-5 return"><a href="index.php"><i class="fa fa-reply" aria-hidden="true"></i>
 				Retour</a></p>
 	</div>
 	

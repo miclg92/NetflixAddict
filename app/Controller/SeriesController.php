@@ -12,15 +12,17 @@ class SeriesController extends AppController
 		$this->loadModel('Serie');
 		$this->loadModel('Comment');
 		$this->loadModel('Favorite');
+		$this->loadModel('New');
 	}
 	
 	public function index()
 	{
+		$lastNews = $this->New->last();
+		$mostFollowedSeries = $this->Serie->mostFollowedSeries();
 		$seriesByPopularity = $this->Serie->allByPopularity();
 		$seriesByAlphabetic = $this->Serie->allByAlphabetic();
 		$seriesByYear = $this->Serie->allByYear();
-		$mostFollowedSeries = $this->Serie->mostFollowedSeries();
-		$this->render('series.index', compact('seriesByPopularity', 'seriesByAlphabetic', 'seriesByYear', 'mostFollowedSeries'));
+		$this->render('series.index', compact('lastNews', 'seriesByPopularity', 'seriesByAlphabetic', 'seriesByYear', 'mostFollowedSeries'));
 	}
 	
 	public function updateSeriesList()

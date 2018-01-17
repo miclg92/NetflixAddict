@@ -5,15 +5,23 @@
 	<div id="flash_news" class="row">
 		<h2 class="col-xs-12">Flash actu</h2>
 		<div class="col-xs-12">
-			<p>Ici la dernière actualité publiée...</p>
+			<?php foreach($lastNews as $news): ?>
+				<div class="col-xs-12">
+					<img class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 thumbnail" src="<?= $news->image ?>" alt="<?= $news->image_name ?>">
+				</div>
+				<div class="col-md-offset-2 col-md-8">
+					<h3><?= $news->title;?></h3>
+					<p><?= $news->extrait; ?></p>
+				</div>
+			<?php endforeach; ?>
 		</div>
 		<div class="col-xs-12">
-			<div class="flash_news_btn col-xs-6">
-				<a type="button" class="news_btn col-xs-6" href="index.php?p=news.show">Lire cette actu</a>
-			</div>
-			<div class="flash_news_btn col-xs-6">
-				<a type="button" class="news_btn col-xs-6" href="index.php?p=news.index">Toutes les actus</a>
-			</div>
+<!--			<div class="flash_news_btn col-xs-6">-->
+<!--				<a type="button" class="news_btn col-xs-6" href="index.php?p=news.show">Lire cette actu</a>-->
+<!--			</div>-->
+<!--			<div class="flash_news_btn col-xs-6">-->
+<!--				<a type="button" class="news_btn col-xs-6" href="index.php?p=news.index">Toutes les actus</a>-->
+<!--			</div>-->
 		</div>
 	</div>
 	

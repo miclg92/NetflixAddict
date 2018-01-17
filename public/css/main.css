@@ -109,7 +109,13 @@ hr{
 #flash_news h2{
 	color: #f40e0e;
 	margin-top: 10px;
+	margin-bottom: 30px;
 	font-size: 2em;
+	text-decoration: underline;
+}
+
+#flash_news p{
+	text-align: justify;
 }
 
 #flash_news .flash_news_btn{
@@ -214,6 +220,7 @@ hr{
 /* Bouton Retour */
 .return{
 	margin-bottom: 50px;
+	margin-top: 50px;
 }
 
 .return a{
