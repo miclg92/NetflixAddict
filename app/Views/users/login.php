@@ -13,7 +13,7 @@
 		</div>
 		<div class="text-center">
 			<button id="login_form_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa fa-sign-in" aria-hidden="true"></i> Connexion</button>
-			<a href="index.php" type="button" id="login_form_btn" type="submit" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
+			<a href="index.php" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
 		</div>
 		
 		

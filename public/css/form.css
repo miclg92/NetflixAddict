@@ -1,4 +1,4 @@
-/* REGISTRATION FORM - LOGIN FORM -  */
+/* REGISTRATION - LOGIN -  ADD NEWS - DELETE ACCOUNT - EDIT NAME/MAIL/PASSWORD - FORGET/REINIT PASSWORD */
 .form{
 	width: 50%;
 	margin: auto;
@@ -27,7 +27,12 @@
 
 .form #register_form_btn,
 .form #login_form_btn,
-.form #add_news_btn{
+.form #add_news_btn,
+.form #edit_name_btn,
+.form #edit_mail_btn,
+.form #edit_passwd_btn,
+.form #forget_passwd_btn,
+.form #reinit_passwd_btn{
 	background-image: none;
 	text-shadow: none;
 	background-color: #3a3a3a;
@@ -36,10 +41,31 @@
 	margin: 0 auto 50px auto;
 }
 
+.form #delete_account_btn{
+	background-image: none;
+	text-shadow: none;
+	background-color: #f40e0e;
+	color: #FFF;
+	font-size: 1.2em;
+	padding: 5px;
+	margin: 0 auto 30px auto;
+	border-radius: 5px;
+}
+
 .form #register_form_btn:hover,
 .form #login_form_btn:hover,
-.form #add_news_btn:hover{
+.form #add_news_btn:hover,
+.form #delete_account_btn:hover,
+.form #edit_name_btn:hover,
+.form #edit_mail_btn:hover,
+.form #edit_passwd_btn:hover,
+.form #forget_passwd_btn:hover,
+.form #reinit_passwd_btn:hover{
 	color: #f40e0e;
+}
+
+.form #delete_account_btn:hover{
+	color: #3a3a3a;
 }
 
 .form div a{
@@ -59,6 +85,15 @@
 
 .checkbox input[type=checkbox]{
 	margin-left: 0;
+}
+
+table .btn{
+	background-image: none;
+	text-shadow: none;
+	background-color: #8a8a8a;
+	color: #FFF;
+	font-size: 1em;
+	padding: 5px;
 }
 
 .errors{

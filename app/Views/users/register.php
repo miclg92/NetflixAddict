@@ -11,7 +11,7 @@
 		<hr>
 		<div class="text-center">
 			<button id="register_form_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa fa-user-plus" aria-hidden="true"></i> M'inscrire</button>
-			<a href="index.php" type="button" id="login_form_btn" type="submit" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
+			<a href="index.php" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
 		</div>
 		
 		<?php if(!empty($errors)): ?>

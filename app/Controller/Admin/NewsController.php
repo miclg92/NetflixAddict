@@ -54,7 +54,7 @@ class NewsController extends AppController
 					$img = $_FILES['image'];
 					move_uploaded_file($img['tmp_name'], '../public/img/'.$img['name']);
 					self::creerMinImg('../public/img/'.$img['name'], '../public/img/min', $img['name'], 358, 270);
-//					$this->loadModel('Image');
+//					$this->loadModel('NewsImage');
 					$image = $this->NewsImage->create([
 						'img_name' => $img['name'],
 						'img_url' => 'img/'.$img['name'],
@@ -90,16 +90,16 @@ class NewsController extends AppController
 					return $this->index();
 				}
 			} else {
-//				$this->loadModel('Category');
+//				$this->loadModel('NewsCategory');
 				$categories = $this->NewsCategory->extract('id', 'title');
-//				$this->loadModel('Image');
+//				$this->loadModel('NewsImage');
 				$form = new BootstrapForm($_POST);
 				$this->render('admin.news.add', compact('categories', 'images', 'form', 'errors'));
 			}
 		} else{
-//			$this->loadModel('Category');
+//			$this->loadModel('NewsCategory');
 			$categories = $this->NewsCategory->extract('id', 'title');
-//			$this->loadModel('Image');
+//			$this->loadModel('NewsImage');
 			$form = new BootstrapForm($_POST);
 			$this->render('admin.news.add', compact('categories', 'images', 'form', 'errors'));
 		}

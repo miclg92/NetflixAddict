@@ -122,10 +122,10 @@ if(isset($_COOKIE['remember'])){
 						if(isset($_SESSION['auth'])){
 							if($_SESSION['user']->flag == 1){
 								?>
-								<li> <a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i>
-										Mon compte</a> </li>
 								<li> <a href="index.php?p=series.favorites"><i class="fa fa-film" aria-hidden="true"></i>
 										Mes séries</a> </li>
+								<li> <a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i>
+										Mon compte</a> </li>
 								<?php
 							} elseif($_SESSION['user']->flag == 2) {
 								?>

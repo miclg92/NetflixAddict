@@ -152,7 +152,7 @@ class UsersController extends AppController
 		$this->render('users.account', compact(''));
 	}
 	
-	public function edit()
+	public function editName()
 	{
 		$user_id = $this->User->find($_GET['id'])->id;
 		if($user_id !== $_SESSION['auth'])
@@ -175,6 +175,35 @@ class UsersController extends AppController
 				}
 			}
 			
+			if (empty($errors)) {
+				$updatedUser = $this->User->update($_GET['id'], [
+					'username' => $_POST['username'],
+				]);
+				$_SESSION['flash']['success']= "Votre pseudo a bien été mis à jour.";
+				
+				if ($updatedUser) {
+					$_SESSION['user']->username = $_POST['username'];
+					return $this->account();
+				}
+				$this->render('users.account');
+			}
+		}
+		$user = $_SESSION['user'];
+		$form = new BootstrapForm($user);
+		$this->render('users.editName', compact('user', 'form', 'errors'));
+	}
+	
+	public function editMail()
+	{
+		$user_id = $this->User->find($_GET['id'])->id;
+		if($user_id !== $_SESSION['auth'])
+		{
+			$this->forbidden();
+		}
+		
+		if (!empty($_POST)) {
+			$errors = array();
+			
 			if (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 				$errors['email'] = "Cet email n'est pas valide.";
 			} else {
@@ -189,13 +218,11 @@ class UsersController extends AppController
 			
 			if (empty($errors)) {
 				$updatedUser = $this->User->update($_GET['id'], [
-					'username' => $_POST['username'],
 					'email' => $_POST['email'],
 				]);
-				$_SESSION['flash']['success']= "Votre compte a bien été mis à jour.";
+				$_SESSION['flash']['success']= "Votre email a bien été mis à jour.";
 				
 				if ($updatedUser) {
-					$_SESSION['user']->username = $_POST['username'];
 					$_SESSION['user']->email = $_POST['email'];
 					return $this->account();
 				}
@@ -204,7 +231,7 @@ class UsersController extends AppController
 		}
 		$user = $_SESSION['user'];
 		$form = new BootstrapForm($user);
-		$this->render('users.edit', compact('user', 'form', 'errors'));
+		$this->render('users.editMail', compact('user', 'form', 'errors'));
 	}
 	
 	public function changePasswd()
@@ -267,9 +294,9 @@ class UsersController extends AppController
 				mail(
 					$_POST['email'],
 					'Réinitialisation de votre compte',
-					"Bonjour. \n\nAfin de réinitialiser votre mot de passe, merci de cliquer sur ce lien :\n\nhttps://www.legoarant.com/projet4/public/index.php?p=users.reset.php?&id=$user_id&token=$reset_token\n\nA bientôt.\n\nJean Forteroche",
-					'From: "Jean Forteroche"<jforteroche@gmail.com>'. "\r\n" .
-					'Reply-To: jforteroche@gmail.com' . "\r\n"
+					"Bonjour. \n\nAfin de réinitialiser votre mot de passe, merci de cliquer sur ce lien :\n\nhttp://www.localhost:8888/index.php?p=users.reset.php?&id=$user_id&token=$reset_token\n\nA bientôt.\n\nAdministrateur",
+					'From: "Netflix Addict"<miclg92@gmail.com>'. "\r\n" .
+					'Reply-To: miclg92@gmail.com' . "\r\n"
 				);
 				header('Location: index.php');
 				exit();

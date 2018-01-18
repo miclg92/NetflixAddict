@@ -36,7 +36,7 @@ class UserTable extends Table
 	
 	/**
 	 * @param $username
-	 * Vérifie d'un disponibilité d'un username avec COUNT
+	 * Vérifie la disponibilité d'un username avec COUNT
 	 * @return mixed
 	 */
 	public function checkUsername($username)
@@ -50,7 +50,7 @@ class UserTable extends Table
 	
 	/**
 	 * @param $email
-	 * Vérifie d'un disponibilité d'un email avec COUNT
+	 * Vérifie la disponibilité d'un email avec COUNT
 	 * @return mixed
 	 */
 	public function checkUsermail($email)
