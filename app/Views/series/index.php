@@ -159,7 +159,7 @@
 			buttonRight: $(".nav > .right"),
 			autoPlay: true,
 			bringToFront: true,
-//			onRendered: showcaseUp<a href="https://www.jqueryscript.net/time-clock/">date</a>d,
+//			onRendered: showcaseUp'<a href="https://www.jqueryscript.net/time-clock/">date</a>',
 			onLoaded: function() {
 				showcase.css( 'visibility', 'visible' );
 				showcase.css( 'display', 'none' );

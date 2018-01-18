@@ -30,10 +30,9 @@
 					</div>
 				</div>
 			<?php endforeach; ?>
-			<div id="pagination_news"></div>
 		</div>
+		<div id="pagination_news"></div>
 	</div>
-	
 	
 </div>
 

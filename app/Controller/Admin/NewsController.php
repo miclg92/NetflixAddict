@@ -54,7 +54,6 @@ class NewsController extends AppController
 					$img = $_FILES['image'];
 					move_uploaded_file($img['tmp_name'], '../public/img/'.$img['name']);
 					self::creerMinImg('../public/img/'.$img['name'], '../public/img/min', $img['name'], 358, 270);
-//					$this->loadModel('NewsImage');
 					$image = $this->NewsImage->create([
 						'img_name' => $img['name'],
 						'img_url' => 'img/'.$img['name'],
@@ -90,80 +89,74 @@ class NewsController extends AppController
 					return $this->index();
 				}
 			} else {
-//				$this->loadModel('NewsCategory');
 				$categories = $this->NewsCategory->extract('id', 'title');
-//				$this->loadModel('NewsImage');
 				$form = new BootstrapForm($_POST);
 				$this->render('admin.news.add', compact('categories', 'images', 'form', 'errors'));
 			}
 		} else{
-//			$this->loadModel('NewsCategory');
 			$categories = $this->NewsCategory->extract('id', 'title');
-//			$this->loadModel('NewsImage');
 			$form = new BootstrapForm($_POST);
 			$this->render('admin.news.add', compact('categories', 'images', 'form', 'errors'));
 		}
 	}
 
-//	public function edit()
-//	{
-//		$episode = $this->Post->find($_GET['id']);
-//		if($episode === false)
-//		{
-//			$this->notFound();
-//		}
-//
-//		if(!empty($_POST)){
-//			$errors = array();
-//
-//			if (empty($_POST['title'])) {
-//				$errors['titre'] = "Titre manquant.";
-//			}
-//
-//			if (empty($_POST['content'])) {
-//				$errors['contenu'] = "Contenu manquant.";
-//			}
-//
-//			if (empty($errors)) {
-//				$result = $this->Post->update($_GET['id'], [
-//					'episode' => $_POST['episode'],
-//					'title' => $_POST['title'],
-//					'content' => $_POST['content'],
-//					'category_id' => $_POST['category_id'],
-//					'date_update' => date('Y-m-d H:i:s')
-//				]);
-//
-//				if($result)
-//				{
-//					$_SESSION['flash']['success'] = "Cet épisode a bien été modifié";
-//					return $this->index();
-//				}
-//			} else {
-//				$post = $this->Post->find($_GET['id']);
+	public function edit()
+	{
+		$news = $this->New->find($_GET['id']);
+		if($news === false)
+		{
+			$this->notFound();
+		}
+
+		if(!empty($_POST)){
+			$errors = array();
+
+			if (empty($_POST['title'])) {
+				$errors['titre'] = "Titre manquant.";
+			}
+
+			if (empty($_POST['content'])) {
+				$errors['contenu'] = "Contenu manquant.";
+			}
+
+			if (empty($errors)) {
+				$result = $this->New->update($_GET['id'], [
+					'title' => $_POST['title'],
+					'content' => $_POST['content'],
+					'category_id' => $_POST['category_id'],
+				]);
+
+				if($result)
+				{
+					$_SESSION['flash']['success'] = "Cette actu a bien été modifiée";
+					return $this->index();
+				}
+			} else {
+				$news = $this->New->find($_GET['id']);
 //				$this->loadModel('Category');
-//				$categories = $this->Category->extract('id', 'title');
-//				$form = new BootstrapForm($post);
-//				$this->render('admin.posts.edit', compact('categories',  'form', 'errors', 'post'));
-//			}
-//		} else {
-//			$post = $this->Post->find($_GET['id']);
-//			$this->loadModel('Category');
-//			$categories = $this->Category->extract('id', 'title');
-//			$form = new BootstrapForm($post);
-//			$this->render('admin.posts.edit', compact('categories',  'form', 'errors', 'post'));
-//		}
-//	}
-//
-//
-//	public function delete()
-//	{
-//		if(!empty($_POST))
-//		{
-//			$result = $this->Post->delete($_POST['id']);
-//			$_SESSION['flash']['success'] = "Cet épisode a bien été supprimé";
-//			return $this->index();
-//		}
-//	}
+				$categories = $this->NewsCategory->extract('id', 'title');
+				$form = new BootstrapForm($news);
+				$this->render('admin.news.edit', compact('categories',  'form', 'errors', 'news'));
+			}
+		} else {
+			$news = $this->New->find($_GET['id']);
+//				$this->loadModel('Category');
+			$categories = $this->NewsCategory->extract('id', 'title');
+			$form = new BootstrapForm($news);
+			$this->render('admin.news.edit', compact('categories',  'form', 'errors', 'news'));
+		}
+	}
+
+
+	public function delete()
+	{
+		if(!empty($_POST))
+		{
+			$result = $this->New->delete($_POST['id']);
+			$_SESSION['flash']['success'] = "Cette actu a bien été supprimée";
+			return $this->index();
+		}
+	}
 
 	static function creerMinImg($img,$chemin,$nom,$mlargeur=100,$mhauteur=100){
 		// On supprime l'extension du nom

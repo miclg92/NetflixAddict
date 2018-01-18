@@ -92,20 +92,7 @@ if(isset($_COOKIE['remember'])){
 							<?php
 						}
 						?>
-						
-						
 					</div>
-					
-					<!-- A DEPLACER DANS L ESPACE ADMIN QUAND IL SERA FAIT -->
-<!--					<div id="update_series">-->
-<!--						<a id="animer" href="index.php?p=series.updateSeriesList" >Mettre à jour les séries</a>-->
-<!--						<div id="pourcentage" class="pull-right"></div>-->
-<!--						<div class="progress progress-striped active">-->
-<!--							<div class="progress-bar progress-bar-danger"></div>-->
-<!--						</div>-->
-<!--					</div>-->
-					
-					
 				</div>
 			</header>
 			
@@ -137,9 +124,9 @@ if(isset($_COOKIE['remember'])){
 									<ul class="dropdown-menu">
 										<li><a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i> Compte Administrateur</a></li>
 										<li><a href="index.php?p=admin.news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Actualités</a></li>
-										<li><a href="#"><i class="fa fa-commenting-o" aria-hidden="true"></i> Commentaires</a></li>
+										<li><a href="index.php?p=admin.comments.index"><i class="fa fa-commenting-o" aria-hidden="true"></i> Commentaires</a></li>
 										<li role="separator" class="divider"></li>
-										<li><a href="index.php?p=series.updateSeriesList"><i class="fa fa-spinner" aria-hidden="true"></i>
+										<li><a href="index.php?p=admin.series.index"><i class="fa fa-spinner" aria-hidden="true"></i>
 												Mise à jour des Séries</a></li>
 									</ul>
 								</li>
@@ -204,24 +191,6 @@ if(isset($_COOKIE['remember'])){
 					'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
 					'save table contextmenu directionality emoticons template paste textcolor'
 				]
-			});
-		</script>
-		
-		<!-- Barre de progression -->
-		<script>
-			function timer(n) {
-				$(".progress-bar").css("width", n + "%");
-				$("#pourcentage").text(n + "%");
-				if(n < 100) {
-					setTimeout(function() {
-						timer(n + 10);
-					}, 200);
-				}
-			}
-			$(function (){
-				$("#animer").click(function() {
-					timer(0);
-				});
 			});
 		</script>
 			
