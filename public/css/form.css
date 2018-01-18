@@ -130,5 +130,13 @@ table .btn{
 	.form{
 		width: 80%;
 	}
+	
+	table td{
+		font-size: 0.9em;
+	}
+	
+	table .btn{
+		font-size: 0.9em;
+	}
 
 }
