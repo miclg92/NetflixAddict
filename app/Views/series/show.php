@@ -96,7 +96,7 @@
 				</ol>
 			</div>
 			<form class="col-xs-12 center-block" method="post">
-				<input type= "hidden" name="id" value="<?= $serie->id ?>">
+				<input type= "hidden" name="serie_id" value="<?= $serie->id ?>">
 				<?= $form->input('comment', 'Votre commentaire : ');?>
 				<button class="btn">Publier</button>
 				<?php if($errors): ?>

@@ -70,4 +70,18 @@ class NewTable extends Table
 		);
 	}
 	
+	/**
+	 * Récupère les commentaires liés à l'actu consultée
+	 * @param $post_id
+	 * @return mixed
+	 */
+	public function getNewsComments($news_id){
+		$result = $this->query("
+			SELECT *
+			FROM comments
+			WHERE news_id = ?
+			ORDER BY date_comment DESC", [$news_id]);
+		return $result;
+	}
+	
 }

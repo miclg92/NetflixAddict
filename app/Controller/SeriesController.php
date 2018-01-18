@@ -121,7 +121,7 @@ class SeriesController extends AppController
 				$comment = $this->Comment->create([
 					'author' => $_SESSION['user']->username,
 					'comment' => $_POST['comment'],
-					'serie_id' => $_POST['id']
+					'serie_id' => $_POST['serie_id']
 				]);
 				
 				if ($comment) {
