@@ -7,9 +7,10 @@ if(isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->fl
 				<a href="index.php?p=admin.news.index" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></a>
 				<br>
 				<h3>Modifier cette actu</h3>
-				<?= $form->input('title', 'Titre de l\'actu : '); ?>
-				<?= $form->input('content', 'Contenu : ', ['type' => 'textarea']); ?>
-				<?= $form->select('category_id', 'Catégorie : ', $categories); ?>
+				<?= $form->input('title', 'Titre de l\'actu'); ?>
+				<?= $form->input('content', 'Contenu', ['type' => 'textarea']); ?>
+				<?= $form->select('category_id', 'Catégorie', $categories); ?>
+				<hr>
 				<div class="text-center">
 					<button id="edit_news_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa fa-floppy-o" aria-hidden="true"></i> Enregistrer</button>
 					<a href="index.php?p=admin.news.index" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>

@@ -116,15 +116,15 @@ if(isset($_COOKIE['remember'])){
 								<?php
 							} elseif($_SESSION['user']->flag == 2) {
 								?>
-								<li> <a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i>
-										Mon compte</a> </li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-key" aria-hidden="true"></i>
 										Administration du site <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i> Compte Administrateur</a></li>
-										<li><a href="index.php?p=admin.news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Actualités</a></li>
-										<li><a href="index.php?p=admin.comments.index"><i class="fa fa-commenting-o" aria-hidden="true"></i> Commentaires</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="index.php?p=admin.news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Gestion des Actus</a></li>
+										<li><a href="index.php?p=admin.newsCategories.index"><i class="fa fa-window-restore" aria-hidden="true"></i> Gestion des Catégories</a></li>
+										<li><a href="index.php?p=admin.comments.index"><i class="fa fa-commenting-o" aria-hidden="true"></i> Gestion des Commentaires</a></li>
 										<li role="separator" class="divider"></li>
 										<li><a href="index.php?p=admin.series.index"><i class="fa fa-spinner" aria-hidden="true"></i>
 												Mise à jour des Séries</a></li>

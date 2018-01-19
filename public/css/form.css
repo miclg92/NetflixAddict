@@ -24,6 +24,7 @@
 .form .form-group select,
 .form .form-group textarea{
 	background-color: #f7e1de;
+	text-align: center;
 }
 
 .form #register_form_btn,
@@ -36,7 +37,8 @@
 .form #reinit_passwd_btn,
 .form #edit_news_btn,
 .form #edit_categories_btn,
-.form #add_categories_btn{
+.form #add_categories_btn,
+.form #edit_comment_btn{
 	background-image: none;
 	text-shadow: none;
 	background-color: #3a3a3a;
@@ -56,7 +58,8 @@
 .form #reinit_passwd_btn:hover,
 .form #edit_news_btn:hover,
 .form #edit_categories_btn:hover,
-.form #add_categories_btn:hover{
+.form #add_categories_btn:hover,
+.form #edit_comment_btn:hover{
 	color: #f40e0e;
 }
 
@@ -96,7 +99,33 @@
 }
 
 .checkbox input[type=checkbox]{
-	margin-left: 0;
+	margin-left: 30%;
+}
+
+#account caption,
+#admin_comments caption,
+#edit_name label,
+#edit_mail label,
+#edit-passwd label,
+#add-news label,
+#edit_news label,
+#add_categories label,
+#edit_categories label,
+#login label,
+#forget_password label,
+#register label,
+#reset-passwd label,
+#edit_comment label{
+	width: 100%;
+	background-color: #3a3a3a;
+	color: #FFF;
+	text-align: center;
+	font-size: 1.2em;
+	border-radius: 5px;
+}
+
+#admin_comments caption span{
+	color: #FF0000;
 }
 
 /* User Account */
@@ -109,31 +138,32 @@ table .btn{
 	padding: 5px;
 }
 
-/* Administrator account */
-#account caption{
-	margin-bottom: 10px;
-	color: #FF0000;
-	text-align: left;
-	font-size: 1.5em;
-}
+/* Gestion Mon Compte / Actus / Commentaires */
 
-/* Gestion des actus */
-
-#admin_news{
+#admin_news,
+#admin_comments{
 	width: 80%;
 }
 
-#admin_news table thead td{
+#edit-passwd input,
+#reset-passwd input{
+	width:100%;
+}
+
+#admin_news table thead td,
+#admin_comments table thead td{
 	color: #FF0000;
 	font-weight: bold;
 	font-size: 1.2em;
 }
 
-#admin_news table tbody td{
+#admin_news table tbody td,
+#admin_comments table tbody td{
 	font-size: 1.2em;
 }
 
-#admin_news table tr:hover{
+#admin_news table tr:hover,
+#admin_comments table tr:hover{
 	background-color: #edbcb6;
 }
 
@@ -209,6 +239,10 @@ table #buttons-actions button{
 	
 	#admin_news .param{
 		display: none;
+	}
+	
+	.checkbox input[type=checkbox]{
+		margin-left: 15%;
 	}
 
 }

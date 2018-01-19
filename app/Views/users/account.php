@@ -20,22 +20,22 @@ if(isset($_SESSION['auth'])){
 					
 					<tbody>
 					<tr>
-						<td class="param">Mon Pseudo : </td>
+						<td class="param"><i class="fa fa-user" aria-hidden="true"></i> Mon Pseudo : </td>
 						<td class="param_value"><?= $_SESSION['user']->username; ?></td>
 						<td><a class="btn" href="?p=users.editName&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
 					</tr>
 					<tr>
-						<td class="param">Mon Email : </td>
+						<td class="param"><i class="fa fa-envelope-o" aria-hidden="true"></i> Mon Email : </td>
 						<td class="param_value"><?= $_SESSION['user']->email; ?></td>
 						<td><a class="btn" href="?p=users.editMail&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
 					</tr>
 					<tr>
-						<td class="param">Mon mot de passe : </td>
+						<td class="param"><i class="fa fa-key" aria-hidden="true"></i> Mon mot de passe : </td>
 						<td class="param_value">********</td>
 						<td><a class="btn" href="?p=users.changePasswd&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
 					</tr>
 					<tr>
-						<td class="param">Mes séries favorites : </td>
+						<td class="param"><i class="fa fa-film" aria-hidden="true"></i> Mes séries favorites : </td>
 						<td class="param_value"></td>
 						<td><a class="btn" href="?p=series.favorites"><i class="fa fa-pencil" aria-hidden="true"></i> Gérer</a></td>
 					</tr>
@@ -65,17 +65,17 @@ if(isset($_SESSION['auth'])){
 					
 					<tbody id="admin_account">
 						<tr>
-							<td class="param">Mon Pseudo : </td>
+							<td class="param"><i class="fa fa-user" aria-hidden="true"></i> Mon Pseudo : </td>
 							<td class="param_value"><?= $_SESSION['user']->username; ?></td>
 							<td><a class="btn" href="?p=users.editName&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
 						</tr>
 						<tr>
-							<td class="param">Mon Email : </td>
+							<td class="param"><i class="fa fa-envelope-o" aria-hidden="true"></i> Mon Email : </td>
 							<td class="param_value"><?= $_SESSION['user']->email; ?></td>
 							<td><a class="btn" href="?p=users.editMail&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
 						</tr>
 						<tr>
-							<td class="param">Mon mot de passe : </td>
+							<td class="param"><i class="fa fa-key" aria-hidden="true"></i> Mon mot de passe : </td>
 							<td class="param_value">********</td>
 							<td><a class="btn" href="?p=users.changePasswd&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
 						</tr>
@@ -98,19 +98,19 @@ if(isset($_SESSION['auth'])){
 					
 					<tbody id="admin_site">
 						<tr>
-							<td class="param">Actualités publiés : </td>
+							<td class="param"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Gestion des Actus : </td>
 							<td><a class="btn" href="?p=admin.news.index"><i class="fa fa-pencil" aria-hidden="true"></i> Gérer</a></td>
 						</tr>
 						<tr>
-							<td class="param">Commentaires publiés : </td>
-							<td><a class="btn" href="?p=admin.comments.index"><i class="fa fa-pencil" aria-hidden="true"></i> Gérer</a></td>
-						</tr>
-						<tr>
-							<td class="param">Catégories d'actus : </td>
+							<td class="param"><i class="fa fa-window-restore" aria-hidden="true"></i> Gestion des Catégories d'actus : </td>
 							<td><a class="btn" href="?p=admin.newsCategories.index"><i class="fa fa-pencil" aria-hidden="true"></i> Gérer</a></td>
 						</tr>
 						<tr>
-							<td class="param">Séries disponibles : </td>
+							<td class="param"><i class="fa fa-commenting-o" aria-hidden="true"></i> Gestion des Commentaires : </td>
+							<td><a class="btn" href="?p=admin.comments.index"><i class="fa fa-pencil" aria-hidden="true"></i> Gérer</a></td>
+						</tr>
+						<tr>
+							<td class="param"><i class="fa fa-film" aria-hidden="true"></i> Séries disponibles : </td>
 							<td><a class="btn" href="?p=admin.series.index"><i class="fa fa-spinner" aria-hidden="true"></i> Actualiser</a></td>
 						</tr>
 						<tr>

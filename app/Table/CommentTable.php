@@ -7,14 +7,28 @@ class CommentTable extends Table
 {
 	protected $table = 'comments';
 	
-	public function allComments()
-	{
-		return $this->query("
+//	/**
+//	 * @return mixed
+//	 * Récupère tous les commantaires
+//	 */
+//	public function allComments()
+//	{
+//		return $this->query("
+//			SELECT *
+//			FROM comments
+//		");
+//	}
+	
+	/**
+	 * @return mixed
+	 * Récupère les commantaires signalés
+	 */
+	public function getSignaledComments(){
+		return $this->query('
 			SELECT *
 			FROM comments
-		");
+			WHERE is_signaled = 1');
 	}
-	
 	
 	
 }

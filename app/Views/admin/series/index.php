@@ -4,10 +4,10 @@ if(isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->fl
 	<div id="bloc_content">
 		<div id="update" class="row form">
 			<a href="?p=users.account" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></a>
-			<h3>Actualiser les séries disponibles</h3>
+			<h3>Mise à jour des séries disponibles</h3>
 			<form method="post" action="?p=admin.series.updateSeries">
 				<div >
-					<button id="animer" type="submit" class="col-xs-12" aria-hidden="true"><i class="fa fa-spinner" aria-hidden="true"></i> Mettre à jour</button>
+					<button id="animer" type="submit" class="col-xs-12" aria-hidden="true"><i class="fa fa-spinner" aria-hidden="true"></i> Actualiser</button>
 					<a href="?p=users.account" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
 				</div>
 			</form>

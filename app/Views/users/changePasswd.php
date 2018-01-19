@@ -8,11 +8,11 @@ if(isset($_SESSION['auth'])){
 				<br>
 				<h3>Modifier mon mot de passe</h3>
 				<div class="form-group">
-					<label for="password">Nouveau mot de passe : </label>
+					<label for="password">Nouveau mot de passe</label>
 					<input name="password" type="password">
 				</div>
 				<div class="form-group">
-					<label for="password">Confirmez nouveau mot de passe : </label>
+					<label for="password">Confirmation</label>
 					<input name="password_confirm" type="password">
 				</div>
 				<br>
