@@ -2,7 +2,7 @@
 namespace App\Controller;
 use Core\HTML\BootstrapForm;
 
-class QuizzController extends AppController
+class QuizController extends AppController
 {
 	public function __construct()
 	{
@@ -10,7 +10,7 @@ class QuizzController extends AppController
 		$this->loadModel('User');
 	}
 	
-	public function index()
+	public function quiz()
 	{
 //		if(isset($_POST['quizLevel'])){
 //			$result = $this->User->update($_GET['id'], [
@@ -18,6 +18,11 @@ class QuizzController extends AppController
 //			]);
 //			$_SESSION['flash']['success'] = "Cette catégorie a bien été ajoutée.";
 //		}
-		$this->render('quizz.index');
+		$this->render('quiz.quiz');
+	}
+	
+	public function personality()
+	{
+		$this->render('quiz.personality');
 	}
 }

@@ -45,7 +45,8 @@ if(isset($_COOKIE['remember'])){
 		<link rel="stylesheet" type="text/css" href="css/form.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/mySeries.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/news.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="css/quizz.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/quiz.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/personality.css" media="screen" />
 		<!-- Accès aux différentes polices Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
@@ -103,13 +104,10 @@ if(isset($_COOKIE['remember'])){
 						<li> <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a> </li>
 						<li> <a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
 								 Actus</a> </li>
-						<li> <a href="index.php?p=quizz.index"><i class="fa fa-trophy" aria-hidden="true"></i>
-								Quizz</a> </li>
-						<li> <a href="index.php?p=news.index"><i class="fa fa-question-circle" aria-hidden="true"></i>
+						<li> <a href="index.php?p=quiz.quiz"><i class="fa fa-trophy" aria-hidden="true"></i>
+								Quiz</a> </li>
+						<li> <a href="index.php?p=quiz.personality"><i class="fa fa-question-circle" aria-hidden="true"></i>
 								Qui es tu ?</a> </li>
-						<li> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-								Contactez-nous</a> </li>
-						
 						<?php
 						if(isset($_SESSION['auth'])){
 							if($_SESSION['user']->flag == 1){
@@ -139,6 +137,8 @@ if(isset($_COOKIE['remember'])){
 							}
 						}
 						?>
+						<li> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+								Contactez-nous</a> </li>
 					</ul>
 					<form class="navbar-form navbar-right inline-form">
 						<div id="searchbar" class="form-group">
@@ -178,9 +178,11 @@ if(isset($_COOKIE['remember'])){
 		<script src="js/jquery.cloud9carousel.js"></script>
 		<script src="js/jquery.reflection.js"></script>
 		<!-- Quiz -->
-		<script src="js/slickQuiz-config.js"></script>
-		<script src="js/slickQuiz.js"></script>
-		<script src="js/master.js"></script>
+		<script src="js/quiz/slickQuiz-config.js"></script>
+		<script src="js/quiz/slickQuiz.js"></script>
+		<script src="js/quiz/master.js"></script>
+		<!-- Personality test Stranger things -->
+		<script src="js/personality/personality.js"></script>
 		<!-- Divers js -->
 		<script src="js/.js"></script>
 		

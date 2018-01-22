@@ -22,7 +22,7 @@
 				backButtonText: '',
 				completeQuizText: '',
 				tryAgainText: '',
-				questionCountText: 'Question %current of %total',
+				questionCountText: 'Question %current sur %total',
 				preventUnansweredText: 'Vous devez choisir une réponse.',
 				questionTemplateText:  '%count. %text',
 				scoreTemplateText: '%score / %total',

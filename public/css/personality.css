@@ -1,0 +1,142 @@
+#personality{
+	width: 60%;
+	margin: 80px auto;
+	padding: 20px;
+}
+
+#personality img{
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+#personality h2{
+	margin-top: 0;
+}
+
+#personality h3{
+	margin-top: 0;
+	font-style: italic;
+}
+#quizzie .quiz-step,
+#quizzie #results{
+	padding: 0;
+}
+
+#quizzie h2{
+	font-size: 1.7em;
+	margin-bottom: 50px;
+}
+
+#quizzie .round{
+	font-size: 2em;
+	background-color: #f40e0e;
+	color: #FFF;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin: 10px auto 50px;
+}
+
+#quizzie .question img{
+	width: 40%;
+	border-radius: 50%;
+}
+
+#quizzie ul {
+	list-style: none;
+	overflow: auto;
+	text-align: center;
+	display: none;
+}
+
+#quizzie .current {
+	 display: block;
+ }
+
+#quizzie li {
+	display: inline-block;
+	width: 60%;
+	overflow: auto;
+	text-align: center;
+}
+
+#quizzie .quiz-answer {
+	cursor: pointer;
+}
+
+#quizzie .answer-wrap {
+	border-radius: 10px;
+}
+
+#quizzie .answer-text{
+	padding: 10px;
+	font-size: 1.3em;
+}
+
+#quizzie .question {
+	 display: block;
+	 width: 100%;
+	 text-align: center;
+}
+
+#quizzie .question-wrap {
+	display: block;
+}
+
+#quizzie .answer-wrap {
+	background-color: #3a3a3a;
+	color: #FFF;
+}
+
+#quizzie .answer-wrap:hover {
+	background-color: #8a8a8a;
+}
+
+#quizzie .results-inner{
+	width: 80%;
+}
+
+#quizzie .results-inner h1{
+	color: #f40e0e;
+}
+
+#quizzie .results-inner p{
+	text-align: justify;
+}
+
+#quizzie .results-inner img{
+	margin-top: 50px;
+	margin-bottom: 0;
+	border-radius: 10px;
+}
+
+
+
+/* -------------------------------- MEDIA QUERIES -------------------------------- */
+
+/* Laptop 992px to 1200px */
+@media all and (max-width: 1200px){
+
+}
+
+/* Tablette 768px to 992px */
+@media all and (max-width: 992px) {
+	
+	#quizzie .question img{
+		width: 50%;
+	}
+	
+}
+
+/* Smartphone lower than 768px */
+@media all and (max-width: 768px) {
+	
+	#personality {
+		width: 100%;
+	}
+	
+	#quizzie .question img{
+		width: 60%;
+	}
+	
+}
