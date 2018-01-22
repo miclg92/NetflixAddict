@@ -74,13 +74,14 @@
 	margin: 0 auto 30px auto;
 	border-radius: 5px;
 }
-.form #animer {
-	width: auto;
-}
 
 .form #delete_account_btn:hover,
 .form #animer:hover{
 	color: #3a3a3a;
+}
+
+.form #animer {
+	width: auto;
 }
 
 .form div a{

@@ -1,0 +1,154 @@
+/* CSS Personnalisé du Quizz */
+#quizz{
+	width: 60%;
+	margin: 80px auto;
+	padding: 20px;
+}
+
+#quizz h2 {
+	margin-top: 0;
+}
+
+#quizz h3{
+	text-align: left;
+}
+
+/* Si User pas connecté */
+#quizz .btn{
+	background-color: #3a3a3a;
+	color: #FFF;
+	font-size: 1.3em;
+	margin: 30px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#quizz .button{
+	background-color: #3a3a3a;
+	color: #FFF;
+	font-size: 1.3em;
+	margin: 0 auto;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+/* Si User connecté */
+#quizz .btn:hover,
+#quizz .button:hover{
+	color: #f40e0e;
+	text-decoration: none;
+}
+
+#quizz .answers,
+#quizz .responses{
+	margin: 50px 10px;
+	padding: 0;
+}
+
+#quizz .responses .correct span {
+	color: #3c3dff;
+	font-size: 1.5em;
+}
+
+#quizz .responses .incorrect span {
+	color: #f40e0e;
+	font-size: 1.5em;
+}
+
+#quizz .quizScore span,
+#quizz .quizLevel span{
+	color: #3c3dff;
+}
+
+
+/* BASE QUIZ STYLES */
+/* These styles ensure that the necessary elements are hidden for toggling */
+/* DO NOT EDIT UNLESS YOU KNOW WHAT YOU ARE DOING!! */
+.startQuiz,
+.nextQuestion,
+.backToQuestion,
+.questions li.question,
+.questions li.question .responses,
+.questions li.question .responses .correct,
+.questions li.question .responses .incorrect,
+.quizResults {
+	display: none;
+}
+
+/* If response messages are disabled or only shown on quiz completion,
+   nextQuestion button IS checkAnswer button - so it must be displayed */
+.nextQuestion.checkAnswer {
+	display: block;
+}
+
+ol.questions,
+ul.answers,
+ul.responses,
+ol.questions li,
+ul.answers li,
+ul.responses li {
+	list-style-type: none;
+}
+
+
+/*!* QUIZ STYLES Style de base du Quizz *!*/
+/*!* Styles to prettify the quiz page *!*/
+
+/*clearfix */
+.quizArea, .quizResults {
+	zoom: 1;
+}
+.quizArea:before, .quizArea:after, .quizResults:before, .quizResults:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	font-size: 0;
+}
+.quizArea:after, .quizResults:after {
+	clear: both;
+}
+
+.questionCount {
+	font-size: 14px;
+	font-style: italic;
+}
+.questionCount span {
+	font-weight: bold;
+}
+
+.quizResults h3 {
+	margin: 0;
+}
+.quizResults h3 span {
+	font-weight: normal;
+	font-style: italic;
+}
+.quizResultsCopy {
+	margin-top: 20px;
+}
+
+
+/* -------------------------------- MEDIA QUERIES -------------------------------- */
+
+/* Laptop 992px to 1200px */
+@media all and (max-width: 1200px){
+
+}
+
+/* Tablette 768px to 992px */
+@media all and (max-width: 992px) {
+	
+	#quizz{
+		width: 70%;
+	}
+}
+
+/* Smartphone lower than 768px */
+@media all and (max-width: 768px) {
+	
+	#quizz{
+		width: 100%;
+	}
+
+}

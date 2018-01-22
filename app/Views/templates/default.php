@@ -45,6 +45,7 @@ if(isset($_COOKIE['remember'])){
 		<link rel="stylesheet" type="text/css" href="css/form.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/mySeries.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="css/news.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/quizz.css" media="screen" />
 		<!-- Accès aux différentes polices Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
@@ -101,9 +102,13 @@ if(isset($_COOKIE['remember'])){
 					<ul id="menu" class="nav navbar-nav">
 						<li> <a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a> </li>
 						<li> <a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
-								 Actualités</a> </li>
+								 Actus</a> </li>
+						<li> <a href="index.php?p=quizz.index"><i class="fa fa-trophy" aria-hidden="true"></i>
+								Quizz</a> </li>
+						<li> <a href="index.php?p=news.index"><i class="fa fa-question-circle" aria-hidden="true"></i>
+								Qui es tu ?</a> </li>
 						<li> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-								Contact</a> </li>
+								Contactez-nous</a> </li>
 						
 						<?php
 						if(isset($_SESSION['auth'])){
@@ -169,9 +174,14 @@ if(isset($_COOKIE['remember'])){
 			</footer>
 		</div>
 		
-		
+		<!-- Slider	-->
 		<script src="js/jquery.cloud9carousel.js"></script>
 		<script src="js/jquery.reflection.js"></script>
+		<!-- Quiz -->
+		<script src="js/slickQuiz-config.js"></script>
+		<script src="js/slickQuiz.js"></script>
+		<script src="js/master.js"></script>
+		<!-- Divers js -->
 		<script src="js/.js"></script>
 		
 		<script>
