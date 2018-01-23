@@ -116,6 +116,8 @@ if(isset($_COOKIE['remember'])){
 										Mes séries</a> </li>
 								<li> <a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i>
 										Mon compte</a> </li>
+								<li> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+										Contactez-nous</a> </li>
 								<?php
 							} elseif($_SESSION['user']->flag == 2) {
 								?>
@@ -137,8 +139,6 @@ if(isset($_COOKIE['remember'])){
 							}
 						}
 						?>
-						<li> <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-								Contactez-nous</a> </li>
 					</ul>
 					<form class="navbar-form navbar-right inline-form">
 						<div id="searchbar" class="form-group">
@@ -184,7 +184,7 @@ if(isset($_COOKIE['remember'])){
 		<!-- Personality test Stranger things -->
 		<script src="js/personality/personality.js"></script>
 		<!-- Divers js -->
-		<script src="js/.js"></script>
+		<script src="js/confirm_delete.js"></script>
 		
 		<script>
 			$(function () { // Attends le chargement de la page

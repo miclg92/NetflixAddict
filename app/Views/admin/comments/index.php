@@ -50,7 +50,7 @@ if(isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->fl
 							<td class="td_comment"><?= $comment->comment; ?></td>
 							<td id="buttons-actions">
 								<a class="btn" href="?p=admin.comments.edit&id=<?= $comment->id; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modérer</a>
-								<form action="?p=admin.comments.delete" method="post" style="display: inline;">
+								<form action="?p=admin.comments.delete" method="post" onclick="return confirm_delete();" style="display: inline;">
 									<input type="hidden" name="id" value="<?= $comment->id ?>">
 									<button type="submit" class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
 								</form>
@@ -108,7 +108,7 @@ if(isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->fl
 							<td class="td_comment"><?= $comment->comment; ?></td>
 							<td id="buttons-actions">
 								<a class="btn" href="?p=admin.comments.edit&id=<?= $comment->id; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modérer</a>
-								<form action="?p=admin.comments.delete" method="post" style="display: inline;">
+								<form action="?p=admin.comments.delete" method="post" onclick="return confirm_delete();" style="display: inline;">
 									<input type="hidden" name="id" value="<?= $comment->id ?>">
 									<button type="submit" class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer</button>
 								</form>
