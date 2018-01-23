@@ -3,21 +3,19 @@ if(isset($_SESSION['auth'])){
 	?>
 	<div id="bloc_content">
 		<div id="edit-passwd" class="form">
-			<form method="post" action="">
+			<form method="post" action="?p=users.askPasswdBeforeDelete">
 				<a href="index.php?p=users.account" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></a>
 				<br>
-				<h3>Modifier mon mot de passe</h3>
+				<h2>Pour supprimer définitivement votre compte, veuillez indiquer votre mot de passe actuel</h2>
+				<h3>Cette action est sans retour possible</h3>
 				<div class="form-group">
-					<label for="password">Nouveau mot de passe</label>
-					<input name="password" type="password">
-				</div>
-				<div class="form-group">
-					<label for="password">Confirmation</label>
-					<input name="password_confirm" type="password">
+					<label for="check_password">Mot de passe actuel</label>
+					<input name="check_password" type="password">
 				</div>
 				<hr>
-				<div class="text-center">
-					<button id="edit_passwd_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa fa-floppy-o" aria-hidden="true"></i> Enregistrer</button>
+				<div id="ask-passwd" class="text-center">
+					<input type="hidden" name="id" value="<?= $_SESSION['auth']; ?>">
+					<button id="delete_account_btn" type="submit" aria-hidden="true"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer mon compte</button>
 					<a href="index.php?p=users.account" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
 				</div>
 				<?php if(!empty($errors)): ?>

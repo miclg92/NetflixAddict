@@ -6,18 +6,14 @@ if(isset($_SESSION['auth'])){
 			<form method="post" action="">
 				<a href="index.php?p=users.account" type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></a>
 				<br>
-				<h3>Modifier mon mot de passe</h3>
+				<h3>Pour effectuer cette action, veuillez indiquer votre mot de passe actuel</h3>
 				<div class="form-group">
-					<label for="password">Nouveau mot de passe</label>
-					<input name="password" type="password">
-				</div>
-				<div class="form-group">
-					<label for="password">Confirmation</label>
-					<input name="password_confirm" type="password">
+					<label for="check_password">Mot de passe actuel</label>
+					<input name="check_password" type="password">
 				</div>
 				<hr>
 				<div class="text-center">
-					<button id="edit_passwd_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa fa-floppy-o" aria-hidden="true"></i> Enregistrer</button>
+					<button id="edit_passwd_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa fa-floppy-o" aria-hidden="true"></i> Valider</button>
 					<a href="index.php?p=users.account" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
 				</div>
 				<?php if(!empty($errors)): ?>

@@ -37,7 +37,7 @@ class DBAuth
 		$user = $this->db->prepare('
 			SELECT *
 			FROM users
-			WHERE username = ?', [$username], null, true);
+			WHERE confirmed_at IS NOT NULL AND username = ?', [$username], null, true);
 //		WHERE confirmed_at IS NOT NULL AND username = ?', [$username], null, true);
 
 		if($user){
@@ -64,6 +64,27 @@ class DBAuth
 	public function logged()
 	{
 		return isset($_SESSION['auth']);
+	}
+	
+	
+	/**
+	 * @param $userId
+	 * @param $password
+	 * @return bool
+	 */
+	public function checkPasswd($userId, $password)
+	{
+		$user = $this->db->prepare('
+			SELECT *
+			FROM users
+			WHERE id = ?', [$userId], null, true);
+		
+		if($user){
+			$verifiedPass = password_verify($password, $user->password);
+			if($verifiedPass === true ){
+				return true;
+			}
+		} return false;
 	}
 	
 }

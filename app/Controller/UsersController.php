@@ -234,35 +234,35 @@ class UsersController extends AppController
 		$this->render('users.editMail', compact('user', 'form', 'errors'));
 	}
 	
-	public function changePasswd()
+	public function askPasswdBeforeDelete()
 	{
-		$user_id = $this->User->find($_GET['id'])->id;
+		$user_id = $_SESSION['auth'];
 		if($user_id !== $_SESSION['auth'])
 		{
 			$this->forbidden();
 		}
 		
-		if (!empty($_POST)) {
+		if (!empty($_POST) && isset($_POST['check_password'])) {
 			$errors = array();
-			
-			if (empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']) {
+
+			$auth = new DBAuth(App::getDb());
+			if ($auth->checkPasswd($_SESSION['auth'], $_POST['check_password'])) {
+				$result = $this->User->delete($_SESSION['auth']);
+				session_unset();
+				session_destroy();
+				session_start();
+				header('location: index.php');
+				$_SESSION['flash']['success'] = "Votre compte a été supprimé.";
+			} else{
 				$errors['password'] = "Veuillez vérifier votre mot de passe.";
-			}
-			
-			if (empty($errors)) {
-				$hashPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
-				$this->User->update($_GET['id'], [
-					'password' => $hashPass
-				]);
-				$_SESSION['flash']['success']= "Votre mot de passe a bien été mis à jour.";
-				$this->render('users.account');
+				$form = new BootstrapForm($_POST);
+				$this->render('users.askPasswdBeforeDelete', compact('user', 'form', 'errors'));
 			}
 		}
 		$user = $_SESSION['user'];
 		$form = new BootstrapForm($user);
-		$this->render('users.changePasswd', compact('user', 'form', 'errors'));
+		$this->render('users.askPasswdBeforeDelete', compact('user', 'form', 'errors'));
 	}
-	
 	public function delete(){
 		if(!empty($_POST))
 		{
@@ -343,6 +343,60 @@ class UsersController extends AppController
 		}
 		$form = new BootstrapForm($_POST);
 		$this->render('users.reset', compact('user', 'form', 'errors'));
+	}
+	
+	public function requestedPasswd()
+	{
+		$user_id = $this->User->find($_GET['id'])->id;
+		if($user_id !== $_SESSION['auth'])
+		{
+			$this->forbidden();
+		}
+		
+		if (!empty($_POST) && isset($_POST['check_password'])) {
+			$errors = array();
+			
+			$auth = new DBAuth(App::getDb());
+			if ($auth->checkPasswd($_SESSION['auth'], $_POST['check_password'])) {
+				header("Location: index.php?p=users.changePasswd&id=$user_id");
+			} else{
+				$errors['password'] = "Veuillez vérifier votre mot de passe.";
+				$form = new BootstrapForm($_POST);
+				$this->render('users.requestedPasswd', compact('user', 'form', 'errors'));
+			}
+		}
+		$user = $_SESSION['user'];
+		$form = new BootstrapForm($user);
+		$this->render('users.requestedPasswd', compact('user', 'form', 'errors'));
+	}
+	
+	public function changePasswd()
+	{
+		$user_id = $this->User->find($_GET['id'])->id;
+		if($user_id !== $_SESSION['auth'])
+		{
+			$this->forbidden();
+		}
+		
+		if (!empty($_POST)) {
+			$errors = array();
+
+			if (empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']) {
+				$errors['password'] = "Veuillez vérifier votre mot de passe.";
+			}
+
+			if (empty($errors)) {
+				$hashPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
+				$this->User->update($_GET['id'], [
+					'password' => $hashPass
+				]);
+				$_SESSION['flash']['success']= "Votre mot de passe a bien été mis à jour.";
+				$this->render('users.account');
+			}
+		}
+		$user = $_SESSION['user'];
+		$form = new BootstrapForm($user);
+		$this->render('users.changePasswd', compact('user', 'form', 'errors'));
 	}
 	
 	

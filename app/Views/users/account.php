@@ -32,7 +32,7 @@ if(isset($_SESSION['auth'])){
 					<tr>
 						<td class="param"><i class="fa fa-key" aria-hidden="true"></i> Mon mot de passe : </td>
 						<td class="param_value">********</td>
-						<td><a class="btn" href="?p=users.changePasswd&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
+						<td><a class="btn" href="?p=users.requestedPasswd&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
 					</tr>
 					<tr>
 						<td class="param"><i class="fa fa-film" aria-hidden="true"></i> Mes séries favorites : </td>
@@ -77,7 +77,7 @@ if(isset($_SESSION['auth'])){
 						<tr>
 							<td class="param"><i class="fa fa-key" aria-hidden="true"></i> Mon mot de passe : </td>
 							<td class="param_value">********</td>
-							<td><a class="btn" href="?p=users.changePasswd&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
+							<td><a class="btn" href="?p=users.requestedPasswd&id=<?= $_SESSION['auth']; ?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
 						</tr>
 					</tbody>
 						<tr>
@@ -123,10 +123,9 @@ if(isset($_SESSION['auth'])){
 			}
 			?>
 			
-			<form method="post" action="?p=users.delete" class="form row">
+			<form method="post" class="form row">
 				<div class="text-center col-xs-12">
-					<input type="hidden" name="id" value="<?= $_SESSION['auth']; ?>">
-					<button id="delete_account_btn" type="submit" class="col-xs-12" aria-hidden="true"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer mon compte</button>
+					<a class="btn" id="delete_account_btn" href="?p=users.askPasswdBeforeDelete"><i class="fa fa-trash-o" aria-hidden="true"></i> Supprimer mon compte</a>
 					<a href="index.php" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
 				</div>
 			</form>

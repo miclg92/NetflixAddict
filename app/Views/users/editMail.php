@@ -8,6 +8,7 @@ if(isset($_SESSION['auth'])){
 				<br>
 				<h3>Modifier mon adresse email</h3>
 				<?= $form->input('email', 'Mon nouvel email', ['type' => 'email']); ?>
+				<hr>
 				<div class="text-center">
 					<button id="edit_mail_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa fa-floppy-o" aria-hidden="true"></i> Enregistrer</button>
 					<a href="index.php?p=users.account" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Annuler</a>

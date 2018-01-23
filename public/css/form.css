@@ -139,6 +139,12 @@ table .btn{
 	padding: 5px;
 }
 
+/* Supprimer mon compte */
+form #ask-passwd{
+	display: flex;
+	flex-direction: column;
+}
+
 /* Gestion Mon Compte / Actus / Commentaires */
 
 #admin_news,
