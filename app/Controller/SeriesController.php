@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use Core\Controller\Controller;
@@ -32,24 +33,28 @@ class SeriesController extends AppController
 	/* Affiche la série demandée */
 	public function show()
 	{
+		$form = new BootstrapForm($_POST);
+		$errors = false;
 		$serie = $this->Serie->find($_GET['id']);
 		$serieId = $serie->id;
-		if($serie === false)
-		{
-			$this->notFound();
-		}
+		$comments = $this->Comment->getSerieComments($serieId);
+		$averageNotes = $this->Note->averageNote($serieId);
 		
-		/* Indique le statut de la série */
-		if($serie->status == "Continuing"){
+		if ($serie === false) {
+			$this->notFound();
+		};
+		
+		/* Indiquer le statut de la série */
+		if ($serie->status == "Continuing") {
 			$status = "En cours";
-		} elseif($serie->status == "Ended"){
+		} elseif ($serie->status == "Ended") {
 			$status = "Terminée";
 		};
 		
-		/* Suit la série demandée */
-		if(isset($_SESSION['auth'])){
+		/* Suivre la série demandée */
+		if (isset($_SESSION['auth'])) {
 			$isFavorite = $this->Favorite->checkSerieAsFavorite($serieId, $_SESSION['auth']);
-			if(isset($_POST['followSerie'])){
+			if (isset($_POST['followSerie'])) {
 				if ($isFavorite == 0) {
 					$this->Favorite->create([
 						'user_id' => $_SESSION['auth'],
@@ -57,89 +62,33 @@ class SeriesController extends AppController
 					]);
 					header("Refresh:0");
 				}
-			}elseif(isset($_POST['stopFollowSerie'])){
+			} elseif (isset($_POST['stopFollowSerie'])) {
 				$this->Favorite->deleteFromFavorite($_POST['serieId']);
 				header("Refresh:0");
 			}
 		};
 		
-		/* Note la série demandée */
-		
-			if(isset($_SESSION['auth'])) {
-				$isNoted = $this->Note->checkNoteForSerie($serieId, $_SESSION['auth']);
-				if(isset($_POST['note'])){
-					if ($isNoted == 0) {
-						
-						$note = $this->Note->create([
-							'serie_id' => $serieId,
-							'user_id' => $_SESSION['auth'],
-							'note' => $_POST['note']
-						]);
-						if ($note) {
-							$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
-						}
+		/* Noter la série demandée */
+		if (isset($_SESSION['auth'])) {
+			$notes = $this->Note->getSerieNote($serieId, $_SESSION['auth']);
+			$isNoted = $this->Note->checkNoteForSerie($serieId, $_SESSION['auth']);
+			if (isset($_POST['note'])) {
+				if ($isNoted == 0) {
+					$note = $this->Note->create([
+						'serie_id' => $serieId,
+						'user_id' => $_SESSION['auth'],
+						'note' => $_POST['note']
+					]);
+					if ($note) {
+//						$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
+						header("Refresh:0");
 					}
 				}
 			}
+		};
 		
-				
-			
-//				if (isset($_POST['5stars'])) {
-//					$note = $this->Note->create([
-//						'serie_id' => $serieId,
-//						'user_id' => $_SESSION['auth'],
-//						'note' => 5
-//					]);
-//					if ($note) {
-//						$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
-//					}
-//				} elseif (isset($_POST['4stars'])) {
-//					$note = $this->Note->create([
-//						'serie_id' => $serieId,
-//						'user_id' => $_SESSION['auth'],
-//						'note' => 4
-//					]);
-//					if ($note) {
-//						$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
-//					}
-//				} elseif (isset($_POST['3stars'])) {
-//					$note = $this->Note->create([
-//						'serie_id' => $serieId,
-//						'user_id' => $_SESSION['auth'],
-//						'note' => 3
-//					]);
-//					if ($note) {
-//						$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
-//					}
-//				} elseif (isset($_POST['2stars'])) {
-//					$note = $this->Note->create([
-//						'serie_id' => $serieId,
-//						'user_id' => $_SESSION['auth'],
-//						'note' => 2
-//					]);
-//					if ($note) {
-//						$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
-//					}
-//				} elseif (isset($_POST['1stars'])) {
-//					$note = $this->Note->create([
-//						'serie_id' => $serieId,
-//						'user_id' => $_SESSION['auth'],
-//						'note' => 1
-//					]);
-//					if ($note) {
-//						$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
-//					}
-//				}
-
-//			} else{
-//				$_SESSION['flash']['success'] = "Vous avez déjà noté cette série.";
-//			}
-//		} else{
-//			$_SESSION['flash']['success'] = "Veuillez vou connecter pour noter cette série.";
-//		}
-		
-		/* Comment la série demandée */
-		if(!empty($_POST)) {
+		/* Commenter la série demandée */
+		if (!empty($_POST)) {
 			if (empty($_POST['comment'])) {
 				$errors = true;
 			} else {
@@ -151,26 +100,22 @@ class SeriesController extends AppController
 				
 				if ($comment) {
 					header("Refresh:0");
-					$_SESSION['flash']['success']= "Votre commentaire a bien été publié.";
+					$_SESSION['flash']['success'] = "Votre commentaire a bien été publié.";
 				}
 			}
 		};
 		
-		/* Signale un commentaire de la série demandée */
-		if(isset($_POST['signal_comment'])){
+		/* Signaler un commentaire de la série demandée */
+		if (isset($_POST['signal_comment'])) {
 			$this->Comment->update($_POST['id'], [
 				'is_signaled' => 1,
 				'signaled_at' => date('Y-m-d H:i:s')
 			]);
 			header("Refresh:0");
-			$_SESSION['flash']['success']= "Ce commentaire a bien été signalé, et il sera traité dans les plus brefs délais.";
+			$_SESSION['flash']['success'] = "Ce commentaire a bien été signalé, et il sera traité dans les plus brefs délais.";
 		};
 		
-		$form = new BootstrapForm($_POST);
-		$errors = false;
-		$comments = $this->Serie->getSerieComments($serieId);
-		$notes = $this->Serie->getSerieNote($serieId, $_SESSION['auth']);
-		$this->render('series.show', compact('serie','status', 'comments', 'form', 'errors', 'isFavorite', 'notes', 'isNoted'));
+		$this->render('series.show', compact('serie', 'status', 'comments', 'form', 'errors', 'isFavorite', 'notes', 'averageNotes', 'isNoted'));
 	}
 	
 	/* Affiche les séries favorites */
@@ -181,32 +126,14 @@ class SeriesController extends AppController
 	}
 	
 	/* Supprime la série des favoris */
-	public function deleteFavorite(){
-		if(!empty($_POST)){
+	public function deleteFavorite()
+	{
+		if (!empty($_POST)) {
 			$this->Favorite->deleteFromFavorite($_POST['serieId']);
 		}
 		header('location: index.php?p=series.favorites');
-		$_SESSION['flash']['danger']= 'Cette série a été retirée de "Mes séries".';
+		$_SESSION['flash']['danger'] = 'Cette série a été retirée de "Mes séries".';
 	}
-	
-//	/* Ajoute une note à la série consultée */
-//	public function addNote(){
-//		$serie_id = $this->Serie->find($_GET['id']);
-//
-//		if(isset($_POST['1stars'])){
-//			$note = $this->Note->create([
-//				'serie_id' => $serie_id,
-//				'user_id' => $_SESSION['auth'],
-//				'note' => 1
-//			]);
-//			if ($note) {
-//				header("Refresh:0");
-//				$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
-//			}
-//		}
-//	}
-//
-	
 	
 	
 }

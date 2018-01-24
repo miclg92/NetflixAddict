@@ -63,7 +63,6 @@
 			<p><?= $serie->description ?></p>
 		</div>
 		
-		
 		<?php
 		if (isset($_SESSION['auth'])) {
 			if ($_SESSION['user']->flag == 1) {
@@ -71,38 +70,49 @@
 					?>
 					<form method="post" action="#" class="col-md-7 col-xs-12 rating">
 						<h2>Noter cette série</h2>
-						<input name="note" id="e5" value="5" type="radio" onchange='this.form.submit();'><label
-								for="e5">☆</label>
-						<input name="note" id="e4" value="4" type="radio" onchange='this.form.submit();'><label
-								for="e4">☆</label>
-						<input name="note" id="e3" value="3" type="radio" onchange='this.form.submit();'><label
-								for="e3">☆</label>
-						<input name="note" id="e2" value="2" type="radio" onchange='this.form.submit();'><label
-								for="e2">☆</label>
-						<input name="note" id="e1" value="1" type="radio" onchange='this.form.submit();'><label
-								for="e1">☆</label>
+						<?php
+						for ($i = 5; $i > 0; $i--) {
+							?>
+							<input name="note" id="<?= $i ?>" value="<?= $i ?>" type="radio"
+							       onchange='this.form.submit();'>
+							<label for="<?= $i ?>">☆</label>
+							<?php
+						}
+						?>
 					</form>
 					<?php
 				} else {
 					?>
-					<?php foreach ($notes as $note): ?>
-						<form class="col-md-7 col-xs-12 rating">
-							<h2>Vous avez noté cette série <?= $note->note ?>/5</h2>
-						</form>
-					<?php endforeach; ?>
+					<div class="col-md-7 col-xs-12 rating">
+						<?php foreach ($notes as $note): ?>
+							<h2>Votre note : <?= $note->note ?>/5</h2>
+						<?php endforeach; ?>
+					</div>
 					<?php
 				}
 			}
 		} else {
 			?>
-			<h2>Pour noter cette série, veuillez vous connecter</h2>
+			<form method="post" action="#" class="col-md-7 col-xs-12 rating">
+				<h2>Pour noter cette série, veuillez vous connecter</h2>
+				<?php
+				for ($i = 5; $i > 0; $i--) {
+					?>
+					<input disabled name="note" id="<?= $i ?>" value="<?= $i ?>" type="radio"
+					       onchange='this.form.submit();'>
+					<label for="<?= $i ?>">☆</label>
+					<?php
+				}
+				?>
+			</form>
 			<?php
 		}
 		?>
 		
-		
 		<div id="actual_rating" class="col-md-7 col-xs-12">
-			<h2>Note actuelle : /5</h2>
+			<?php foreach ($averageNotes as $averageNote): ?>
+				<h2>Note globale : <?= $averageNote ?>/5</h2>
+			<?php endforeach; ?>
 		</div>
 	</div>
 	
