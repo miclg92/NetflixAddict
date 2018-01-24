@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Table;
+
 use Core\Table\Table;
 
 class SerieTable extends Table
@@ -85,26 +86,15 @@ class SerieTable extends Table
 		");
 	}
 	
-	/**
-	 * Récupère les commentaires liés à la série consultée
-	 * @param $serie_id
-	 * @return mixed
-	 */
-	public function getSerieComments($serie_id){
-		$result = $this->query("
-			SELECT *
-			FROM comments
-			WHERE serie_id = ?
-			ORDER BY date_comment DESC", [$serie_id]);
-		return $result;
-	}
+	
 	
 	/**
 	 * Récupère les séries favorites d'un user
 	 * @param $user_id
 	 * @return mixed
 	 */
-	public function showFavoriteSeries($user_id){
+	public function showFavoriteSeries($user_id)
+	{
 		$result = $this->query("
 			SELECT *
 			FROM series
@@ -113,19 +103,7 @@ class SerieTable extends Table
 		return $result;
 	}
 	
-	/**
-	 * Récupère la note donnée à la série par un user
-	 * @param $post_id
-	 * @return mixed
-	 */
-	public function getSerieNote($serie_id, $user_id){
-		$result = $this->query("
-			SELECT *
-			FROM notes
-			WHERE user_id = ? AND serie_id = ?", [$serie_id, $user_id]);
-		return $result;
-	}
 	
 	
-
+	
 }

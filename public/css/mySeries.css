@@ -1,18 +1,43 @@
-#mySeries{
-	margin-top: 50px;
+#mySeries {
+	margin: 50px auto;
 }
 
-#mySerie{
-	margin-bottom: 30px;
+#mySerie {
+	margin: 0 auto 30px;
 }
 
 #mySerieDetails p,
 #mySerieDetails h3,
-#mySerieDetails form{
+#mySerieDetails form {
 	text-align: left;
 }
 
-#stop_follow_serie{
+#stop_follow_serie {
 	padding: 0;
 	justify-content: flex-start;
+}
+
+/* -------------------------------- MEDIA QUERIES -------------------------------- */
+
+/* Laptop 992px to 1200px */
+@media all and (max-width: 1200px) {
+
+}
+
+/* Tablette 768px to 992px */
+@media all and (max-width: 992px) {
+
+}
+
+/* Smartphone lower than 768px */
+@media all and (max-width: 768px) {
+	
+	#mySerieDetails h3 {
+		font-size: 1.5em;
+	}
+	
+	#stop_follow_serie {
+		font-size: 0.9em;
+	}
+	
 }

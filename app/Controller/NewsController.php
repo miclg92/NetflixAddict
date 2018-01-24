@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use Core\Controller\Controller;
@@ -29,13 +30,12 @@ class NewsController extends AppController
 	{
 		$news = $this->New->find($_GET['id']);
 		$newsId = $news->id;
-		if($news === false)
-		{
+		if ($news === false) {
 			$this->notFound();
 		}
 		
 		$new = $this->New->findWithCategory($_GET['id']);
-		if(!empty($_POST)) {
+		if (!empty($_POST)) {
 			if (empty($_POST['comment'])) {
 				$errors = true;
 			} else {
@@ -47,24 +47,24 @@ class NewsController extends AppController
 				
 				if ($comment) {
 					header("Refresh:0");
-					$_SESSION['flash']['success']= "Votre commentaire a bien été publié.";
+					$_SESSION['flash']['success'] = "Votre commentaire a bien été publié.";
 				}
 			}
 		};
 		
-		if(isset($_POST['signal_comment'])){
+		if (isset($_POST['signal_comment'])) {
 			$this->Comment->update($_POST['id'], [
 				'is_signaled' => 1,
 				'signaled_at' => date('Y-m-d H:i:s')
 			]);
 			header("Refresh:0");
-			$_SESSION['flash']['success']= "Ce commentaire a bien été signalé, et il sera traité dans les plus brefs délais.";
+			$_SESSION['flash']['success'] = "Ce commentaire a bien été signalé, et il sera traité dans les plus brefs délais.";
 		};
 		
 		$form = new BootstrapForm($_POST);
 		$errors = false;
-		$comments = $this->New->getNewsComments($newsId);
-		$this->render('news.show', compact('new','comments', 'form', 'errors'));
+		$comments = $this->Comment->getNewsComments($newsId);
+		$this->render('news.show', compact('new', 'comments', 'form', 'errors'));
 
 //		$currentPost = $this->Post->find($_GET['id']);
 //		$currentId = $currentPost->id;
@@ -75,8 +75,7 @@ class NewsController extends AppController
 	public function category()
 	{
 		$category = $this->NewsCategory->find($_GET['id']);
-		if($category === false)
-		{
+		if ($category === false) {
 			$this->notFound();
 		}
 		$news = $this->New->lastByCategory($_GET['id']);
