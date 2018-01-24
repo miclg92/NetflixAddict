@@ -183,29 +183,31 @@ if(isset($_COOKIE['remember'])){
 		<script src="js/quiz/master.js"></script>
 		<!-- Personality test Stranger things -->
 		<script src="js/personality/personality.js"></script>
+		<!-- TINY MCE -->
+		<script src="js/tinymce/tinymce.min.js"></script>
 		<!-- Divers js -->
-		<script src="js/confirm_delete.js"></script>
+		<script src="js/functions.js"></script>
 		
 		<script>
 			$(function () { // Attends le chargement de la page
-			
+				
+				tinymce.init({
+					selector: '#add-news textarea,  #edit_news textarea',
+					// content_css: "css/main.css,css/admin.css",
+					menubar: false,
+					plugins: [
+						'advlist autolink link lists charmap print preview hr anchor pagebreak spellchecker',
+						'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+						'save table contextmenu directionality emoticons template paste textcolor'
+					]
+				});
+				
+				carousel_init();
+				pagination_series_init();
+				pagination_news_init();
+				progress_bar_init();
+				
 			});
 		</script>
-		
-		<!-- TINY MCE -->
-		<script>
-			tinymce.init({
-				selector: '#add-post form div textarea',
-				content_css: "css/main.css,css/admin.css",
-				menubar: false,
-				plugins: [
-					'advlist autolink link lists charmap print preview hr anchor pagebreak spellchecker',
-					'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
-					'save table contextmenu directionality emoticons template paste textcolor'
-				]
-			});
-		</script>
-			
 	</body>
-
 </html>

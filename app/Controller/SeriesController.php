@@ -20,9 +20,11 @@ class SeriesController extends AppController
 	{
 		$lastNews = $this->New->last();
 		$mostFollowedSeries = $this->Serie->mostFollowedSeries();
+		
 		$seriesByPopularity = $this->Serie->allByPopularity();
 		$seriesByAlphabetic = $this->Serie->allByAlphabetic();
 		$seriesByYear = $this->Serie->allByYear();
+		
 		$this->render('series.index', compact('lastNews', 'seriesByPopularity', 'seriesByAlphabetic', 'seriesByYear', 'mostFollowedSeries'));
 	}
 	

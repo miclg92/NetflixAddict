@@ -25,19 +25,19 @@ if(isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->fl
 
 
 <!-- Barre de progression -->
-<script>
-	function timer(n) {
-		$(".progress-bar").css("width", n + "%");
-		$("#pourcentage").text(n + "%");
-		if(n < 100) {
-			setTimeout(function() {
-				timer(n + 10);
-			}, 200);
-		}
-	}
-	$(function (){
-		$("#animer").click(function() {
-			timer(0);
-		});
-	});
-</script>
+<!--<script>-->
+<!--	function timer(n) {-->
+<!--		$(".progress-bar").css("width", n + "%");-->
+<!--		$("#pourcentage").text(n + "%");-->
+<!--		if(n < 100) {-->
+<!--			setTimeout(function() {-->
+<!--				timer(n + 10);-->
+<!--			}, 200);-->
+<!--		}-->
+<!--	}-->
+<!--	$(function (){-->
+<!--		$("#animer").click(function() {-->
+<!--			timer(0);-->
+<!--		});-->
+<!--	});-->
+<!--</script>-->
