@@ -7,20 +7,6 @@ class FavoriteTable extends Table
 {
 	protected $table = 'favorites';
 	
-//	/**
-//	 * @param $username
-//	 * Vérifie si une série est dans la liste des favorites
-//	 * @return mixed
-//	 */
-//	public function checkSerieAsFavorite($serie_id)
-//	{
-//		$result = $this->query('
-//			SELECT COUNT(*) AS nbFavorite
-//			FROM favorites
-//			WHERE serie_id = ?', [$serie_id], true);
-//		return $result->nbFavorite;
-//	}
-	
 	/**
 	 * @param $username
 	 * Vérifie si une série est dans la liste des favorites

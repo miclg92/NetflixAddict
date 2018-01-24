@@ -4,7 +4,7 @@ body {
 	font-family: 'Mukta', sans-serif;
 }
 
-.container{
+.container {
 	width: 95%;
 	display: flex; /* Fixe le pied de page en bas */
 	flex-direction: column; /* Fixe le pied de page en bas */
@@ -14,53 +14,54 @@ body {
 	margin: auto;
 }
 
-#container{
+#container {
 	flex: 1; /* Fixe le pied de page en bas */
 }
 
-[class*="col-"]{
+[class*="col-"] {
 	text-align: center;
 }
 
-hr{
+hr {
 	color: #FFF;
 	width: 100%;
 	margin: 50px auto;
 }
 
-.alert{
+.alert {
 	width: auto;
 	margin: 0 auto;
 }
 
 /* HEADER */
-#main_title{
+#main_title {
 	font-family: 'Indie Flower', sans-serif;
 	text-align: left;
 	padding-bottom: 30px;
 }
 
-#main_title h1{
+#main_title h1 {
 	width: 100%;
 	margin-top: 10px;
 	color: #f40e0e;
 	font-size: 5em;
 	font-weight: bold;
 }
-#main_title a:hover{
+
+#main_title a:hover {
 	text-decoration: none;
 }
 
-#main_title h2{
+#main_title h2 {
 	font-style: italic;
 }
 
-#login_btns{
+#login_btns {
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
 
-#login_btns .btn{
+#login_btns .btn {
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.2em;
@@ -68,37 +69,37 @@ hr{
 	float: right;
 }
 
-#login_btns .btn:hover{
+#login_btns .btn:hover {
 	color: #f40e0e;
 }
 
 /* MENU */
-.navbar{
+.navbar {
 	margin-bottom: 50px;
 }
 
-#menu{
+#menu {
 	font-size: 1.4em;
 }
 
-#searchbar .btn{
+#searchbar .btn {
 	background-color: #3a3a3a;
 	color: #8a8a8a;
 	border: 1px solid #FFF;
 }
 
-#searchbar .btn:hover{
+#searchbar .btn:hover {
 	color: #FFF;
 }
 
-#bloc_content h2{
+#bloc_content h2 {
 	margin-top: 80px;
 	margin-bottom: 20px;
 	text-align: center;
 }
 
 /* FLASH ACTU */
-#flash_news{
+#flash_news {
 	width: 90%;
 	height: 100%;
 	margin: 80px auto 30px;
@@ -106,7 +107,7 @@ hr{
 	box-shadow: 0px 0px 50px #FFF;
 }
 
-#flash_news h2{
+#flash_news h2 {
 	color: #f40e0e;
 	margin-top: 10px;
 	margin-bottom: 30px;
@@ -114,15 +115,15 @@ hr{
 	text-decoration: underline;
 }
 
-#flash_news p{
+#flash_news p {
 	text-align: justify;
 }
 
-#flash_news .flash_news_btn{
+#flash_news .flash_news_btn {
 	margin: 20px auto;
 }
 
-#flash_news .flash_news_btn a{
+#flash_news .flash_news_btn a {
 	float: none;
 	background-color: #3a3a3a;
 	color: #FFF;
@@ -130,7 +131,7 @@ hr{
 	border-radius: 5px;
 }
 
-#flash_news a:hover{
+#flash_news a:hover {
 	color: #f40e0e;
 	text-decoration: none;
 }
@@ -142,6 +143,7 @@ hr{
 	text-align: center;
 	visibility: hidden;
 }
+
 #showcase img {
 	margin: 0 auto;
 	cursor: pointer;
@@ -150,6 +152,7 @@ hr{
 .nav {
 	text-align: center;
 }
+
 .nav button {
 	width: 64px;
 	height: 36px;
@@ -162,35 +165,36 @@ hr{
 }
 
 /* DIAPOSITIVES */
-#series_list{
+#bloc_series_list #list {
 	margin: auto;
 }
 
-#series_list img {
+#bloc_series_list #list img {
 	border: 10px solid #000000;
 	/*margin-bottom: 10px;*/
 	/*margin: 10px;*/
 }
 
-#series_list .thumbnail{
+#bloc_series_list #list .thumbnail {
 	margin-bottom: 0;
 }
 
-#series_list img:hover {
+#bloc_series_list #list img:hover {
 	opacity: 0.4;
 }
 
-#pagination{
+#pagination {
 	float: right;
+	margin-right: 20px;
 }
 
 .pagination li a,
-.pagination li span{
+.pagination li span {
 	background-color: #3a3a3a;
 	color: #FFF;
 }
 
-.pagination li.active a{
+.pagination li.active a {
 	background-color: #f40e0e;
 	color: #FFF;
 	border: 1px solid #ddd;
@@ -198,50 +202,50 @@ hr{
 
 /* PROVISOIRE.... REGISTRATION FORM */
 #registration_form,
-#login_form{
+#login_form {
 	color: #000000;
 }
 
 /* PROVISOIRE.... BUTTON UPDATE SERIES */
-#update_series{
+#update_series {
 	float: right;
 	margin-right: 20px;
 }
 
-#update_series a{
+#update_series a {
 	color: #f40e0e;
 	margin-bottom: 20px;
 	margin-left: 10px;
 }
 
-#pourcentage{
+#pourcentage {
 	margin-left: 10px;
 }
 
-.progress{
+.progress {
 	margin-top: 10px;
 }
 
 /* Bouton Retour */
-.return{
+.return {
 	margin-bottom: 50px;
 	margin-top: 50px;
 }
 
-.return a{
+.return a {
 	color: #f40e0e;
 	font-size: 1.2em;
 	float: left;
 }
 
-.return a:hover{
+.return a:hover {
 	text-decoration: none;
 }
 
 /* FOOTER */
-footer{
+footer {
 	color: #FFF;
-	background-image: linear-gradient(to bottom,#3c3c3c 0,#222 100%);
+	background-image: linear-gradient(to bottom, #3c3c3c 0, #222 100%);
 	font-size: 1.2em;
 	margin-top: 200px;
 	padding-top: 10px;
@@ -249,13 +253,12 @@ footer{
 	/*height: 200px;*/
 }
 
-
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
 
 /* Laptop 992px to 1200px */
-@media all and (max-width: 1200px){
+@media all and (max-width: 1200px) {
 	
-	.carousel-inner img{
+	.carousel-inner img {
 		width: 40%;
 	}
 	
@@ -269,17 +272,17 @@ footer{
 		padding-bottom: 0;
 	}
 	
-	#login_btns{
+	#login_btns {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 	}
 	
-	#menu{
+	#menu {
 		font-size: 1.1em;
 	}
 	
-	.carousel-inner img{
+	.carousel-inner img {
 		width: 50%;
 	}
 	
@@ -288,12 +291,12 @@ footer{
 /* Smartphone lower than 768px */
 @media all and (max-width: 768px) {
 	
-	.navbar{
+	.navbar {
 		width: auto;
 		margin: auto;
 	}
 	
-	.container-fluid{
+	.container-fluid {
 		text-align: center;
 	}
 	
@@ -302,7 +305,7 @@ footer{
 		width: 100px;
 	}
 	
-	.carousel-inner img{
+	.carousel-inner img {
 		width: 80%;
 	}
 	

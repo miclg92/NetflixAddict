@@ -5,14 +5,15 @@
 	<div id="flash_news" class="row">
 		<h2 class="col-xs-12">Flash actu</h2>
 		<div class="col-xs-12">
-			<?php foreach($lastNews as $news): ?>
+			<?php foreach ($lastNews as $news): ?>
 				<div class="col-xs-12">
 					<a href="<?= $news->url; ?>">
-						<img class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 thumbnail" src="<?= $news->image ?>" alt="<?= $news->image_name ?>">
+						<img class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 thumbnail"
+						     src="<?= $news->image ?>" alt="<?= $news->image_name ?>">
 					</a>
 				</div>
 				<div class="col-md-offset-2 col-md-8">
-					<h3><?= $news->title;?></h3>
+					<h3><?= $news->title; ?></h3>
 					<p><?= $news->extrait; ?></p>
 				</div>
 			<?php endforeach; ?>
@@ -24,7 +25,8 @@
 	<h2>Top 5 des séries les plus suivies</h2>
 	<div id="showcase" class="col-xs-12 center-block">
 		<a href="<?= $mostFollowedSeries[0]->url ?>">
-			<img src="<?= $mostFollowedSeries[0]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block">
+			<img src="<?= $mostFollowedSeries[0]->image ?>"
+			     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block">
 		</a>
 		<a href="<?= $mostFollowedSeries[1]->url ?>">
 			<img src="<?= $mostFollowedSeries[1]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
@@ -48,7 +50,8 @@
 	
 	<h2>Toutes les séries disponibles sur Netflix</h2>
 	<div class="dropdown">
-		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+		        aria-haspopup="true" aria-expanded="true">
 			Afficher
 			<span class="caret"></span>
 		</button>
@@ -59,26 +62,28 @@
 		</ul>
 	</div>
 	<div id="bloc_series_list">
-		<div id="series_list" class="row">
-				<?php foreach($seriesByPopularity as $serie): ?>
-					<a href="<?= $serie->url ?>" name="seriesByPopularity">
-						<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="<?= $serie->image ?>">
-					</a>
-				<?php endforeach; ?>
-<!--			<div id="seriesByAlphabetic">-->
-<!--			--><?php //foreach($seriesByAlphabetic as $serie): ?>
-<!--				<a href="--><?//= $serie->url ?><!--" name="seriesByAlphabetic">-->
-<!--					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="--><?//= $serie->image ?><!--">-->
-<!--				</a>-->
-<!--			--><?php //endforeach; ?>
-<!--			</div>-->
-<!--			<div id="seriesByYear">-->
-<!--			--><?php //foreach($seriesByYear as $serie): ?>
-<!--				<a href="--><?//= $serie->url ?><!--" name="seriesByYear">-->
-<!--					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="--><?//= $serie->image ?><!--">-->
-<!--				</a>-->
-<!--			--><?php //endforeach; ?>
-<!--			</div>-->
+		<div id="list" class="row">
+			<?php foreach ($seriesByPopularity as $serie): ?>
+				<a href="<?= $serie->url ?>" name="seriesByPopularity">
+					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="<?= $serie->image ?>">
+				</a>
+			<?php endforeach; ?>
+			<!--			<div id="seriesByAlphabetic">-->
+			<!--			--><?php //foreach($seriesByAlphabetic as $serie): ?>
+			<!--				<a href="--><? //= $serie->url ?><!--" name="seriesByAlphabetic">-->
+			<!--					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="-->
+			<? //= $serie->image ?><!--">-->
+			<!--				</a>-->
+			<!--			--><?php //endforeach; ?>
+			<!--			</div>-->
+			<!--			<div id="seriesByYear">-->
+			<!--			--><?php //foreach($seriesByYear as $serie): ?>
+			<!--				<a href="--><? //= $serie->url ?><!--" name="seriesByYear">-->
+			<!--					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="-->
+			<? //= $serie->image ?><!--">-->
+			<!--				</a>-->
+			<!--			--><?php //endforeach; ?>
+			<!--			</div>-->
 		</div>
 		<div id="pagination"></div>
 	</div>

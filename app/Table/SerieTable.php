@@ -87,7 +87,7 @@ class SerieTable extends Table
 	
 	/**
 	 * Récupère les commentaires liés à la série consultée
-	 * @param $post_id
+	 * @param $serie_id
 	 * @return mixed
 	 */
 	public function getSerieComments($serie_id){
@@ -110,6 +110,19 @@ class SerieTable extends Table
 			FROM series
 			LEFT JOIN favorites ON series.id = favorites.serie_id
 			WHERE favorites.user_id = ?", [$user_id]);
+		return $result;
+	}
+	
+	/**
+	 * Récupère la note donnée à la série par un user
+	 * @param $post_id
+	 * @return mixed
+	 */
+	public function getSerieNote($serie_id, $user_id){
+		$result = $this->query("
+			SELECT *
+			FROM notes
+			WHERE user_id = ? AND serie_id = ?", [$serie_id, $user_id]);
 		return $result;
 	}
 	

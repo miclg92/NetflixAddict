@@ -1,135 +1,119 @@
 /* PAGE INDEX (Toutes les séries) */
-.categories h2 span{
+.categories h2 span {
 	color: #f40e0e;
 }
 
-.categories ul{
+.categories ul {
 	display: flex;
 	flex-direction: row;
 	list-style: none;
 	margin-top: 50px;
 }
 
-.categories ul li{
+.categories ul li {
 	margin: auto;
 }
 
-.categories .btn{
+.categories .btn {
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.2em;
 }
 
-.categories .btn:hover{
+.categories .btn:hover {
 	color: #f40e0e;
 }
 
-#all_news{
-	width: 90%;
-	height: 100%;
+#bloc_news_list #list {
 	margin: 50px auto 30px;
 }
 
-.each_news{
+.each_news {
+	width: 90%;
+	margin: auto;
 	border-radius: 10px;
 	box-shadow: 0px 0px 50px #FFF;
 	margin-bottom: 100px;
 }
 
-#all_news img{
+#list .each_news img {
 	margin-top: 50px;
 }
 
-#all_news h2{
+#list h2 .each_news_details {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-#all_news h2 a{
+#list .each_news_details h2 a {
 	color: #f40e0e;
 }
 
-#all_news h2 a:hover{
+#list .each_news_details h2 a:hover {
 	color: #FFF;
 	text-decoration: none;
 }
 
-#all_news h4 a{
+#list .each_news_details h4 a {
 	color: #f40e0e;
 }
 
-#all_news h4 a:hover{
+#list .each_news_details h4 a:hover {
 	color: #FFF;
 	text-decoration: none;
 	cursor: pointer;
 }
 
-#all_news span{
+#list .each_news_details span {
 	margin-bottom: 20px;
 }
 
-#all_news p{
+#list .each_news_details p {
 	margin-top: 20px;
 	padding: 20px;
 	text-align: justify;
 }
 
-#pagination_news{
+#pagination_news {
 	float: right;
 }
 
-#pagination_news li a,
-#pagination_news li span{
-	background-color: #3a3a3a;
-	color: #FFF;
+#bloc_news_list #pagination {
+	margin-right: 100px;
+	margin-top: -100px;
 }
-
-#pagination_news li.active a{
-	background-color: #f40e0e;
-	color: #FFF;
-	border: 1px solid #ddd;
-}
-
-
-
-
 
 /* PAGE SHOW (Série demandée) */
-.news_content img{
+.news_content img {
 	margin-bottom: 50px;
 }
 
-.news_content p{
+.news_content p {
 	text-align: justify;
 	font-size: 1.5em;
 	margin-top: 50px;
 }
 
-
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
 
 /* Laptop 992px to 1200px */
-@media all and (max-width: 1200px){
-
-
+@media all and (max-width: 1200px) {
 
 }
 
 /* Tablette 768px to 992px */
 @media all and (max-width: 992px) {
 
-
-
 }
 
 /* Smartphone lower than 768px */
 @media all and (max-width: 768px) {
 	
-	#all_news h2{
+	#list h2 {
 		font-size: 1.5em;
 	}
 	
-	.news_content p{
+	.news_content p {
 		font-size: 1em;
 	}
 	
