@@ -111,7 +111,18 @@
 		
 		<div id="actual_rating" class="col-md-7 col-xs-12">
 			<?php foreach ($averageNotes as $averageNote): ?>
-				<h2>Note globale : <?= $averageNote ?>/5</h2>
+				<?php
+				$averageNote = round($averageNote, 1) + 0;
+				if ($averageNote == 0) {
+					?>
+					<h2>Cette série n'a pas encore été notée. Soyez le premier !</h2>
+					<?php
+				} else {
+					?>
+					<h2>Note globale : <?= $averageNote ?>/5</h2>
+					<?php
+				}
+				?>
 			<?php endforeach; ?>
 		</div>
 	</div>

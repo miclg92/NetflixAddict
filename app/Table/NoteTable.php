@@ -44,7 +44,7 @@ class NoteTable extends Table
 	public function averageNote($serie_id)
 	{
 		$result = $this->query('
-			SELECT ROUND(AVG(note),1)
+			SELECT AVG(note)
 			FROM notes
 			WHERE serie_id = ?', [$serie_id], true);
 		return $result;
