@@ -5,7 +5,7 @@
 		<h2 class="col-xs-12">Prêt à tenter ta chance ?</h2>
 		<hr>
 		<?php
-		if(isset($_SESSION['auth'])) {
+		if (isset($_SESSION['auth'])) {
 			?>
 			<div id="slickQuiz">
 				<h1 class="quizName"></h1>
@@ -21,17 +21,21 @@
 				</div>
 			</div>
 			<?php
-		}else{
-		?>
+		} else {
+			?>
 			<div id="link_login_btns" class="col-xs-12">
 				<div class="register_btn col-xs-6">
-					<a href="quiz.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus" aria-hidden="true"></i> Inscrivez-vous</a>
+					<a href="index.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus"
+					                                                               aria-hidden="true"></i>
+						Inscrivez-vous</a>
 				</div>
 				<div class="login_btn col-xs-6">
-					<a href="quiz.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in" aria-hidden="true"></i> Connectez-vous</a>
+					<a href="index.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in"
+					                                                            aria-hidden="true"></i>
+						Connectez-vous</a>
 				</div>
 			</div>
-		<?php
+			<?php
 		}
 		?>
 	</div>

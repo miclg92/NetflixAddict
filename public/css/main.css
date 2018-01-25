@@ -169,10 +169,39 @@ hr {
 	margin: auto;
 }
 
+.dropdown .btn {
+	background-image: none;
+	text-shadow: none;
+	background-color: #3a3a3a;
+	color: #FFF;
+	font-size: 1.3em;
+	margin-left: 10px;
+}
+
+.dropdown .btn:hover {
+	color: #f40e0e;
+}
+
+.dropdown ul {
+	margin-left: 10px;
+}
+
+.dropdown ul li {
+	color: #000000;
+	padding-left: 5px;
+}
+
+.dropdown ul li input {
+	border: none;
+	padding-left: 5px;
+}
+
+.dropdown ul li input:hover {
+	color: #f40e0e;
+}
+
 #bloc_series_list #list img {
 	border: 10px solid #000000;
-	/*margin-bottom: 10px;*/
-	/*margin: 10px;*/
 }
 
 #bloc_series_list #list .thumbnail {
@@ -185,7 +214,7 @@ hr {
 
 #pagination {
 	float: right;
-	margin-right: 20px;
+	margin-right: 10px;
 }
 
 .pagination li a,

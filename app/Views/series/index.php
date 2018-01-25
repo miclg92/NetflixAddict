@@ -46,129 +46,45 @@
 		<button class="right">→</button>
 	</div>
 	
-	<hr>
+	<hr id="ancre_tri">
 	
 	<h2>Toutes les séries disponibles sur Netflix</h2>
-	<div class="dropdown">
-		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-		        aria-haspopup="true" aria-expanded="true">
-			Afficher
-			<span class="caret"></span>
-		</button>
-		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-			<li><a href="#seriesByAlphabetic">Par ordre alphabétique</a></li>
-			<li><a href="#seriesByYear">Les plus récentes</a></li>
-			<li><a href="#seriesByPopularity">Les plus populaires</a></li>
-		</ul>
-	</div>
+	<form method="post" action="#ancre_tri">
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+			        aria-haspopup="true" aria-expanded="true">
+				Afficher
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li>
+					<i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+					<input type="submit" name="alphabetic" value="De A à Z">
+				</li>
+				<li>
+					<i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+					<input type="submit" name="alphabeticDesc" value="De Z à A">
+				</li>
+				<li>
+					<i class="fa fa-hacker-news" aria-hidden="true"></i>
+					<input type="submit" name="year" value="Les plus récentes">
+				</li>
+				<li>
+					<i class="fa fa-heart" aria-hidden="true"></i>
+					<input type="submit" name="popularity" value="Les plus populaires">
+				</li>
+			</ul>
+		</div>
+	</form>
 	<div id="bloc_series_list">
 		<div id="list" class="row">
-			<?php foreach ($seriesByPopularity as $serie): ?>
-				<a href="<?= $serie->url ?>" name="seriesByPopularity">
-					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="<?= $serie->image ?>">
+			<?php foreach ($series as $serie): ?>
+				<a href="<?= $serie->url ?>">
+					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="
+			<?= $serie->image ?>">
 				</a>
 			<?php endforeach; ?>
-			<!--			<div id="seriesByAlphabetic">-->
-			<!--			--><?php //foreach($seriesByAlphabetic as $serie): ?>
-			<!--				<a href="--><? //= $serie->url ?><!--" name="seriesByAlphabetic">-->
-			<!--					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="-->
-			<? //= $serie->image ?><!--">-->
-			<!--				</a>-->
-			<!--			--><?php //endforeach; ?>
-			<!--			</div>-->
-			<!--			<div id="seriesByYear">-->
-			<!--			--><?php //foreach($seriesByYear as $serie): ?>
-			<!--				<a href="--><? //= $serie->url ?><!--" name="seriesByYear">-->
-			<!--					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="-->
-			<? //= $serie->image ?><!--">-->
-			<!--				</a>-->
-			<!--			--><?php //endforeach; ?>
-			<!--			</div>-->
 		</div>
 		<div id="pagination"></div>
 	</div>
 </div>
-
-<!-- CAROUSEL -->
-<!--<script>-->
-<!--	$(function() {-->
-<!--		var showcase = $("#showcase");-->
-<!--		showcase.Cloud9Carousel( {-->
-<!--			yPos: 42,-->
-<!--			yRadius: 48,-->
-<!--			mirrorOptions: {-->
-<!--				gap: 12,-->
-<!--				height: 0.2-->
-<!--			},-->
-<!--			buttonLeft: $(".nav > .left"),-->
-<!--			buttonRight: $(".nav > .right"),-->
-<!--			autoPlay: true,-->
-<!--			bringToFront: true,-->
-<!--//			onRendered: showcaseUp'<a href="https://www.jqueryscript.net/time-clock/">date</a>',-->
-<!--			onLoaded: function() {-->
-<!--				showcase.css( 'visibility', 'visible' );-->
-<!--				showcase.css( 'display', 'none' );-->
-<!--				showcase.fadeIn( 1500 )-->
-<!--			}-->
-<!--		} );-->
-<!---->
-<!--		$('.nav > button').click( function( e ) {-->
-<!--			var b = $(e.target).addClass( 'down' );-->
-<!--			setTimeout( function() { b.removeClass( 'down' ) }, 80 )-->
-<!--		} );-->
-<!---->
-<!--		$(document).keydown( function( e ) {-->
-<!--			switch( e.keyCode ) {-->
-<!--				/* left arrow */-->
-<!--				case 37:-->
-<!--					$('.nav > .left').click();-->
-<!--					break;-->
-<!--				/* right arrow */-->
-<!--				case 39:-->
-<!--					$('.nav > .right').click();-->
-<!--			}-->
-<!--		} )-->
-<!--	})-->
-<!--</script>-->
-
-<!-- PAGINATION -->
-<!--<script>-->
-<!--	var show_per_page = 12;-->
-<!--	var current_page = 0;-->
-<!--	function set_display(first, last) {-->
-<!--		$('#series_list').children().css('display', 'none');-->
-<!--		$('#series_list').children().slice(first, last).css('display', 'block');-->
-<!--	}-->
-<!--	function previous(){-->
-<!--		if($('.active').prev('.page_link').length) go_to_page(current_page - 1);-->
-<!--	}-->
-<!--	function next(){-->
-<!--		if($('.active').next('.page_link').length) go_to_page(current_page + 1);-->
-<!--	}-->
-<!--	function go_to_page(page_num){-->
-<!--		current_page = page_num;-->
-<!--		start_from = current_page * show_per_page;-->
-<!--		end_on = start_from + show_per_page;-->
-<!--		set_display(start_from, end_on);-->
-<!--		$('.active').removeClass('active');-->
-<!--		$('#id' + page_num).addClass('active');-->
-<!--	}-->
-<!--	$(document).ready(function() {-->
-<!--		-->
-<!--		var number_of_pages = Math.ceil($('#series_list').children().length / show_per_page);-->
-<!--		-->
-<!--		var nav = '<ul class="pagination"><li><a href="javascript:previous();">&laquo;</a>';-->
-<!--		-->
-<!--		var i = -1;-->
-<!--		while(number_of_pages > ++i){-->
-<!--			nav += '<li class="page_link'-->
-<!--			if(!i) nav += ' active';-->
-<!--			nav += '" id="id' + i +'">';-->
-<!--			nav += '<a href="javascript:go_to_page(' + i +')">'+ (i + 1) +'</a>';-->
-<!--		}-->
-<!--		nav += '<li><a href="javascript:next();">&raquo;</a></ul>';-->
-<!--		-->
-<!--		$('#pagination').html(nav);-->
-<!--		set_display(0, show_per_page);-->
-<!--	});-->
-<!--</script>-->

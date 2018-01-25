@@ -1,18 +1,20 @@
 <div id="bloc_content">
 	<div id="personality" class="form row">
-		<img src="img/stranger_things_groupe.jpg" alt="Photo des 5 enfants principaux de la série Netflix 'Stranger things'">
+		<img src="img/stranger_things_groupe.jpg"
+		     alt="Photo des 5 enfants principaux de la série Netflix 'Stranger things'">
 		<h2 class="col-xs-12">Quel personnage de "Stranger Things" es-tu ?</h2>
 		<h3 class="col-xs-12">Lucas, Onze, Mike, will ou Dustin ?</h3>
 		<hr>
 		<?php
-		if(isset($_SESSION['auth'])) {
+		if (isset($_SESSION['auth'])) {
 			?>
 			<div id="quizzie">
 				<ul class="quiz-step step1 current">
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">1</p>
-							<img src="img/stranger_things_demogorgon.jpg" alt="Photo du demogorgon de la série Netflix 'Stranger things'">
+							<img src="img/stranger_things_demogorgon.jpg"
+							     alt="Photo du demogorgon de la série Netflix 'Stranger things'">
 							<h2>À part le Demogorgon, de quoi as-tu le plus peur ?</h2>
 						</div>
 					</li>
@@ -47,7 +49,8 @@
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">2</p>
-							<img src="img/stranger_things_film.jpg" alt="Photo d'un extrait de la série Netflix 'Stranger things'">
+							<img src="img/stranger_things_film.jpg"
+							     alt="Photo d'un extrait de la série Netflix 'Stranger things'">
 							<h2>Quel est ton film préféré des années 80 ?</h2>
 						</div>
 					</li>
@@ -82,7 +85,8 @@
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">3</p>
-							<img src="img/stranger_things_friends.jpg" alt="Photo des enfants de la série Netflix 'Stranger things'">
+							<img src="img/stranger_things_friends.jpg"
+							     alt="Photo des enfants de la série Netflix 'Stranger things'">
 							<h2>Tes amis pourraient te décrire comme quelqu'un de... ?</h2>
 						</div>
 					</li>
@@ -117,7 +121,8 @@
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">4</p>
-							<img src="img/stranger_things_batracian.jpg" alt="Photo du batracien de la poubelle dans la série Netflix 'Stranger things'">
+							<img src="img/stranger_things_batracian.jpg"
+							     alt="Photo du batracien de la poubelle dans la série Netflix 'Stranger things'">
 							<h2>Que fais-tu si tu trouves cette créature dans ta poubelle ?</h2>
 						</div>
 					</li>
@@ -152,7 +157,8 @@
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">5</p>
-							<img src="img/stranger_things_friends2.jpg" alt="Photo des enfants de la série Netflix 'Stranger things'">
+							<img src="img/stranger_things_friends2.jpg"
+							     alt="Photo des enfants de la série Netflix 'Stranger things'">
 							<h2>Dans quel cas pourrais-tu arrêter de parler à tes amis ?</h2>
 						</div>
 					</li>
@@ -187,7 +193,8 @@
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">6</p>
-							<img src="img/stranger_things_flying_van.png" alt="Photo du flying van de la série Netflix 'Stranger things'">
+							<img src="img/stranger_things_flying_van.png"
+							     alt="Photo du flying van de la série Netflix 'Stranger things'">
 							<h2>Si tu étais un super-héros, quel serait ton pouvoir ?</h2>
 						</div>
 					</li>
@@ -222,7 +229,8 @@
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">7</p>
-							<img src="img/stranger_things_clothe.jpg" alt="Photo d'un tshirt indiquant le nom des enfants de la série Netflix 'Stranger things'">
+							<img src="img/stranger_things_clothe.jpg"
+							     alt="Photo d'un tshirt indiquant le nom des enfants de la série Netflix 'Stranger things'">
 							<h2>Quel est ton vêtement ou accessoire de mode préféré ?</h2>
 						</div>
 					</li>
@@ -257,7 +265,8 @@
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">8</p>
-							<img src="img/stranger_things_game.jpg" alt="Photo du jeu de role apparaissant dans la série Netflix 'Stranger things'">
+							<img src="img/stranger_things_game.jpg"
+							     alt="Photo du jeu de role apparaissant dans la série Netflix 'Stranger things'">
 							<h2>Dans un jeu de rôles, quel personnage es-tu ?</h2>
 						</div>
 					</li>
@@ -292,7 +301,8 @@
 					<li class="question">
 						<div class="question-wrap">
 							<p class="round">9</p>
-							<img src="img/stranger_things_music.jpg" alt="Photo des enfants de la série Netflix 'Stranger things' en train de chanter">
+							<img src="img/stranger_things_music.jpg"
+							     alt="Photo des enfants de la série Netflix 'Stranger things' en train de chanter">
 							<h2>Quelle chanson des années 80 préfères-tu ?</h2>
 						</div>
 					</li>
@@ -357,7 +367,7 @@
 						</div>
 					</li>
 				</ul>
-
+				
 				<ul id="results">
 					<li class="results-inner">
 						<h1></h1>
@@ -365,19 +375,24 @@
 					</li>
 					<hr>
 					<div class="text-center">
-						<a href="index.php" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i class="fa fa-reply" aria-hidden="true"></i> Retour Accueil</a>
+						<a href="index.php" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i
+									class="fa fa-reply" aria-hidden="true"></i> Retour Accueil</a>
 					</div>
 				</ul>
 			</div>
 			<?php
-		}else{
+		} else {
 			?>
 			<div id="link_login_btns" class="col-xs-12">
 				<div class="register_btn col-xs-6">
-					<a href="quiz.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus" aria-hidden="true"></i> Inscrivez-vous</a>
+					<a href="index.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus"
+					                                                               aria-hidden="true"></i>
+						Inscrivez-vous</a>
 				</div>
 				<div class="login_btn col-xs-6">
-					<a href="quiz.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in" aria-hidden="true"></i> Connectez-vous</a>
+					<a href="index.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in"
+					                                                            aria-hidden="true"></i>
+						Connectez-vous</a>
 				</div>
 			</div>
 			<?php

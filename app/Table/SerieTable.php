@@ -36,7 +36,7 @@ class SerieTable extends Table
 	}
 	
 	/**
-	 * Récupère toutes les series par ordre alphabétique
+	 * Récupère toutes les series par ordre alphabétique (A à Z)
 	 * @return array
 	 */
 	public function allByAlphabetic()
@@ -45,6 +45,19 @@ class SerieTable extends Table
 			SELECT *
 			FROM series
 			ORDER BY title
+		");
+	}
+	
+	/**
+	 * Récupère toutes les series par ordre alphabétique (Z à A)
+	 * @return array
+	 */
+	public function allByAlphabeticDesc()
+	{
+		return $this->query("
+			SELECT *
+			FROM series
+			ORDER BY title DESC
 		");
 	}
 	
@@ -87,7 +100,6 @@ class SerieTable extends Table
 	}
 	
 	
-	
 	/**
 	 * Récupère les séries favorites d'un user
 	 * @param $user_id
@@ -102,8 +114,6 @@ class SerieTable extends Table
 			WHERE favorites.user_id = ?", [$user_id]);
 		return $result;
 	}
-	
-	
 	
 	
 }

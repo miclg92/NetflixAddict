@@ -23,11 +23,18 @@ class SeriesController extends AppController
 		$lastNews = $this->New->last();
 		$mostFollowedSeries = $this->Serie->mostFollowedSeries();
 		
-		$seriesByPopularity = $this->Serie->allByPopularity();
-		$seriesByAlphabetic = $this->Serie->allByAlphabetic();
-		$seriesByYear = $this->Serie->allByYear();
-		
-		$this->render('series.index', compact('lastNews', 'seriesByPopularity', 'seriesByAlphabetic', 'seriesByYear', 'mostFollowedSeries'));
+		if (isset($_POST['alphabetic'])) {
+			$series = $this->Serie->allByAlphabetic();
+		} elseif (isset($_POST['alphabeticDesc'])) {
+			$series = $this->Serie->allByAlphabeticDesc();
+		} elseif (isset($_POST['year'])) {
+			$series = $this->Serie->allByYear();
+		} elseif (isset($_POST['popularity'])) {
+			$series = $this->Serie->allByPopularity();
+		} else {
+			$series = $this->Serie->allByPopularity();
+		}
+		$this->render('series.index', compact('lastNews', 'mostFollowedSeries', 'series'));
 	}
 	
 	/* Affiche la série demandée */
