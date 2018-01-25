@@ -49,9 +49,25 @@
 	<hr id="ancre_tri">
 	
 	<h2>Toutes les séries disponibles sur Netflix</h2>
+	<form method="get" action="#ancre_tri">
+		<div id="searchbar" class="form-group">
+			<input type="search" name="search" class="input-sm form-control" placeholder="Rechercher une série">
+			<button type="submit" class="btn btn-sm"><i class="fa fa-search" aria-hidden="true"></i>
+				Go
+			</button>
+		</div>
+	</form>
+	<?php
+	if ($series == false) {
+		?>
+		<p class="no_serie_found">Aucune série trouvée.</p>
+		<?php
+	}
+	?>
 	<form method="post" action="#ancre_tri">
 		<div class="dropdown">
-			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+			        data-toggle="dropdown"
 			        aria-haspopup="true" aria-expanded="true">
 				Afficher
 				<span class="caret"></span>

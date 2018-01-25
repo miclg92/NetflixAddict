@@ -31,6 +31,9 @@ class SeriesController extends AppController
 			$series = $this->Serie->allByYear();
 		} elseif (isset($_POST['popularity'])) {
 			$series = $this->Serie->allByPopularity();
+		} elseif (isset($_GET['search']) && !EMPTY($_GET['search'])) {
+			$title = htmlspecialchars($_GET['search']);
+			$series = $this->Serie->searchedSerie($title);
 		} else {
 			$series = $this->Serie->allByPopularity();
 		}
@@ -87,7 +90,6 @@ class SeriesController extends AppController
 						'note' => $_POST['note']
 					]);
 					if ($note) {
-//						$_SESSION['flash']['success'] = "Votre note a bien été prise en compte.";
 						header("Refresh:0");
 					}
 				}

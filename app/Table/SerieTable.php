@@ -75,6 +75,21 @@ class SerieTable extends Table
 	}
 	
 	/**
+	 * Récupère uniquement les séries recherchées
+	 * @param $title
+	 * @return mixed
+	 */
+	public function searchedSerie($title)
+	{
+		return $this->query('
+			SELECT *
+			FROM series
+			WHERE title LIKE "%' . $title . '%"
+			', [$title]);
+	}
+	
+	
+	/**
 	 * Récupère les 5 séries ayant le plus de followers sur Betaseries
 	 * @return mixed
 	 */

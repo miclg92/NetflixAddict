@@ -169,6 +169,37 @@ hr {
 	margin: auto;
 }
 
+#searchbar {
+	display: flex;
+	width: 30%;
+	margin: auto;
+}
+
+#searchbar input {
+	margin-right: 10px;
+	font-size: 1em;
+}
+
+#searchbar .btn {
+	color: #FFF;
+}
+
+#searchbar .btn:hover {
+	color: #f40e0e;
+}
+
+.no_serie_found {
+	margin: auto;
+	width: 300px;
+	text-align: center;
+	margin-top: 50px;
+	color: #FF0000;
+	background-color: #edbcb6;
+	font-size: 1.5em;
+	padding: 10px;
+	border-radius: 10px;
+}
+
 .dropdown .btn {
 	background-image: none;
 	text-shadow: none;
@@ -176,6 +207,7 @@ hr {
 	color: #FFF;
 	font-size: 1.3em;
 	margin-left: 10px;
+	margin-right: 100px;
 }
 
 .dropdown .btn:hover {
@@ -336,6 +368,11 @@ footer {
 	
 	.carousel-inner img {
 		width: 80%;
+	}
+	
+	#searchbar {
+		width: 60%;
+		margin-bottom: 50px;
 	}
 	
 }

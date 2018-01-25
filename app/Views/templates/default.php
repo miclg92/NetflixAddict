@@ -158,14 +158,6 @@ if (isset($_COOKIE['remember'])) {
 				}
 				?>
 			</ul>
-			<form class="navbar-form navbar-right inline-form">
-				<div id="searchbar" class="form-group">
-					<input type="search" class="input-sm form-control" placeholder="Recherche">
-					<button type="submit" class="btn btn-sm"><i class="fa fa-search" aria-hidden="true"></i>
-						Chercher
-					</button>
-				</div>
-			</form>
 		</div>
 	</nav>
 	
@@ -225,8 +217,6 @@ if (isset($_COOKIE['remember'])) {
 		});
 		
 		carousel_init();
-//		pagination_series_init();
-//		pagination_news_init();
 		progress_bar_init();
 		
 	});
