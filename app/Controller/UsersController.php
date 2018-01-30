@@ -62,10 +62,10 @@ class UsersController extends AppController
 					$_POST['email'],
 					'Confirmation de votre compte',
 					"Bonjour. \n\nAfin de valider votre compte, merci de cliquer sur ce lien :\n\nhttp://www.localhost:8888/index.php?p=users.confirm.php?&id=$user_id&token=$token\n\nA bientôt.\n\nAdministrateur",
-					'From: "Netflix Addict"<miclg92@gmail.com>'. "\r\n" .
+					'From: "Netflix Addict"<miclg92@gmail.com>' . "\r\n" .
 					'Reply-To: miclg92@gmail.com' . "\r\n"
 				);
-				$_SESSION['flash']['success']= "Un email vous a été envoyé afin de valider votre compte.";
+				$_SESSION['flash']['success'] = "Un email vous a été envoyé afin de valider votre compte.";
 				header('Location: index.php');
 				exit();
 				
@@ -92,10 +92,10 @@ class UsersController extends AppController
 				'confirmation_token' => NULL,
 				'confirmed_at' => date('Y-m-d H:i:s')
 			]);
-			$_SESSION['flash']['success']= "Votre compte a bien été confimé. Connectez-vous dès maintenant !";
+			$_SESSION['flash']['success'] = "Votre compte a bien été confimé. Connectez-vous dès maintenant !";
 			header('location: index.php');
 		} else {
-			$_SESSION['flash']['danger']= "Ce lien n'est plus valide, vous avez déjà confirmé votre compte.";
+			$_SESSION['flash']['danger'] = "Ce lien n'est plus valide, vous avez déjà confirmé votre compte.";
 			header('location: index.php');
 		}
 	}
@@ -108,7 +108,7 @@ class UsersController extends AppController
 			$auth = new DBAuth(App::getDb());
 			if ($auth->login($_POST['username'], $_POST['password'])) {
 				
-				if(isset($_POST['remember']) && $_POST['remember']){
+				if (isset($_POST['remember']) && $_POST['remember']) {
 					$remember_token = Str::str_random(250);
 					$user_id = $_SESSION['auth'];
 					$this->User->update($user_id, [
@@ -117,11 +117,11 @@ class UsersController extends AppController
 					setcookie('remember', $user_id . '==' . $remember_token . sha1($user_id . 'ratonslaveurs'), time() + 60 * 60 * 24 * 7, '/', null, null, true);
 				}
 				
-				if($_SESSION['user']->flag == 1){
-					$_SESSION['flash']['success']= "Vous êtes maintenant connecté en tant que Membre.";
+				if ($_SESSION['user']->flag == 1) {
+					$_SESSION['flash']['success'] = "Vous êtes maintenant connecté en tant que Membre.";
 					$this->render('users.account');
-				} elseif($_SESSION['user']->flag == 2){
-					$_SESSION['flash']['success']= "Vous êtes maintenant connecté en tant qu'Administrateur.";
+				} elseif ($_SESSION['user']->flag == 2) {
+					$_SESSION['flash']['success'] = "Vous êtes maintenant connecté en tant qu'Administrateur.";
 					$this->render('users.account');
 				}
 			} else {
@@ -129,7 +129,7 @@ class UsersController extends AppController
 				$form = new BootstrapForm($_POST);
 				$this->render('users.login', compact('form', 'errors', 'message'));
 			}
-		} else{
+		} else {
 			$form = new BootstrapForm($_POST);
 			$this->render('users.login', compact('form', 'errors', 'message'));
 		}
@@ -155,8 +155,7 @@ class UsersController extends AppController
 	public function editName()
 	{
 		$user_id = $this->User->find($_GET['id'])->id;
-		if($user_id !== $_SESSION['auth'])
-		{
+		if ($user_id !== $_SESSION['auth']) {
 			$this->forbidden();
 		}
 		
@@ -166,8 +165,8 @@ class UsersController extends AppController
 			if (empty($_POST['username']) || !preg_match('/^[a-zA-Z0-9_]+$/', $_POST['username'])) {
 				$errors['username'] = "Ce pseudo n'est pas valide (alphanumérique).";
 			} else {
-				if($_POST['username'] == $_SESSION['user']->username){
-				} else{
+				if ($_POST['username'] == $_SESSION['user']->username) {
+				} else {
 					$user = $this->User->checkUsername($_POST['username']);
 					if ($user) {
 						$errors['username'] = "Ce pseudo n'est pas disponible.";
@@ -179,7 +178,7 @@ class UsersController extends AppController
 				$updatedUser = $this->User->update($_GET['id'], [
 					'username' => $_POST['username'],
 				]);
-				$_SESSION['flash']['success']= "Votre pseudo a bien été mis à jour.";
+				$_SESSION['flash']['success'] = "Votre pseudo a bien été mis à jour.";
 				
 				if ($updatedUser) {
 					$_SESSION['user']->username = $_POST['username'];
@@ -196,8 +195,7 @@ class UsersController extends AppController
 	public function editMail()
 	{
 		$user_id = $this->User->find($_GET['id'])->id;
-		if($user_id !== $_SESSION['auth'])
-		{
+		if ($user_id !== $_SESSION['auth']) {
 			$this->forbidden();
 		}
 		
@@ -207,8 +205,8 @@ class UsersController extends AppController
 			if (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 				$errors['email'] = "Cet email n'est pas valide.";
 			} else {
-				if($_POST['email'] == $_SESSION['user']->email){
-				} else{
+				if ($_POST['email'] == $_SESSION['user']->email) {
+				} else {
 					$user = $this->User->checkUsermail($_POST['email']);
 					if ($user) {
 						$errors['email'] = "Cet email est déjà utilisé.";
@@ -220,7 +218,7 @@ class UsersController extends AppController
 				$updatedUser = $this->User->update($_GET['id'], [
 					'email' => $_POST['email'],
 				]);
-				$_SESSION['flash']['success']= "Votre email a bien été mis à jour.";
+				$_SESSION['flash']['success'] = "Votre email a bien été mis à jour.";
 				
 				if ($updatedUser) {
 					$_SESSION['user']->email = $_POST['email'];
@@ -237,14 +235,13 @@ class UsersController extends AppController
 	public function askPasswdBeforeDelete()
 	{
 		$user_id = $_SESSION['auth'];
-		if($user_id !== $_SESSION['auth'])
-		{
+		if ($user_id !== $_SESSION['auth']) {
 			$this->forbidden();
 		}
 		
 		if (!empty($_POST) && isset($_POST['check_password'])) {
 			$errors = array();
-
+			
 			$auth = new DBAuth(App::getDb());
 			if ($auth->checkPasswd($_SESSION['auth'], $_POST['check_password'])) {
 				$result = $this->User->delete($_SESSION['auth']);
@@ -253,7 +250,7 @@ class UsersController extends AppController
 				session_start();
 				header('location: index.php');
 				$_SESSION['flash']['success'] = "Votre compte a été supprimé.";
-			} else{
+			} else {
 				$errors['password'] = "Veuillez vérifier votre mot de passe.";
 				$form = new BootstrapForm($_POST);
 				$this->render('users.askPasswdBeforeDelete', compact('user', 'form', 'errors'));
@@ -263,9 +260,10 @@ class UsersController extends AppController
 		$form = new BootstrapForm($user);
 		$this->render('users.askPasswdBeforeDelete', compact('user', 'form', 'errors'));
 	}
-	public function delete(){
-		if(!empty($_POST))
-		{
+	
+	public function delete()
+	{
+		if (!empty($_POST)) {
 			$result = $this->User->delete($_POST['id']);
 			session_unset();
 			session_destroy();
@@ -275,12 +273,13 @@ class UsersController extends AppController
 		}
 	}
 	
-	public function forget(){
+	public function forget()
+	{
 		$errors = false;
 		
-		if(!empty($_POST) && !empty($_POST['email'])){
+		if (!empty($_POST) && !empty($_POST['email'])) {
 			$user = $this->User->checkUsermail($_POST['email']);
-			if($user == 1){
+			if ($user == 1) {
 				$reset_token = Str::str_random(60);
 				$user_id = $this->User->getUserId($_POST['email']);
 				
@@ -295,7 +294,7 @@ class UsersController extends AppController
 					$_POST['email'],
 					'Réinitialisation de votre compte',
 					"Bonjour. \n\nAfin de réinitialiser votre mot de passe, merci de cliquer sur ce lien :\n\nhttp://www.localhost:8888/index.php?p=users.reset.php?&id=$user_id&token=$reset_token\n\nA bientôt.\n\nAdministrateur",
-					'From: "Netflix Addict"<miclg92@gmail.com>'. "\r\n" .
+					'From: "Netflix Addict"<miclg92@gmail.com>' . "\r\n" .
 					'Reply-To: miclg92@gmail.com' . "\r\n"
 				);
 				header('Location: index.php');
@@ -348,8 +347,7 @@ class UsersController extends AppController
 	public function requestedPasswd()
 	{
 		$user_id = $this->User->find($_GET['id'])->id;
-		if($user_id !== $_SESSION['auth'])
-		{
+		if ($user_id !== $_SESSION['auth']) {
 			$this->forbidden();
 		}
 		
@@ -359,7 +357,7 @@ class UsersController extends AppController
 			$auth = new DBAuth(App::getDb());
 			if ($auth->checkPasswd($_SESSION['auth'], $_POST['check_password'])) {
 				header("Location: index.php?p=users.changePasswd&id=$user_id");
-			} else{
+			} else {
 				$errors['password'] = "Veuillez vérifier votre mot de passe.";
 				$form = new BootstrapForm($_POST);
 				$this->render('users.requestedPasswd', compact('user', 'form', 'errors'));
@@ -373,24 +371,23 @@ class UsersController extends AppController
 	public function changePasswd()
 	{
 		$user_id = $this->User->find($_GET['id'])->id;
-		if($user_id !== $_SESSION['auth'])
-		{
+		if ($user_id !== $_SESSION['auth']) {
 			$this->forbidden();
 		}
 		
 		if (!empty($_POST)) {
 			$errors = array();
-
+			
 			if (empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']) {
 				$errors['password'] = "Veuillez vérifier votre mot de passe.";
 			}
-
+			
 			if (empty($errors)) {
 				$hashPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
 				$this->User->update($_GET['id'], [
 					'password' => $hashPass
 				]);
-				$_SESSION['flash']['success']= "Votre mot de passe a bien été mis à jour.";
+				$_SESSION['flash']['success'] = "Votre mot de passe a bien été mis à jour.";
 				$this->render('users.account');
 			}
 		}

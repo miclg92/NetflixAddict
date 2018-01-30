@@ -14,7 +14,8 @@ class QuizQuestionTable extends Table
 			SELECT *
 			FROM quizQuestions
 			LEFT JOIN quizAnswers ON quizQuestions.question_number = quizAnswers.question_number
-			GROUP BY quizQuestions.question_number');
+			WHERE quizAnswers.is_correct = 1
+			');
 		return $result;
 	}
 	

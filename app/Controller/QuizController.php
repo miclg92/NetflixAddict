@@ -70,6 +70,8 @@ class QuizController extends AppController
 							'quiz_level' => $scoreLevel,
 							'quiz_correct_answers' => $_SESSION['score']
 						]);
+						$_SESSION['user']->quiz_level = $scoreLevel;
+						$_SESSION['user']->quiz_score = $score;
 						header('location: index.php?p=quiz.result');
 						exit();
 					} else {
@@ -100,17 +102,10 @@ class QuizController extends AppController
 		$nb = $numberOfQuestions[0]->nbOfQuestions;
 		if (isset($_SESSION['auth'])) {
 			$quizQuestions = $this->quizQuestion->allQuizQuestions();
-//			var_dump($quizQuestions);
-
-//			$questions_number = $this->quizQuestion->getQuestionNumber();
-//			$quizAnswers = $this->quizAnswer->allQuizAnswers();
-
-//			foreach ($questions_number AS $question_number) {
-//				$id = $question_number->question_number;
-//				$quizAnswers = $this->quizAnswer->quizAnswers($id);
-//			}
+			$quiz_score = $this->User->getUserDetails($_SESSION['auth'])->quiz_score;
 		}
-		$this->render('quiz.answers', compact('quizQuestions', 'quizAnswers', 'questions_number', 'nb'));
+		
+		$this->render('quiz.answers', compact('quizQuestions', 'nb', 'quiz_score'));
 	}
 	
 }

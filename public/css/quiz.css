@@ -1,4 +1,3 @@
-/* CSS Personnalisé du Quizz */
 #quizz {
 	width: 60%;
 	margin: 80px auto;
@@ -89,112 +88,13 @@
 	color: #f40e0e;
 }
 
-/*#quizz .btn:hover,*/
-/*#quizz .button:hover{*/
-/*color: #f40e0e;*/
-/*text-decoration: none;*/
-/*}*/
+#quizz .correction .question {
+	font-size: 1.8em;
+}
 
-/*#quizz .answers,*/
-/*#quizz .responses{*/
-/*margin: 50px 10px;*/
-/*padding: 0;*/
-/*}*/
-
-/*#quizz .answers label{*/
-/*font-size: 1.5em;*/
-/*}*/
-
-/*#quizz .responses .correct span {*/
-/*color: #3c3dff;*/
-/*font-size: 1.5em;*/
-/*}*/
-
-/*#quizz .responses .incorrect span {*/
-/*color: #f40e0e;*/
-/*font-size: 1.5em;*/
-/*}*/
-
-/*#quizz .quizScore span,*/
-/*#quizz .quizLevel span{*/
-/*color: #f40e0e;*/
-/*}*/
-
-/*!* BASE QUIZ STYLES *!*/
-/*!* These styles ensure that the necessary elements are hidden for toggling *!*/
-/*!* DO NOT EDIT UNLESS YOU KNOW WHAT YOU ARE DOING!! *!*/
-/*.startQuiz,*/
-/*.nextQuestion,*/
-/*.backToQuestion,*/
-/*.questions li.question,*/
-/*.questions li.question .responses,*/
-/*.questions li.question .responses .correct,*/
-/*.questions li.question .responses .incorrect,*/
-/*.quizResults {*/
-/*display: none;*/
-/*}*/
-
-/*!* If response messages are disabled or only shown on quiz completion,*/
-/*nextQuestion button IS checkAnswer button - so it must be displayed *!*/
-/*.nextQuestion.checkAnswer {*/
-/*display: block;*/
-/*}*/
-
-/*ol.questions,*/
-/*ul.answers,*/
-/*ul.responses,*/
-/*ol.questions li,*/
-/*ul.answers li,*/
-/*ul.responses li {*/
-/*list-style-type: none;*/
-/*}*/
-
-/*ol.questions{*/
-/*list-style-type: none;*/
-/*margin: auto;*/
-/*text-align: center;*/
-/*padding: 0;*/
-/*margin-bottom: 30px;*/
-/*}*/
-
-/*!*!* QUIZ STYLES Style de base du Quizz *!*!*/
-/*!*!* Styles to prettify the quiz page *!*!*/
-
-/*!*clearfix *!*/
-/*.quizArea, .quizResults {*/
-/*zoom: 1;*/
-/*}*/
-/*.quizArea:before, .quizArea:after, .quizResults:before, .quizResults:after {*/
-/*content: "\0020";*/
-/*display: block;*/
-/*height: 0;*/
-/*visibility: hidden;*/
-/*font-size: 0;*/
-/*}*/
-/*.quizArea:after, .quizResults:after {*/
-/*clear: both;*/
-/*}*/
-
-/*.questionCount {*/
-/*font-size: 25px;*/
-/*font-style: italic;*/
-/*color: #f40e0e ;*/
-/*}*/
-/*.questionCount span {*/
-/*font-weight: bold;*/
-/*}*/
-
-/*#quizz .quizResults h3 {*/
-/*margin-bottom: 0;*/
-/*text-align: center;*/
-/*}*/
-/*.quizResults h3 span {*/
-/*font-weight: normal;*/
-/*font-style: italic;*/
-/*}*/
-/*.quizResultsCopy {*/
-/*margin-top: 20px;*/
-/*}*/
+#quizz .correction span {
+	color: blue;
+}
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
 

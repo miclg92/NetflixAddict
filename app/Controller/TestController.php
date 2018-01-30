@@ -68,7 +68,10 @@ class TestController extends AppController
 			$numberOfQuestions = $this->testQuestion->NumberOfQuestions();
 			$nb = $numberOfQuestions[0]->nbOfQuestions;
 			$personality_name = $this->User->getUserDetails($_SESSION['auth'])->personality_name;
-			$_SESSION['personality_name'] = $personality_name;
+			$this->User->update($_SESSION['auth'], [
+				'personality_name' => $personality_name
+			]);
+			$_SESSION['user']->personality_name = $personality_name;
 			$personality_desc = $this->User->getUserDetails($_SESSION['auth'])->personality_description;
 			$personality_img = $this->User->getUserDetails($_SESSION['auth'])->personality_picture;
 		}

@@ -89,19 +89,17 @@ if (isset($_COOKIE['remember'])) {
 											href="index.php?p=users.account"> <?= $_SESSION['user']->username; ?></a></span>
 							</h4>
 							<?php
-							if ($_SESSION['user']->personality != NULL) {
-								if (isset($_SESSION['personality_name'])) {
-									?>
-									<h4>Identité : "<span><a
-													href="index.php?p=test.result"><?= $_SESSION['personality_name']; ?></a></span>"
-									</h4>
-									<?php
-								}
+							if ($_SESSION['user']->personality_name != NULL) {
+								?>
+								<h4>Identité : <span><a
+												href="index.php?p=test.result"><?= $_SESSION['user']->personality_name; ?></a></span>
+								</h4>
+								<?php
 							}
 							if ($_SESSION['user']->quiz_level != NULL) {
 								?>
 								<h4>Statut :
-									"<span><a href="index.php?p=quiz.result"><?= $_SESSION['user']->quiz_level; ?></a></span>"
+									<span><a href="index.php?p=quiz.result"><?= $_SESSION['user']->quiz_level; ?></a></span>
 									(<?= $_SESSION['user']->quiz_score; ?>
 									%)</h4>
 								<?php
