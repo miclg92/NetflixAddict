@@ -52,7 +52,7 @@ if (isset($_COOKIE['remember'])) {
 	<link rel="stylesheet" type="text/css" href="css/mySeries.css" media="screen"/>
 	<link rel="stylesheet" type="text/css" href="css/news.css" media="screen"/>
 	<link rel="stylesheet" type="text/css" href="css/quiz.css" media="screen"/>
-	<link rel="stylesheet" type="text/css" href="css/personality.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/test.css" media="screen"/>
 	<!-- Accès aux différentes polices Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
@@ -90,14 +90,18 @@ if (isset($_COOKIE['remember'])) {
 							</h4>
 							<?php
 							if ($_SESSION['user']->personality != NULL) {
-								?>
-								<h4>identité "<span><?= $_SESSION['user']->personality; ?></span>"</h4>
-								<?php
+								if (isset($_SESSION['personality_name'])) {
+									?>
+									<h4>Identité : "<span><a
+													href="index.php?p=test.result"><?= $_SESSION['personality_name']; ?></a></span>"
+									</h4>
+									<?php
+								}
 							}
 							if ($_SESSION['user']->quiz_level != NULL) {
 								?>
-								<h4>Statut
-									"<span><?= $_SESSION['user']->quiz_level; ?></span>"
+								<h4>Statut :
+									"<span><a href="index.php?p=quiz.result"><?= $_SESSION['user']->quiz_level; ?></a></span>"
 									(<?= $_SESSION['user']->quiz_score; ?>
 									%)</h4>
 								<?php
@@ -108,8 +112,6 @@ if (isset($_COOKIE['remember'])) {
 							<a href="index.php?p=users.logout" class="btn"><i class="fa fa-sign-out"
 							                                                  aria-hidden="true"></i>
 								Deconnexion</a>
-							<!--						<a href="index.php?p=users.account" class="btn">Bonjour -->
-							<? //= $_SESSION['user']->username; ?><!--</a>-->
 						</div>
 					</div>
 					
@@ -143,7 +145,7 @@ if (isset($_COOKIE['remember'])) {
 						Actus</a></li>
 				<li><a href="index.php?p=quiz.start"><i class="fa fa-trophy" aria-hidden="true"></i>
 						Quiz</a></li>
-				<li><a href="index.php?p=quiz.personality"><i class="fa fa-question-circle" aria-hidden="true"></i>
+				<li><a href="index.php?p=test.start"><i class="fa fa-question-circle" aria-hidden="true"></i>
 						Qui es tu ?</a></li>
 				<?php
 				if (isset($_SESSION['auth'])) {
@@ -218,12 +220,6 @@ if (isset($_COOKIE['remember'])) {
 <!-- Slider	-->
 <script src="js/jquery.cloud9carousel.js"></script>
 <script src="js/jquery.reflection.js"></script>
-<!-- Quiz -->
-<!--<script src="js/quiz/slickQuiz-config.js"></script>-->
-<!--<script src="js/quiz/slickQuiz.js"></script>-->
-<!--<script src="js/quiz/master.js"></script>-->
-<!-- Personality test Stranger things -->
-<script src="js/personality/personality.js"></script>
 <!-- TINY MCE -->
 <script src="js/tinymce/tinymce.min.js"></script>
 <!-- Divers js -->

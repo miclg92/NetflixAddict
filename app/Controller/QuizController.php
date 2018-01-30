@@ -2,8 +2,6 @@
 
 namespace App\Controller;
 
-use Core\HTML\BootstrapForm;
-
 class QuizController extends AppController
 {
 	public function __construct()
@@ -115,8 +113,4 @@ class QuizController extends AppController
 		$this->render('quiz.answers', compact('quizQuestions', 'quizAnswers', 'questions_number', 'nb'));
 	}
 	
-	public function personality()
-	{
-		$this->render('quiz.personality');
-	}
 }

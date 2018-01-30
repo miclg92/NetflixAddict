@@ -72,6 +72,10 @@
 	margin-right: 10px;
 }
 
+#quizz .answer label:hover {
+	cursor: pointer;
+}
+
 #quizz .quiz_results {
 	margin: 0 auto 50px;
 }

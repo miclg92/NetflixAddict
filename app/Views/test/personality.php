@@ -30,7 +30,7 @@
 					</li>
 					<li class="quiz-answer high-value" data-quizIndex="5">
 						<div class="answer-wrap">
-							<p class="answer-text">Du regard des autres</p>
+									<p class="answer-text">Du regard des autres</p>
 						</div>
 					</li>
 					<li class="quiz-answer" data-quizIndex="3">

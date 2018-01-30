@@ -19,7 +19,8 @@ class UserTable extends Table
 		$result = $this->query('
 			SELECT *
 			FROM users
-			WHERE id = ?', [$user_id], true);
+			LEFT JOIN testPersonalities ON users.personality = testPersonalities.answer_index
+			WHERE users.id = ?', [$user_id], true);
 		return $result;
 	}
 	

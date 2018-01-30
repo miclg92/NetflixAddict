@@ -1,4 +1,5 @@
 <?php
+
 namespace Core\Auth;
 
 use Core\Database\MysqlDatabase;
@@ -20,8 +21,7 @@ class DBAuth
 	 */
 	public function getUserId()
 	{
-		if($this->logged())
-		{
+		if ($this->logged()) {
 			return $_SESSION['auth'];
 		}
 		return false;
@@ -38,16 +38,16 @@ class DBAuth
 			SELECT *
 			FROM users
 			WHERE confirmed_at IS NOT NULL AND username = ?', [$username], null, true);
-//		WHERE confirmed_at IS NOT NULL AND username = ?', [$username], null, true);
-
-		if($user){
+		
+		if ($user) {
 			$verifiedPass = password_verify($password, $user->password);
-			if($verifiedPass === true ){
+			if ($verifiedPass === true) {
 				$_SESSION['auth'] = $user->id;
 				$_SESSION['user'] = $user;
 				return true;
 			}
-		} return false;
+		}
+		return false;
 	}
 	
 	public function loginWithId($user_id)
@@ -79,12 +79,13 @@ class DBAuth
 			FROM users
 			WHERE id = ?', [$userId], null, true);
 		
-		if($user){
+		if ($user) {
 			$verifiedPass = password_verify($password, $user->password);
-			if($verifiedPass === true ){
+			if ($verifiedPass === true) {
 				return true;
 			}
-		} return false;
+		}
+		return false;
 	}
 	
 }
