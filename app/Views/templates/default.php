@@ -83,22 +83,50 @@ if (isset($_COOKIE['remember'])) {
 				<?php
 				if (isset($_SESSION['auth'])) {
 					?>
-					<div class="logout_btn">
-						<a href="index.php?p=users.logout" class="btn"><i class="fa fa-sign-out" aria-hidden="true"></i>
-							Deconnexion</a>
-						<a href="index.php?p=users.account" class="btn">Bonjour <?= $_SESSION['user']->username; ?></a>
+					<div id="bloc_user_infos">
+						<div class="user_infos">
+							<h4>Bonjour <span><a
+											href="index.php?p=users.account"> <?= $_SESSION['user']->username; ?></a></span>
+							</h4>
+							<?php
+							if ($_SESSION['user']->personality != NULL) {
+								?>
+								<h4>identité "<span><?= $_SESSION['user']->personality; ?></span>"</h4>
+								<?php
+							}
+							if ($_SESSION['user']->quiz_level != NULL) {
+								?>
+								<h4>Statut
+									"<span><?= $_SESSION['user']->quiz_level; ?></span>"
+									(<?= $_SESSION['user']->quiz_score; ?>
+									%)</h4>
+								<?php
+							}
+							?>
+						</div>
+						<div class="logout_btn">
+							<a href="index.php?p=users.logout" class="btn"><i class="fa fa-sign-out"
+							                                                  aria-hidden="true"></i>
+								Deconnexion</a>
+							<!--						<a href="index.php?p=users.account" class="btn">Bonjour -->
+							<? //= $_SESSION['user']->username; ?><!--</a>-->
+						</div>
 					</div>
+					
 					<?php
 				} else {
 					?>
-					<div class="register_btn">
-						<a href="index.php?p=users.register" class="btn"><i class="fa fa-user-plus"
-						                                                    aria-hidden="true"></i> Inscription</a>
-					</div>
-					
-					<div class="login_btn">
-						<a href="index.php?p=users.login" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i>
-							Connexion</a>
+					<div class="unlogged_btns">
+						<div class="register_btn">
+							<a href="index.php?p=users.register" class="btn"><i class="fa fa-user-plus"
+							                                                    aria-hidden="true"></i> Inscription</a>
+						</div>
+						
+						<div class="login_btn">
+							<a href="index.php?p=users.login" class="btn"><i class="fa fa-sign-in"
+							                                                 aria-hidden="true"></i>
+								Connexion</a>
+						</div>
 					</div>
 					<?php
 				}
@@ -113,7 +141,7 @@ if (isset($_COOKIE['remember'])) {
 				<li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a></li>
 				<li><a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
 						Actus</a></li>
-				<li><a href="index.php?p=quiz.quiz"><i class="fa fa-trophy" aria-hidden="true"></i>
+				<li><a href="index.php?p=quiz.start"><i class="fa fa-trophy" aria-hidden="true"></i>
 						Quiz</a></li>
 				<li><a href="index.php?p=quiz.personality"><i class="fa fa-question-circle" aria-hidden="true"></i>
 						Qui es tu ?</a></li>
@@ -191,9 +219,9 @@ if (isset($_COOKIE['remember'])) {
 <script src="js/jquery.cloud9carousel.js"></script>
 <script src="js/jquery.reflection.js"></script>
 <!-- Quiz -->
-<script src="js/quiz/slickQuiz-config.js"></script>
-<script src="js/quiz/slickQuiz.js"></script>
-<script src="js/quiz/master.js"></script>
+<!--<script src="js/quiz/slickQuiz-config.js"></script>-->
+<!--<script src="js/quiz/slickQuiz.js"></script>-->
+<!--<script src="js/quiz/master.js"></script>-->
 <!-- Personality test Stranger things -->
 <script src="js/personality/personality.js"></script>
 <!-- TINY MCE -->

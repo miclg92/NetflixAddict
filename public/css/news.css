@@ -29,7 +29,7 @@
 }
 
 .each_news {
-	width: 90%;
+	width: 80%;
 	margin: auto;
 	border-radius: 10px;
 	box-shadow: 0px 0px 50px #FFF;
@@ -70,8 +70,13 @@
 
 #list .each_news_details p {
 	margin-top: 20px;
-	padding: 20px;
+	/*padding: 20px;*/
 	text-align: justify;
+}
+
+#list .each_news_details .extrait_actu {
+	width: 70%;
+	margin: 20px auto;
 }
 
 #pagination_news {

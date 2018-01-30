@@ -1,12 +1,12 @@
 /* CSS Personnalisé du Quizz */
-#quizz{
+#quizz {
 	width: 60%;
 	margin: 80px auto;
 	padding: 20px;
+	text-align: center;
 }
 
-
-#quizz img{
+#quizz img {
 	width: 100%;
 	margin-bottom: 50px;
 }
@@ -15,21 +15,21 @@
 	margin-top: 0;
 }
 
-#quizz h3{
+#quizz h3 {
 	text-align: left;
 }
 
 /* Si User pas connecté */
-#quizz .btn{
+#quizz .btn {
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.3em;
-	margin: 30px;
+	margin: 0 auto 20px;
 	padding: 5px;
 	border-radius: 5px;
 }
 
-#quizz .button{
+#quizz .button {
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.3em;
@@ -39,132 +39,170 @@
 }
 
 /* Si User connecté */
-#quizz .startQuiz{
+#quizz .startQuiz {
 	font-size: 2em;
 	padding: 10px 20px;
 }
 
-#quizz .btn:hover,
-#quizz .button:hover{
-	color: #f40e0e;
-	text-decoration: none;
-}
-
-#quizz .answers,
-#quizz .responses{
-	margin: 50px 10px;
-	padding: 0;
-}
-
-#quizz .answers label{
-	font-size: 1.5em;
-}
-
-#quizz .responses .correct span {
-	color: #3c3dff;
-	font-size: 1.5em;
-}
-
-#quizz .responses .incorrect span {
-	color: #f40e0e;
-	font-size: 1.5em;
-}
-
-#quizz .quizScore span,
-#quizz .quizLevel span{
-	color: #f40e0e;
-}
-
-
-/* BASE QUIZ STYLES */
-/* These styles ensure that the necessary elements are hidden for toggling */
-/* DO NOT EDIT UNLESS YOU KNOW WHAT YOU ARE DOING!! */
-.startQuiz,
-.nextQuestion,
-.backToQuestion,
-.questions li.question,
-.questions li.question .responses,
-.questions li.question .responses .correct,
-.questions li.question .responses .incorrect,
-.quizResults {
-	display: none;
-}
-
-/* If response messages are disabled or only shown on quiz completion,
-   nextQuestion button IS checkAnswer button - so it must be displayed */
-.nextQuestion.checkAnswer {
-	display: block;
-}
-
-ol.questions,
-ul.answers,
-ul.responses,
-ol.questions li,
-ul.answers li,
-ul.responses li {
-	list-style-type: none;
-}
-
-ol.questions{
-	list-style-type: none;
-	margin: auto;
-	text-align: center;
-	padding: 0;
+#quizz .quiz_details {
 	margin-bottom: 30px;
 }
 
-
-/*!* QUIZ STYLES Style de base du Quizz *!*/
-/*!* Styles to prettify the quiz page *!*/
-
-/*clearfix */
-.quizArea, .quizResults {
-	zoom: 1;
-}
-.quizArea:before, .quizArea:after, .quizResults:before, .quizResults:after {
-	content: "\0020";
-	display: block;
-	height: 0;
-	visibility: hidden;
-	font-size: 0;
-}
-.quizArea:after, .quizResults:after {
-	clear: both;
+#quizz p {
+	color: #f40e0e;
+	font-size: 1.2em;
 }
 
-.questionCount {
-	font-size: 25px;
-	font-style: italic;
-	color: #f40e0e ;
-}
-.questionCount span {
-	font-weight: bold;
+#quizz .question_nb {
+	color: #f40e0e;
 }
 
-#quizz .quizResults h3 {
-	margin-bottom: 0;
+#quizz .answers {
+	padding: 0;
+	margin: 50px auto;
+}
+
+#quizz .answer {
+	list-style: none;
+	font-size: 1.5em;
+	margin: 0 auto;
+}
+
+#quizz .answer input {
+	margin-right: 10px;
+}
+
+#quizz .quiz_results {
+	margin: 0 auto 50px;
+}
+
+#quizz .quiz_results h3 {
+	margin: 10px auto;
 	text-align: center;
 }
-.quizResults h3 span {
-	font-weight: normal;
-	font-style: italic;
-}
-.quizResultsCopy {
-	margin-top: 20px;
+
+#quizz .quiz_results span {
+	color: #f40e0e;
 }
 
+/*#quizz .btn:hover,*/
+/*#quizz .button:hover{*/
+/*color: #f40e0e;*/
+/*text-decoration: none;*/
+/*}*/
+
+/*#quizz .answers,*/
+/*#quizz .responses{*/
+/*margin: 50px 10px;*/
+/*padding: 0;*/
+/*}*/
+
+/*#quizz .answers label{*/
+/*font-size: 1.5em;*/
+/*}*/
+
+/*#quizz .responses .correct span {*/
+/*color: #3c3dff;*/
+/*font-size: 1.5em;*/
+/*}*/
+
+/*#quizz .responses .incorrect span {*/
+/*color: #f40e0e;*/
+/*font-size: 1.5em;*/
+/*}*/
+
+/*#quizz .quizScore span,*/
+/*#quizz .quizLevel span{*/
+/*color: #f40e0e;*/
+/*}*/
+
+/*!* BASE QUIZ STYLES *!*/
+/*!* These styles ensure that the necessary elements are hidden for toggling *!*/
+/*!* DO NOT EDIT UNLESS YOU KNOW WHAT YOU ARE DOING!! *!*/
+/*.startQuiz,*/
+/*.nextQuestion,*/
+/*.backToQuestion,*/
+/*.questions li.question,*/
+/*.questions li.question .responses,*/
+/*.questions li.question .responses .correct,*/
+/*.questions li.question .responses .incorrect,*/
+/*.quizResults {*/
+/*display: none;*/
+/*}*/
+
+/*!* If response messages are disabled or only shown on quiz completion,*/
+/*nextQuestion button IS checkAnswer button - so it must be displayed *!*/
+/*.nextQuestion.checkAnswer {*/
+/*display: block;*/
+/*}*/
+
+/*ol.questions,*/
+/*ul.answers,*/
+/*ul.responses,*/
+/*ol.questions li,*/
+/*ul.answers li,*/
+/*ul.responses li {*/
+/*list-style-type: none;*/
+/*}*/
+
+/*ol.questions{*/
+/*list-style-type: none;*/
+/*margin: auto;*/
+/*text-align: center;*/
+/*padding: 0;*/
+/*margin-bottom: 30px;*/
+/*}*/
+
+/*!*!* QUIZ STYLES Style de base du Quizz *!*!*/
+/*!*!* Styles to prettify the quiz page *!*!*/
+
+/*!*clearfix *!*/
+/*.quizArea, .quizResults {*/
+/*zoom: 1;*/
+/*}*/
+/*.quizArea:before, .quizArea:after, .quizResults:before, .quizResults:after {*/
+/*content: "\0020";*/
+/*display: block;*/
+/*height: 0;*/
+/*visibility: hidden;*/
+/*font-size: 0;*/
+/*}*/
+/*.quizArea:after, .quizResults:after {*/
+/*clear: both;*/
+/*}*/
+
+/*.questionCount {*/
+/*font-size: 25px;*/
+/*font-style: italic;*/
+/*color: #f40e0e ;*/
+/*}*/
+/*.questionCount span {*/
+/*font-weight: bold;*/
+/*}*/
+
+/*#quizz .quizResults h3 {*/
+/*margin-bottom: 0;*/
+/*text-align: center;*/
+/*}*/
+/*.quizResults h3 span {*/
+/*font-weight: normal;*/
+/*font-style: italic;*/
+/*}*/
+/*.quizResultsCopy {*/
+/*margin-top: 20px;*/
+/*}*/
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
 
 /* Laptop 992px to 1200px */
-@media all and (max-width: 1200px){
+@media all and (max-width: 1200px) {
 
 }
 
 /* Tablette 768px to 992px */
 @media all and (max-width: 992px) {
 	
-	#quizz{
+	#quizz {
 		width: 70%;
 	}
 }
@@ -172,8 +210,8 @@ ol.questions{
 /* Smartphone lower than 768px */
 @media all and (max-width: 768px) {
 	
-	#quizz{
+	#quizz {
 		width: 100%;
 	}
-
+	
 }

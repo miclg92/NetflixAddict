@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Table;
 
 use Core\Table\Table;
@@ -7,19 +8,34 @@ class UserTable extends Table
 {
 	protected $table = "users";
 	
+	
+	/**
+	 * @param $email
+	 * Récupère les caractéristiques d'un user
+	 * @return mixed
+	 */
+	public function getUserDetails($user_id)
+	{
+		$result = $this->query('
+			SELECT *
+			FROM users
+			WHERE id = ?', [$user_id], true);
+		return $result;
+	}
+	
 	/**
 	 * @param $email
 	 * Récupère l'id d'un user avec l'email
 	 * @return mixed
 	 */
 	public function getUserId($email)
-		{
-			$result = $this->query('
+	{
+		$result = $this->query('
 			SELECT id
 			FROM users
 			WHERE email = ?', [$email], true);
-			return $result->id;
-		}
+		return $result->id;
+	}
 	
 	/**
 	 * @return mixed
@@ -58,7 +74,7 @@ class UserTable extends Table
 		$result = $this->query('
 			SELECT COUNT(*) AS nbUsermail
 			FROM users
-			WHERE email = ?', [$email],  true);
+			WHERE email = ?', [$email], true);
 		return $result->nbUsermail;
 	}
 	
@@ -72,7 +88,7 @@ class UserTable extends Table
 		$user = $this->query('
 			SELECT *
 			FROM users
-			WHERE id = ?',[$user_id] , true);
+			WHERE id = ?', [$user_id], true);
 		return $user;
 	}
 	
@@ -95,7 +111,8 @@ class UserTable extends Table
 	 * @return mixed
 	 * Récupère tous les emails des users enregistrés
 	 */
-	public function allUsersMails(){
+	public function allUsersMails()
+	{
 		$mails = $this->query('
 			SELECT email
 			FROM users
@@ -104,5 +121,4 @@ class UserTable extends Table
 	}
 	
 	
-
 }

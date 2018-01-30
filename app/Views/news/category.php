@@ -33,7 +33,7 @@
 							<h2><a href="<?= $new->url ?>"><?= $new->title; ?></a></h2>
 							<h4>Catégorie " <a><span><?= $new->category; ?></span></a> "</h4>
 							<span><em>Publié le <?= $new->publish_date_fr; ?></em></span>
-							<p><?= $new->content ?></p>
+							<p><?= $new->extrait ?></p>
 						</div>
 					</div>
 				<?php endforeach; ?>
