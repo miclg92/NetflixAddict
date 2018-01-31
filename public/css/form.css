@@ -118,7 +118,8 @@
 #forget_password label,
 #register label,
 #reset-passwd label,
-#edit_comment label {
+#edit_comment label,
+#contact label {
 	width: 100%;
 	background-color: #3a3a3a;
 	color: #FFF;

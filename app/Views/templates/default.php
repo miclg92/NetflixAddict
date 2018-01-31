@@ -154,8 +154,8 @@ if (isset($_COOKIE['remember'])) {
 								Mes séries</a></li>
 						<li><a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i>
 								Mon compte</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>
-								Contactez-nous</a></li>
+						<li><a href="index.php?p=users.contact"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+								Contact</a></li>
 						<?php
 					} elseif ($_SESSION['user']->flag == 2) {
 						?>
