@@ -23,27 +23,33 @@
 	</div>
 	
 	<h2>Top 5 des séries les plus suivies</h2>
-	<div id="showcase" class="col-xs-12 center-block">
-		<a href="<?= $mostFollowedSeries[0]->url ?>">
-			<img src="<?= $mostFollowedSeries[0]->image ?>"
-			     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block">
-		</a>
-		<a href="<?= $mostFollowedSeries[1]->url ?>">
-			<img src="<?= $mostFollowedSeries[1]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
-		</a>
-		<a href="<?= $mostFollowedSeries[2]->url ?>">
-			<img src="<?= $mostFollowedSeries[2]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
-		</a>
-		<a href="<?= $mostFollowedSeries[3]->url ?>">
-			<img src="<?= $mostFollowedSeries[3]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
-		</a>
-		<a href="<?= $mostFollowedSeries[4]->url ?>">
-			<img src="<?= $mostFollowedSeries[4]->image ?>" class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail">
-		</a>
-	</div>
-	<div class="nav">
-		<button class="left">←</button>
-		<button class="right">→</button>
+	<div id="slider" class="row row-centered">
+		<div id="showcase" class="col-xs-12 col-centered center-block">
+			<a href="<?= $mostFollowedSeries[0]->url ?>">
+				<img src="<?= $mostFollowedSeries[0]->image ?>"
+				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
+			</a>
+			<a href="<?= $mostFollowedSeries[1]->url ?>">
+				<img src="<?= $mostFollowedSeries[1]->image ?>"
+				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
+			</a>
+			<a href="<?= $mostFollowedSeries[2]->url ?>">
+				<img src="<?= $mostFollowedSeries[2]->image ?>"
+				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
+			</a>
+			<a href="<?= $mostFollowedSeries[3]->url ?>">
+				<img src="<?= $mostFollowedSeries[3]->image ?>"
+				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
+			</a>
+			<a href="<?= $mostFollowedSeries[4]->url ?>">
+				<img src="<?= $mostFollowedSeries[4]->image ?>"
+				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
+			</a>
+		</div>
+		<div class="nav col-xs-12 center-block col-centered">
+			<button class="left">←</button>
+			<button class="right">→</button>
+		</div>
 	</div>
 	
 	<hr id="ancre_tri">
