@@ -3,7 +3,7 @@
 <div id="bloc_content">
 	
 	<div class="row categories">
-		<h2 id="categories_title" class="col-xs-12">Toutes les actus reatives à Netflix</h2>
+		<h2 id="categories_title" class="col-xs-12">Toutes les actus relatives à Netflix</h2>
 		<div class="col-xs-12">
 			<ul class="col-xs-12">
 				<?php foreach ($categories as $category): ?>

@@ -70,11 +70,11 @@
 
 #list .each_news_details p {
 	margin-top: 20px;
-	/*padding: 20px;*/
 	text-align: justify;
 }
 
-#list .each_news_details .extrait_actu {
+#list .each_news_details .extrait_actu,
+#list .each_news_details p {
 	width: 70%;
 	margin: 20px auto;
 }
@@ -89,14 +89,23 @@
 }
 
 /* PAGE SHOW (Série demandée) */
+.news_content {
+	width: 80%;
+	margin: auto;
+}
+
 .news_content img {
-	margin-bottom: 50px;
+	/*margin-bottom: 50px;*/
 }
 
 .news_content p {
 	text-align: justify;
 	font-size: 1.5em;
 	margin-top: 50px;
+}
+
+.new_title {
+	color: #f40e0e;
 }
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */

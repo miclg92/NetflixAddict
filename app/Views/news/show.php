@@ -9,12 +9,12 @@
 	
 	<div class="row news_content">
 		<div class="col-xs-12">
-			<img class="thumbnail col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-6" src="<?= $new->image ?>"
+			<img class="thumbnail col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8" src="<?= $new->image ?>"
 			     alt="<?= $new->image_name ?>">
 		</div>
-		<h2 class="new_title"><?= $new->title; ?></h2>
-		<span class="col-xs-offset-1 col-xs-10"><em>Publiée le <?= $new->publish_date_fr; ?></em></span>
-		<p class="col-xs-offset-1 col-xs-10"><?= $new->content; ?></p>
+		<h2 class="new_title col-xs-12"><?= $new->title; ?></h2>
+		<span class="col-xs-12"><em>Publiée le <?= $new->publish_date_fr; ?></em></span>
+		<p class="col-xs-12"><?= $new->content; ?></p>
 	</div>
 	
 	<hr>
