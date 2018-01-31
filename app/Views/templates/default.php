@@ -55,6 +55,7 @@ if (isset($_COOKIE['remember'])) {
 	<link rel="stylesheet" type="text/css" href="css/test.css" media="screen"/>
 	<!-- Accès aux différentes polices Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
@@ -75,7 +76,7 @@ if (isset($_COOKIE['remember'])) {
 		<div class="row">
 			<div id="main_title" class="col-md-8 col-sm-12">
 				<a href="index.php">
-					<h1>NETFLIX ' ADDICT</h1>
+					<h1><span>N</span>ETFLIX <span>A</span>DDICT</h1>
 				</a>
 				<h2>Le site des inconditionnels de séries Netflix</h2>
 			</div>

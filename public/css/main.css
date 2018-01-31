@@ -35,17 +35,23 @@ hr {
 
 /* HEADER */
 #main_title {
-	font-family: 'Indie Flower', sans-serif;
 	text-align: left;
 	padding-bottom: 30px;
 }
 
 #main_title h1 {
+	font-family: 'Roboto Slab', serif;
 	width: 100%;
 	margin-top: 10px;
 	color: #f40e0e;
 	font-size: 5em;
 	font-weight: bold;
+}
+
+#main_title h1 span {
+	font-size: 1.4em;
+	color: #000000;
+	text-shadow: 1px 0 0 #FFF, 0 1px 0 #FFF, 0 -1px 0 #FFF, -1px 0 0 #FFF, 1px 1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, -1px -1px 0 #FFF;
 }
 
 #main_title a:hover {
@@ -54,6 +60,7 @@ hr {
 
 #main_title h2 {
 	font-style: italic;
+	font-family: 'Indie Flower', sans-serif;
 }
 
 #login_btns {

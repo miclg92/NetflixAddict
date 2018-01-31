@@ -143,8 +143,8 @@
 				<ol class="col-xs-12">
 					<li>- Netflix'Addict ne permet pas la diffusion de séries en streaming</li>
 					<li>- Il est interdit de diffuser des liens de partages illégaux</li>
-					<li>- Courtoisie et respect entre membres indispensables</li>
-					<li>- Eviter les SPOILERS... Pensez à ceux qui n'ont pas terminé la série</li>
+					<li>- Courtoisie et respect entre membres sont indispensables</li>
+					<li>- Eviter les SPOILERS... Pensez à ceux qui n'ont pas encore regardé la série</li>
 					<li>- Signalez les commentaires inappropriés à l'aide du bouton prévu à cet effet</li>
 				</ol>
 			</div>
