@@ -7,19 +7,33 @@ use Core\Table\Table;
 class SerieTable extends Table
 {
 	protected $table = 'series';
+
+//	/**
+//	 * @param $title
+//	 * @return mixed
+//	 * Vérifie si une série existe déjà dans la bdd lors de la mise à jour
+//	 */
+//	public function serieExists($title)
+//	{
+//		$result = $this->query('
+//			SELECT COUNT(*) AS nbTitles
+//			FROM series
+//			WHERE title = ?', [$title], true);
+//		return $result->nbTitles;
+//	}
 	
 	/**
 	 * @param $title
 	 * @return mixed
 	 * Vérifie si une série existe déjà dans la bdd lors de la mise à jour
 	 */
-	public function serieExists($title)
+	public function serieExists($beta_id)
 	{
 		$result = $this->query('
-			SELECT COUNT(*) AS nbTitles
+			SELECT COUNT(*) AS nbBetaId
 			FROM series
-			WHERE title = ?', [$title], true);
-		return $result->nbTitles;
+			WHERE id_beta = ?', [$beta_id], true);
+		return $result->nbBetaId;
 	}
 	
 	/**
@@ -108,10 +122,11 @@ class SerieTable extends Table
 	 */
 	public function serieId()
 	{
-		return $this->query("
-			SELECT id
+		$result = $this->query("
+			SELECT id_beta
 			FROM series
 		");
+		return $result;
 	}
 	
 	
@@ -128,6 +143,26 @@ class SerieTable extends Table
 			LEFT JOIN favorites ON series.id = favorites.serie_id
 			WHERE favorites.user_id = ?", [$user_id]);
 		return $result;
+	}
+	
+	/**
+	 * @param $id
+	 * @param $fields
+	 * Met à jour les données de la table séries
+	 * @return mixed
+	 */
+	public function updateSeries($betaid, $fields)
+	{
+		$sql_parts = [];
+		$attributes = [];
+		
+		foreach ($fields as $k => $v) {
+			$sql_parts[] = "$k = ?";
+			$attributes[] = $v;
+		}
+		$attributes[] = $betaid;
+		$sql_part = implode(', ', $sql_parts);
+		return $this->query("UPDATE {$this->table} SET $sql_part WHERE id_beta = ?", $attributes, true);
 	}
 	
 	
