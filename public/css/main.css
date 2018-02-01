@@ -396,6 +396,14 @@ footer {
 		border-top: 0.01em solid #FFF;
 	}
 	
+	#menu .dropdown-menu li {
+		border-top: none;
+	}
+	
+	#menu .divider {
+		color: #FFF;
+	}
+	
 	#menu li a {
 		color: #FFF;
 	}

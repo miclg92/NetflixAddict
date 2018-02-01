@@ -254,6 +254,11 @@ table #buttons-actions button {
 		font-size: 0.9em;
 	}
 	
+	#admin_news,
+	#admin_comments {
+		width: 100%;
+	}
+	
 	#admin_news table thead td {
 		font-size: 1em;
 	}
@@ -264,6 +269,14 @@ table #buttons-actions button {
 	
 	#admin_news .param {
 		display: none;
+	}
+	
+	#admin_comments .tohide {
+		display: none;
+	}
+	
+	#admin_comments caption {
+		font-size: 1.1em;
 	}
 	
 	.checkbox input[type=checkbox] {
