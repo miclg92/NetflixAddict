@@ -383,6 +383,27 @@ footer {
 /* Smartphone lower than 768px */
 @media all and (max-width: 768px) {
 	
+	.navbar .container-fluid {
+		background-color: #000000;
+	}
+	
+	#menu {
+		background-color: #3a3a3a;
+		width: 350px;
+	}
+	
+	#menu li {
+		border-top: 0.01em solid #FFF;
+	}
+	
+	#menu li a {
+		color: #FFF;
+	}
+	
+	#menu li a:hover {
+		color: #f40e0e;
+	}
+	
 	.navbar {
 		width: auto;
 		margin: auto;

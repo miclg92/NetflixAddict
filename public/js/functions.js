@@ -42,11 +42,11 @@ function carousel_init() {
 			case 39:
 				$('.nav > .right').click();
 		}
-	})
-	
-	$(window).resize(function () {
-		location.reload();
 	});
+	
+	// $(window).resize(function () {
+	// 	window.location.reload();
+	// });
 }
 
 //Progress bar (Mise à jour des séries)

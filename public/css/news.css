@@ -123,12 +123,38 @@
 /* Smartphone lower than 768px */
 @media all and (max-width: 768px) {
 	
+	.categories ul {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.categories ul li {
+		margin-bottom: 10px;
+	}
+	
+	.categories ul li a {
+		width: 200px;
+	}
+	
 	#list h2 {
 		font-size: 1.5em;
 	}
 	
+	.each_news {
+		width: 100%;
+	}
+	
+	.news_content {
+		width: 100%;
+	}
+	
 	.news_content p {
 		font-size: 1em;
+	}
+	
+	#list .each_news_details .extrait_actu,
+	#list .each_news_details p {
+		width: 100%;
 	}
 	
 }

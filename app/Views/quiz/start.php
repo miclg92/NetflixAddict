@@ -35,15 +35,15 @@
 				<h2 class="col-xs-12">Connais-tu vraiment l'univers Netflix ?</h2>
 				<h2 class="col-xs-12">Prêt à tenter ta chance ?</h2>
 				<hr>
-				<div class="register_btn col-xs-6">
+				<div class="register_btn col-xs-offset-3 col-xs-6 col-sm-6">
 					<a href="index.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus"
 					                                                               aria-hidden="true"></i>
-						Inscrivez-vous</a>
+						Inscription</a>
 				</div>
-				<div class="login_btn col-xs-6">
+				<div class="login_btn col-xs-offset-3 col-xs-6 col-sm-6">
 					<a href="index.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in"
 					                                                            aria-hidden="true"></i>
-						Connectez-vous</a>
+						Connexion</a>
 				</div>
 			</div>
 			<?php

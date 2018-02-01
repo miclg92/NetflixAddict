@@ -116,4 +116,17 @@
 		font-size: 2em;
 	}
 	
+	#personality #link_login_btns {
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+	}
+	
+	#personality .login_btn,
+	#personality .register_btn {
+		margin: auto;
+		padding: 0;
+		width: 160px;
+	}
+	
 }

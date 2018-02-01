@@ -18,51 +18,157 @@ class SeriesController extends AppController
 	
 	public function updateSeries()
 	{
+		$ok = false;
+		$x = 1;
 		$y = 100;
-		for ($x = 1; $x <= $y; $x++) {
-			$netflix_list = file_get_contents("https://api.betaseries.com/shows/list?key=c1085ededab1&v=3.0&start=$x&limit=$y&order=followers&fields=id,title,description,creation,seasons,episodes,followers,network,status,images");
-			$netflix_array = json_decode($netflix_list, true);
-			$netflix_series = $netflix_array['shows'];
-			foreach ($netflix_series as $serie) {
-				if (array_key_exists('network', $serie)) {
-					if ($serie['network'] === 'Netflix') {
-						$serie_exists = $this->Serie->serieExists($serie['id']);
-						if ($serie_exists == 0) {
-							$this->Serie->create([
-								'id_beta' => $serie['id'],
-								'network' => $serie['network'],
-								'title' => $serie['title'],
-								'description' => $serie['description'],
-								'year' => $serie['creation'],
-								'seasons' => $serie['seasons'],
-								'episodes' => $serie['episodes'],
-								'followers' => $serie['followers'],
-								'status' => $serie['status'],
-								'image' => $serie['images']['poster']
-							]);
-						} else {
-							$this->Serie->updateSeries($serie['id'], [
-								'id_beta' => $serie['id'],
-								'network' => $serie['network'],
-								'title' => $serie['title'],
-								'description' => $serie['description'],
-								'year' => $serie['creation'],
-								'seasons' => $serie['seasons'],
-								'episodes' => $serie['episodes'],
-								'followers' => $serie['followers'],
-								'status' => $serie['status'],
-								'image' => $serie['images']['poster']
-							]);
+		
+		while (!$ok) {
+			$result = file_get_contents("https://api.betaseries.com/shows/list?key=c1085ededab1&v=3.0&start=$x&limit=$y&order=followers&fields=id,title,description,creation,seasons,episodes,followers,network,status,images");
+			$json = json_decode($result, true);
+			$total_series = $json['shows'];
+			$total_series_nb = count($total_series);
+			
+			if ($total_series_nb) {
+				foreach ($total_series as $serie) {
+					if (array_key_exists('network', $serie)) {
+						if ($serie['network'] === 'Netflix') {
+							$serie_exists = $this->Serie->serieExists($serie['id']);
+							if ($serie_exists == 0) {
+								$this->Serie->create([
+									'id_beta' => $serie['id'],
+									'network' => $serie['network'],
+									'title' => $serie['title'],
+									'description' => $serie['description'],
+									'year' => $serie['creation'],
+									'seasons' => $serie['seasons'],
+									'episodes' => $serie['episodes'],
+									'followers' => $serie['followers'],
+									'status' => $serie['status'],
+									'image' => $serie['images']['poster']
+								]);
+							} else {
+								$this->Serie->updateSeries($serie['id'], [
+									'id_beta' => $serie['id'],
+									'network' => $serie['network'],
+									'title' => $serie['title'],
+									'description' => $serie['description'],
+									'year' => $serie['creation'],
+									'seasons' => $serie['seasons'],
+									'episodes' => $serie['episodes'],
+									'followers' => $serie['followers'],
+									'status' => $serie['status'],
+									'image' => $serie['images']['poster']
+								]);
+							}
 						}
 					}
 				}
+				$x = $x + 100;
+				$y = $y + 100;
+			} else {
+				$ok = true;
 			}
-			$x = $x + 100;
-			$y = $y + 100;
 		}
 		header('location: index.php?p=admin.series.index');
 		$_SESSION['flash']['success'] = "La liste des séries a bien été mise à jour.";
 	}
+
+//	public function updateSeries()
+//	{
+//
+//		$y = 100;
+//		for ($x = 1; $x <= $y; $x++) {
+//			$netflix_list = file_get_contents("https://api.betaseries.com/shows/list?key=c1085ededab1&v=3.0&start=$x&limit=$y&order=followers&fields=id,title,description,creation,seasons,episodes,followers,network,status,images");
+//			$netflix_array = json_decode($netflix_list, true);
+//			$netflix_series = $netflix_array['shows'];
+//			foreach ($netflix_series as $serie) {
+//				if (array_key_exists('network', $serie)) {
+//					if ($serie['network'] === 'Netflix') {
+//						$serie_exists = $this->Serie->serieExists($serie['id']);
+//						if ($serie_exists == 0) {
+//							$this->Serie->create([
+//								'id_beta' => $serie['id'],
+//								'network' => $serie['network'],
+//								'title' => $serie['title'],
+//								'description' => $serie['description'],
+//								'year' => $serie['creation'],
+//								'seasons' => $serie['seasons'],
+//								'episodes' => $serie['episodes'],
+//								'followers' => $serie['followers'],
+//								'status' => $serie['status'],
+//								'image' => $serie['images']['poster']
+//							]);
+//						} else {
+//							$this->Serie->updateSeries($serie['id'], [
+//								'id_beta' => $serie['id'],
+//								'network' => $serie['network'],
+//								'title' => $serie['title'],
+//								'description' => $serie['description'],
+//								'year' => $serie['creation'],
+//								'seasons' => $serie['seasons'],
+//								'episodes' => $serie['episodes'],
+//								'followers' => $serie['followers'],
+//								'status' => $serie['status'],
+//								'image' => $serie['images']['poster']
+//							]);
+//						}
+//					}
+//				}
+//			}
+//			$x = $x + 100;
+//			$y = $y + 100;
+//		}
+//		header('location: index.php?p=admin.series.index');
+//		$_SESSION['flash']['success'] = "La liste des séries a bien été mise à jour.";
+//	}
+
+//	public function updateSeries()
+//	{
+//		$y = 100;
+//		for ($x = 1; $x <= $y; $x++) {
+//			$netflix_list = file_get_contents("https://api.betaseries.com/shows/list?key=c1085ededab1&v=3.0&start=$x&limit=$y&order=followers&fields=id,title,description,creation,seasons,episodes,followers,network,status,images");
+//			$netflix_array = json_decode($netflix_list, true);
+//			$netflix_series = $netflix_array['shows'];
+//			foreach ($netflix_series as $serie) {
+//				if (array_key_exists('network', $serie)) {
+//					if ($serie['network'] === 'Netflix') {
+//						$serie_exists = $this->Serie->serieExists($serie['id']);
+//						if ($serie_exists == 0) {
+//							$this->Serie->create([
+//								'id_beta' => $serie['id'],
+//								'network' => $serie['network'],
+//								'title' => $serie['title'],
+//								'description' => $serie['description'],
+//								'year' => $serie['creation'],
+//								'seasons' => $serie['seasons'],
+//								'episodes' => $serie['episodes'],
+//								'followers' => $serie['followers'],
+//								'status' => $serie['status'],
+//								'image' => $serie['images']['poster']
+//							]);
+//						} else {
+//							$this->Serie->updateSeries($serie['id'], [
+//								'id_beta' => $serie['id'],
+//								'network' => $serie['network'],
+//								'title' => $serie['title'],
+//								'description' => $serie['description'],
+//								'year' => $serie['creation'],
+//								'seasons' => $serie['seasons'],
+//								'episodes' => $serie['episodes'],
+//								'followers' => $serie['followers'],
+//								'status' => $serie['status'],
+//								'image' => $serie['images']['poster']
+//							]);
+//						}
+//					}
+//				}
+//			}
+//			$x = $x + 100;
+//			$y = $y + 100;
+//		}
+//		header('location: index.php?p=admin.series.index');
+//		$_SESSION['flash']['success'] = "La liste des séries a bien été mise à jour.";
+//	}
 
 //	public function updateSeries()
 //	{
@@ -75,7 +181,7 @@ class SeriesController extends AppController
 //		$x = 1;
 //		$y = 100;
 ////		while($x <= $total_series_nb){
-//		while ($x <= 200) {
+//		while ($x <= $total_series_nb) {
 //			$netflix_list = file_get_contents("https://api.betaseries.com/shows/list?key=c1085ededab1&v=3.0&start=$x&limit=$y&order=followers&fields=id,title,description,creation,seasons,episodes,followers,network,status,images");
 //			$netflix_array = json_decode($netflix_list, true);
 //			$netflix_series = $netflix_array['shows'];
@@ -120,6 +226,6 @@ class SeriesController extends AppController
 //		header('location: index.php?p=admin.series.index');
 //		$_SESSION['flash']['success'] = "La liste des séries a bien été mise à jour.";
 //	}
-
+	
 	
 }

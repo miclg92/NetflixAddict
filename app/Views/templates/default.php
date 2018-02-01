@@ -86,7 +86,7 @@ if (isset($_COOKIE['remember'])) {
 					?>
 					<div id="bloc_user_infos">
 						<div class="user_infos">
-							<h4>Bonjour <span><a
+							<h4>Bonjour<span><a
 											href="index.php?p=users.account"> <?= $_SESSION['user']->username; ?></a></span>
 							</h4>
 							<?php

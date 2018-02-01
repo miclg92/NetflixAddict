@@ -37,6 +37,10 @@
 	border-radius: 5px;
 }
 
+#quizz .btn:hover {
+	color: #f40e0e;
+}
+
 /* Si User connecté */
 #quizz .startQuiz {
 	font-size: 2em;
@@ -116,6 +120,19 @@
 	
 	#quizz {
 		width: 100%;
+	}
+	
+	#quizz #link_login_btns {
+		display: flex;
+		flex-direction: column;
+		margin: auto;
+	}
+	
+	#quizz .login_btn,
+	#quizz .register_btn {
+		margin: auto;
+		padding: 0;
+		width: 160px;
 	}
 	
 }
