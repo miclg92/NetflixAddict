@@ -119,7 +119,12 @@
 #register label,
 #reset-passwd label,
 #edit_comment label,
-#contact label {
+#contact label,
+#edit_quiz_answer label,
+#edit_quiz_question label,
+#edit_test_question label,
+#edit_test_answer label,
+#edit_test_identity label {
 	width: 100%;
 	background-color: #3a3a3a;
 	color: #FFF;
@@ -161,7 +166,13 @@ form #ask-passwd {
 }
 
 #admin_news table thead td,
-#admin_comments table thead td {
+#admin_comments table thead td,
+#admin_categories table thead td,
+#quiz_questions table thead td,
+#quiz_answers table thead td,
+#test_questions table thead td,
+#test_answers table thead td,
+#test_identities table thead td {
 	color: #FF0000;
 	font-weight: bold;
 	font-size: 1.2em;
@@ -188,6 +199,12 @@ table #buttons-actions a {
 
 table #buttons-actions button {
 	background-color: #FF0000;
+}
+
+#quiz_index form,
+#test_index form {
+	margin: 0 auto;
+	text-align: center;
 }
 
 /* Mise à jour des séries */

@@ -177,6 +177,14 @@ if (isset($_COOKIE['remember'])) {
 								                                                  aria-hidden="true"></i> Gestion des
 										Commentaires</a></li>
 								<li role="separator" class="divider"></li>
+								<li><a href="index.php?p=admin.quiz.index"><i class="fa fa-trophy"
+								                                              aria-hidden="true"></i> Gestion du
+										Quiz</a>
+								</li>
+								<li><a href="index.php?p=admin.test.index"><i class="fa fa-question-circle"
+								                                              aria-hidden="true"></i> Gestion
+										du Test</a></li>
+								<li role="separator" class="divider"></li>
 								<li><a href="index.php?p=admin.series.index"><i class="fa fa-spinner"
 								                                                aria-hidden="true"></i>
 										Mise à jour des Séries</a></li>
