@@ -229,6 +229,8 @@ if (isset($_COOKIE['remember'])) {
 <script src="js/jquery.reflection.js"></script>
 <!-- TINY MCE -->
 <script src="js/tinymce/tinymce.min.js"></script>
+<!-- Image Lazy Load -->
+<script src="js/imglazyload.js"></script>
 <!-- Divers js -->
 <script src="js/functions.js"></script>
 <script src="js/pagination.js"></script>
@@ -249,6 +251,7 @@ if (isset($_COOKIE['remember'])) {
 		
 		carousel_init();
 		progress_bar_init();
+		$('img').imgLazyLoad();
 		
 	});
 </script>

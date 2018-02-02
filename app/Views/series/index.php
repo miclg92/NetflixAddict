@@ -64,23 +64,23 @@
 		<!--		</div>-->
 		<div id="showcase" class="col-xs-12 col-centered center-block">
 			<a href="<?= $mostFollowedSeries[0]->url ?>">
-				<img src="<?= $mostFollowedSeries[0]->image ?>"
+				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[0]->image ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 			<a href="<?= $mostFollowedSeries[1]->url ?>">
-				<img src="<?= $mostFollowedSeries[1]->image ?>"
+				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[1]->image ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 			<a href="<?= $mostFollowedSeries[2]->url ?>">
-				<img src="<?= $mostFollowedSeries[2]->image ?>"
+				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[2]->image ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 			<a href="<?= $mostFollowedSeries[3]->url ?>">
-				<img src="<?= $mostFollowedSeries[3]->image ?>"
+				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[3]->image ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 			<a href="<?= $mostFollowedSeries[4]->url ?>">
-				<img src="<?= $mostFollowedSeries[4]->image ?>"
+				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[4]->image ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 		</div>
@@ -136,11 +136,14 @@
 			</ul>
 		</div>
 	</form>
+	
+	<img src="img/blank.gif">
+	
 	<div id="bloc_series_list">
 		<div id="list" class="row">
 			<?php foreach ($series as $serie): ?>
 				<a href="<?= $serie->url ?>">
-					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="
+					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="img/loading.svg" data-src="
 			<?= $serie->image ?>">
 				</a>
 			<?php endforeach; ?>
