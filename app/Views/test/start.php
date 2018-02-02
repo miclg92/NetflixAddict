@@ -36,15 +36,13 @@
 				<h2 class="col-xs-12">Quel personnage de "Stranger Things" es-tu ?</h2>
 				<h2 class="col-xs-12">Lucas, Onze, Mike, will ou Dustin ?</h2>
 				<hr>
-				<div class="register_btn col-xs-offset-3 col-xs-6 col-sm-6">
-					<a href="index.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus"
-					                                                               aria-hidden="true"></i>
-						Inscription</a>
-				</div>
-				<div class="login_btn col-xs-offset-3 col-xs-6 col-sm-6">
-					<a href="index.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in"
-					                                                            aria-hidden="true"></i>
-						Connexion</a>
+				<div class="text-center">
+					<a href="index.php?p=users.register" type="button" id="login_form_btn" class="btn"
+					   aria-hidden="true"><i
+								class="fa fa-user-plus" aria-hidden="true"></i> Inscription</a>
+					<a href="index.php?p=users.login" type="button" id="login_form_btn" class="btn"
+					   aria-hidden="true"><i
+								class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
 				</div>
 			</div>
 			<?php

@@ -155,7 +155,6 @@ if (isset($_SESSION['auth'])) {
 				<?php
 			}
 			?>
-			
 			<form method="post" class="form row">
 				<div class="text-center col-xs-12">
 					<a class="btn" id="delete_account_btn" href="?p=users.askPasswdBeforeDelete"><i
