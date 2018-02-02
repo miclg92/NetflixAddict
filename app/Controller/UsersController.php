@@ -61,7 +61,7 @@ class UsersController extends AppController
 				mail(
 					$_POST['email'],
 					'Confirmation de votre compte',
-					"Bonjour. \n\nAfin de valider votre compte, merci de cliquer sur ce lien :\n\nhttp://www.localhost:8888/index.php?p=users.confirm.php?&id=$user_id&token=$token\n\nA bientôt.\n\nAdministrateur",
+					"Bonjour. \n\nAfin de valider votre compte, merci de cliquer sur ce lien :\n\nhttps://www.legoarant.com/projet5/public/index.php?p=users.confirm.php?&id=$user_id&token=$token\n\nA bientôt.\n\nAdministrateur",
 					'From: "Netflix Addict"<miclg92@gmail.com>' . "\r\n" .
 					'Reply-To: miclg92@gmail.com' . "\r\n"
 				);
@@ -293,7 +293,7 @@ class UsersController extends AppController
 				mail(
 					$_POST['email'],
 					'Réinitialisation de votre compte',
-					"Bonjour. \n\nAfin de réinitialiser votre mot de passe, merci de cliquer sur ce lien :\n\nhttp://www.localhost:8888/index.php?p=users.reset.php?&id=$user_id&token=$reset_token\n\nA bientôt.\n\nAdministrateur",
+					"Bonjour. \n\nAfin de réinitialiser votre mot de passe, merci de cliquer sur ce lien :\n\nhttps://www.legoarant.com/projet5/public/index.php?p=users.reset.php?&id=$user_id&token=$reset_token\n\nA bientôt.\n\nAdministrateur",
 					'From: "Netflix Addict"<miclg92@gmail.com>' . "\r\n" .
 					'Reply-To: miclg92@gmail.com' . "\r\n"
 				);
