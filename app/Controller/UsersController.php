@@ -409,6 +409,10 @@ class UsersController extends AppController
 				$errors['message'] = "Veuillez indiquer votre message.";
 			}
 			
+			if (empty($_POST['g-recaptcha-response'])) {
+				$errors['recaptcha'] = 'Veuillez cocher la case "Je ne suis pas un robot".';
+			}
+			
 			if (empty($errors)) {
 				// Envoi d'un email à l'administrateur
 				$receiver = 'miclg92@gmail.com';

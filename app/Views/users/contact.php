@@ -20,6 +20,8 @@
 			<?= $form->input('sujet', 'Sujet'); ?>
 			<?= $form->input('message', 'Message', ['type' => 'textarea']); ?>
 			<hr>
+			<div align="center" class="g-recaptcha" data-sitekey="6Lce-kMUAAAAAJVp5ZiEXgTcChhDrPsu0_W4dUhm"></div>
+			<hr>
 			<div class="text-center">
 				<button id="register_form_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa
 					fa-envelope-o" aria-hidden="true"></i> Envoyer
