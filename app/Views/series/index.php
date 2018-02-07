@@ -1,6 +1,16 @@
 <!-- Contenu de la page d'accueil -->
 
 <div id="bloc_content">
+	<div id="visits_members" class="row">
+		<div id="visits">
+			<h3>Visiteurs</h3>
+			<p><?= $visits ?></p>
+		</div>
+		<div id="members">
+			<h3>Membres</h3>
+			<p><?= $members ?></p>
+		</div>
+	</div>
 	
 	<div id="flash_news" class="row">
 		<h2 class="col-xs-12">Flash actu</h2>
@@ -136,9 +146,6 @@
 			</ul>
 		</div>
 	</form>
-	
-	<img src="img/blank.gif">
-	
 	<div id="bloc_series_list">
 		<div id="list" class="row">
 			<?php foreach ($series as $serie): ?>

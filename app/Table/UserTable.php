@@ -122,4 +122,14 @@ class UserTable extends Table
 	}
 	
 	
+	public function count_users()
+	{
+		$result = $this->query('
+			SELECT COUNT(id) AS nbUsers
+			FROM users
+			');
+		return $result;
+	}
+	
+	
 }

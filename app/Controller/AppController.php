@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use Core\Controller\Controller;
@@ -21,4 +22,5 @@ class AppController extends Controller
 	{
 		$this->$model_name = App::getTable($model_name);
 	}
+	
 }

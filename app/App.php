@@ -1,4 +1,5 @@
 <?php
+
 use Core\Config;
 use Core\Database\MysqlDatabase;
 
@@ -7,7 +8,7 @@ use Core\Database\MysqlDatabase;
  */
 class App
 {
-	public $title = 'Netflix Addict';
+	public $title = 'Netflix Addict - Le site des inconditionnels de Netflix.';
 	private static $db_instance;
 	private static $_instance;
 	
@@ -17,8 +18,7 @@ class App
 	 */
 	public static function getInstance()
 	{
-		if(is_null(self::$_instance))
-		{
+		if (is_null(self::$_instance)) {
 			self::$_instance = new App();
 		}
 		return self::$_instance;
@@ -55,8 +55,7 @@ class App
 	{
 		// SINGLETON
 		$config = Config::getInstance(ROOT . '/config/config.php');
-		if(is_null(self::$db_instance))
-		{
+		if (is_null(self::$db_instance)) {
 			self::$db_instance = new MysqlDatabase($config->get('db_name'), $config->get('db_user'), $config->get('db_pass'), $config->get('db_host'));
 		}
 		return self::$db_instance;

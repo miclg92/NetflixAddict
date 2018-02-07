@@ -103,8 +103,26 @@ hr {
 	margin-bottom: 50px;
 }
 
+.navbar .container-fluid {
+	padding: 0;
+}
+
 #menu {
 	font-size: 1.4em;
+}
+
+#menu a {
+	color: #8a8a8a;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#menu a:hover {
+	color: #3a3a3a;
+}
+
+#menu .active {
+	background-color: #FFF;
 }
 
 #searchbar .btn {
@@ -121,6 +139,33 @@ hr {
 	margin-top: 80px;
 	margin-bottom: 20px;
 	text-align: center;
+}
+
+/* Compteur de visites */
+#visits_members {
+	display: flex;
+	flex-direction: row;
+}
+
+#visits,
+#members {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#visits span,
+#members span {
+	border: 5px solid #FFF;
+	padding: 0 10px;
+	font-size: 1.1em;
+}
+
+#visits {
+	margin-right: 20px;
+}
+
+#members {
+	margin-left: 20px;
 }
 
 /* FLASH ACTU */
@@ -389,7 +434,7 @@ footer {
 	
 	#menu {
 		background-color: #3a3a3a;
-		width: 350px;
+		width: 250px;
 	}
 	
 	#menu li {
@@ -414,7 +459,7 @@ footer {
 	
 	.navbar {
 		width: auto;
-		margin: auto;
+		margin: 20px auto 0;
 	}
 	
 	.container-fluid {

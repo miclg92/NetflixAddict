@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Core\Controller\Controller;
 use Core\HTML\BootstrapForm;
+use Core\Functions\Visits;
 
 class SeriesController extends AppController
 {
@@ -15,6 +16,7 @@ class SeriesController extends AppController
 		$this->loadModel('Favorite');
 		$this->loadModel('New');
 		$this->loadModel('Note');
+		$this->loadModel('User');
 	}
 	
 	/* Affiche toutes les séries */
@@ -37,7 +39,19 @@ class SeriesController extends AppController
 		} else {
 			$series = $this->Serie->allByPopularity();
 		}
-		$this->render('series.index', compact('lastNews', 'mostFollowedSeries', 'series'));
+		
+		$members_result = $this->User->count_users();
+		$members = $members_result[0]->nbUsers;
+		if ($members < 100) {
+			$members = "<span>0</span>" . "<span>0</span>" . "<span>0</span>" . "<span>$members</span>";
+		} elseif ($members >= 100 && $members < 1000) {
+			return "<span>0</span>" . "<span>0</span>" . "<span>$members</span>";
+		} elseif ($members >= 1000) {
+			return "<span>0</span>" . "<span>$members</span>";
+		}
+		
+		$visits = Visits::visits_count();
+		$this->render('series.index', compact('lastNews', 'mostFollowedSeries', 'series', 'visits', 'members'));
 	}
 	
 	/* Affiche la série demandée */

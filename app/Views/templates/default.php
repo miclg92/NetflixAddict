@@ -30,7 +30,9 @@ if (isset($_COOKIE['remember'])) {
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<meta name="description" content=""/>
+	<meta name="description"
+	      content="Fan de l'univers Netflix ? Vous êtes au bon endroit... Séries, actus, quiz, test de personnalité... Tout y est ! Rejoignez-nous dès maintenant en créant un compte.">
+	<meta name="author" content="Mickaël LE GOARANT">
 	
 	<!-- Accès CDN jQuery -->
 	<script src="https://code.jquery.com/jquery-1.12.3.js"
@@ -136,29 +138,37 @@ if (isset($_COOKIE['remember'])) {
 		</div>
 	</header>
 	
-	<nav class="navbar navbar-inverse navbar-static-top">
+	<nav class="navbar navbar-inverse .navbar-static-top">
 		<div class="container-fluid">
-			<ul id="menu" class="nav navbar-nav">
-				<li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a></li>
-				<li><a href="index.php?p=news.index"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+			<ul id="menu" class="nav nav-justified nav-pills ">
+				<li class=" accueil
+			"><a href="index.php" class="accueil_a"><i class="fa fa-home"
+				                                       aria-hidden="true"></i>Accueil</a>
+				</li>
+				<li class="nav_li"><a href="index.php?p=news.index" class="nav_link"><i class="fa fa-newspaper-o"
+				                                                                        aria-hidden="true"></i>
 						Actus</a></li>
-				<li><a href="index.php?p=quiz.start"><i class="fa fa-trophy" aria-hidden="true"></i>
+				<li class="nav_li"><a href="index.php?p=quiz.start" class="nav_link"><i class="fa fa-trophy"
+				                                                                        aria-hidden="true"></i>
 						Quiz</a></li>
-				<li><a href="index.php?p=test.start"><i class="fa fa-question-circle" aria-hidden="true"></i>
+				<li class="nav_li"><a href="index.php?p=test.start" class="nav_link"><i class="fa fa-question-circle"
+				                                                                        aria-hidden="true"></i>
 						Qui es tu ?</a></li>
 				<?php
 				if (isset($_SESSION['auth'])) {
 					if ($_SESSION['user']->flag == 1) {
 						?>
-						<li><a href="index.php?p=series.favorites"><i class="fa fa-film" aria-hidden="true"></i>
+						<li class="nav_li"><a href="index.php?p=series.favorites" class="nav_link"><i class="fa fa-film"
+						                                                                              aria-hidden="true"></i>
 								Mes séries</a></li>
-						<li><a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i>
+						<li class="nav_li"><a href="index.php?p=users.account" class="nav_link"><i class="fa fa-user"
+						                                                                           aria-hidden="true"></i>
 								Mon compte</a></li>
 						<?php
 					} elseif ($_SESSION['user']->flag == 2) {
 						?>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+						<li class="dropdown nav_li">
+							<a href="#" class="dropdown-toggle nav_link" data-toggle="dropdown" role="button"
 							   aria-haspopup="true" aria-expanded="false"><i class="fa fa-key" aria-hidden="true"></i>
 								Administration du site <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -192,7 +202,8 @@ if (isset($_COOKIE['remember'])) {
 					}
 				}
 				?>
-				<li><a href="index.php?p=users.contact"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+				<li class="nav_li"><a href="index.php?p=users.contact" class="nav_link"><i class="fa fa-envelope-o"
+				                                                                           aria-hidden="true"></i>
 						Contact</a></li>
 			</ul>
 		</div>
@@ -248,10 +259,11 @@ if (isset($_COOKIE['remember'])) {
 				'save table contextmenu directionality emoticons template paste textcolor'
 			]
 		});
-		
+//		setActive();
 		carousel_init();
 		progress_bar_init();
 		$('img').imgLazyLoad();
+		
 		
 	});
 </script>
