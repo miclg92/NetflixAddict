@@ -8,7 +8,8 @@
 			?>
 			<?php foreach ($testQuestions as $testQuestion): ?>
 				<h2 class="question_nb">Question <?= $testQuestion->question_number; ?>/<?= $nb; ?></h2>
-				<img class="question_img img-responsive center-block" src="<?= $testQuestion->picture; ?>">
+				<img class="question_img img-responsive center-block" src="<?= $testQuestion->picture; ?>"
+				     alt="<?= $testQuestion->picture; ?>">
 				<h2><?= $testQuestion->question; ?></h2>
 				<form method="post" action="#ancre_img">
 					<ul class="answers">

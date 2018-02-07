@@ -11,7 +11,8 @@
 				<div class="quiz_results">
 					<h3>Tu es...... <span><?= $personality_name; ?></span></h3>
 					<p><?= $personality_desc; ?></p>
-					<img class="img-responsive center-block" src="<?= $personality_img; ?>">
+					<img class="img-responsive center-block" src="<?= $personality_img; ?>"
+					     alt="<?= $personality_img; ?>">
 				</div>
 				<?php
 			} else {

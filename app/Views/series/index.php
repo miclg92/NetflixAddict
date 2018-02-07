@@ -37,22 +37,27 @@
 		<div id="showcase" class="col-xs-12 col-centered center-block">
 			<a href="<?= $mostFollowedSeries[0]->url ?>">
 				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[0]->image ?>"
+				     alt="<?= $mostFollowedSeries[0]->title ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 			<a href="<?= $mostFollowedSeries[1]->url ?>">
 				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[1]->image ?>"
+				     alt="<?= $mostFollowedSeries[1]->title ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 			<a href="<?= $mostFollowedSeries[2]->url ?>">
 				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[2]->image ?>"
+				     alt="<?= $mostFollowedSeries[2]->title ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 			<a href="<?= $mostFollowedSeries[3]->url ?>">
 				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[3]->image ?>"
+				     alt="<?= $mostFollowedSeries[3]->title ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 			<a href="<?= $mostFollowedSeries[4]->url ?>">
 				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[4]->image ?>"
+				     alt="<?= $mostFollowedSeries[4]->title ?>"
 				     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">
 			</a>
 		</div>
@@ -163,7 +168,7 @@
 			<?php foreach ($series as $serie): ?>
 				<a href="<?= $serie->url ?>">
 					<img class="col-md-3 col-sm-4 col-xs-6 thumbnail" src="img/loading.svg" data-src="
-			<?= $serie->image ?>">
+			<?= $serie->image ?>" alt="<?= $serie->title ?>">
 				</a>
 			<?php endforeach; ?>
 		</div>

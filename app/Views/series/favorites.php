@@ -10,7 +10,7 @@ if (isset($_SESSION['auth'])) {
 				<div id="mySerie" class="col-xs-12">
 					<a href="<?= $serie->url ?>">
 						<img class="col-xs-5 col-sm-3 col-md-2 thumbnail"
-						     src="<?= $serie->image ?>">
+						     src="<?= $serie->image ?>" alt="<?= $serie->title ?>">
 					</a>
 					<div id="mySerieDetails" class="col-xs-7 col-sm-9 col-md-10">
 						<h3 class="col-xs-12"><?= $serie->title ?></h3>

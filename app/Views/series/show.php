@@ -45,7 +45,7 @@
 	
 	<div id="serie" class="row">
 		<div id="serie_image" class="col-md-5 col-xs-12">
-			<img class="col-md-12 col-sm-8 col-xs-12 thumbnail" src="<?= $serie->image ?>">
+			<img class="col-md-12 col-sm-8 col-xs-12 thumbnail" src="<?= $serie->image ?>" alt="<?= $serie->title ?>">
 		</div>
 		
 		<div id="serie_details" class="col-md-7 col-xs-12">
