@@ -239,6 +239,11 @@ hr {
 	border-radius: 5px;
 }
 
+/* CAROUSEL BOOTSTRAP OPTIONNEL */
+.carousel-inner .item img {
+	float: none;
+}
+
 /* DIAPOSITIVES */
 #bloc_series_list #list {
 	margin: auto;

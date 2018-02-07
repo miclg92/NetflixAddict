@@ -34,44 +34,6 @@
 	
 	<h2>Top 5 des séries les plus suivies</h2>
 	<div id="slider" class="row row-centered">
-		<!--		<div id="showcase" class="col-xs-12 col-centered center-block">-->
-		<!--			<ul class="carousel">-->
-		<!--				<li class="item transition active">-->
-		<!--					<a href="--><? //= $mostFollowedSeries[0]->url ?><!--">-->
-		<!--						<img src="--><? //= $mostFollowedSeries[0]->image ?><!--"-->
-		<!--						     class="thumbnail center-block col-centered">-->
-		<!--					</a>-->
-		<!--				</li>-->
-		<!--				<li class="item transition">-->
-		<!--					<a href="--><? //= $mostFollowedSeries[1]->url ?><!--">-->
-		<!--						<img src="--><? //= $mostFollowedSeries[1]->image ?><!--"-->
-		<!--						     class="thumbnail center-block col-centered">-->
-		<!--					</a>-->
-		<!--				</li>-->
-		<!--				<li class="item transition">-->
-		<!--					<a href="--><? //= $mostFollowedSeries[2]->url ?><!--">-->
-		<!--						<img src="--><? //= $mostFollowedSeries[2]->image ?><!--"-->
-		<!--						     class="thumbnail center-block col-centered">-->
-		<!--					</a>-->
-		<!--				</li>-->
-		<!--				<li class="item transition">-->
-		<!--					<a href="--><? //= $mostFollowedSeries[3]->url ?><!--">-->
-		<!--						<img src="--><? //= $mostFollowedSeries[3]->image ?><!--"-->
-		<!--						     class="thumbnail center-block col-centered">-->
-		<!--					</a>-->
-		<!--				</li>-->
-		<!--				<li class="item transition">-->
-		<!--					<a href="--><? //= $mostFollowedSeries[4]->url ?><!--">-->
-		<!--						<img src="--><? //= $mostFollowedSeries[4]->image ?><!--"-->
-		<!--						     class="thumbnail center-block col-centered">-->
-		<!--					</a>-->
-		<!--				</li>-->
-		<!--			</ul>-->
-		<!--		</div>-->
-		<!--		<div class="controls nav col-xs-12 center-block col-centered">-->
-		<!--			<a href="#" class="previous">←</a>-->
-		<!--			<a href="#" class="next">→</a>-->
-		<!--		</div>-->
 		<div id="showcase" class="col-xs-12 col-centered center-block">
 			<a href="<?= $mostFollowedSeries[0]->url ?>">
 				<img src="img/loading.svg" data-src="<?= $mostFollowedSeries[0]->image ?>"
@@ -99,6 +61,56 @@
 			<button class="right">→</button>
 		</div>
 	</div>
+	
+	<!--		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">-->
+	<!--			<ol class="carousel-indicators">-->
+	<!--				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
+	<!--				<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
+	<!--				<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+	<!--				<li data-target="#carousel-example-generic" data-slide-to="3"></li>-->
+	<!--				<li data-target="#carousel-example-generic" data-slide-to="4"></li>-->
+	<!--			</ol>-->
+	<!--			-->
+	<!--			<div class="carousel-inner" role="listbox">-->
+	<!--				<div class="item active">-->
+	<!--					<a href="--><? //= $mostFollowedSeries[0]->url ?><!--">-->
+	<!--						<img src="--><? //= $mostFollowedSeries[0]->image ?><!--"-->
+	<!--						     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">-->
+	<!--					</a>-->
+	<!--				</div>-->
+	<!--				<div class="item">-->
+	<!--					<a href="--><? //= $mostFollowedSeries[1]->url ?><!--">-->
+	<!--						<img src="--><? //= $mostFollowedSeries[1]->image ?><!--"-->
+	<!--						     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">-->
+	<!--					</a>-->
+	<!--				</div>-->
+	<!--				<div class="item">-->
+	<!--					<a href="--><? //= $mostFollowedSeries[2]->url ?><!--">-->
+	<!--						<img src="--><? //= $mostFollowedSeries[2]->image ?><!--"-->
+	<!--						     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">-->
+	<!--					</a>-->
+	<!--				</div>-->
+	<!--				<div class="item">-->
+	<!--					<a href="--><? //= $mostFollowedSeries[3]->url ?><!--">-->
+	<!--						<img src="--><? //= $mostFollowedSeries[3]->image ?><!--"-->
+	<!--						     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">-->
+	<!--					</a>-->
+	<!--				</div>-->
+	<!--				<div class="item">-->
+	<!--					<a href="--><? //= $mostFollowedSeries[4]->url ?><!--">-->
+	<!--						<img src="--><? //= $mostFollowedSeries[4]->image ?><!--"-->
+	<!--						     class="cloud9-item col-md-3 col-sm-4 col-xs-5 thumbnail center-block col-centered">-->
+	<!--					</a>-->
+	<!--				</div>-->
+	<!--			</div>-->
+	<!--			-->
+	<!--			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
+	<!--				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+	<!--			</a>-->
+	<!--			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
+	<!--				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+	<!--			</a>-->
+	<!--		</div>-->
 	
 	<hr id="ancre_tri">
 	
