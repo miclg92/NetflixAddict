@@ -229,7 +229,7 @@ if (isset($_COOKIE['remember'])) {
 	<footer>
 		<div class="row">
 			<p class="col-lg-12"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2018</p>
-			<p class="col-lg-12">Données recueillies auprès de <a href="https://www.betaseries.com/api/">Betaseries</a>
+			<p class="col-lg-12">Données "Séries" recueillies auprès de <a href="https://www.betaseries.com/api/">Betaseries</a>
 				(API).</p>
 			<p class="col-lg-12">Les Séries et films présentés sont la propriété de <a
 						href="https://www.netflix.com/fr/">Netflix</a>.</p>

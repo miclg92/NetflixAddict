@@ -39,7 +39,8 @@
 .form #edit_categories_btn,
 .form #add_categories_btn,
 .form #edit_comment_btn,
-#personality .btn {
+#personality .btn,
+#return_news_btn .btn {
 	background-image: none;
 	text-shadow: none;
 	background-color: #3a3a3a;
@@ -61,7 +62,8 @@
 .form #edit_categories_btn:hover,
 .form #add_categories_btn:hover,
 .form #edit_comment_btn:hover,
-#personality .btn:hover {
+#personality .btn:hover,
+#return_news_btn .btn:hover {
 	color: #f40e0e;
 }
 

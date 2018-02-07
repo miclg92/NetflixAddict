@@ -34,6 +34,26 @@
 		</div>
 		<div id="pagination"></div>
 	</div>
+	
+	<div id="return_news_btn" class="col-xs-12">
+		<div class="register_btn col-xs-6">
+			<a href="index.php" class="btn"><i class="fa fa-home"
+			                                   aria-hidden="true"></i>
+				Accueil</a>
+		</div>
+		<div class="login_btn col-xs-6">
+			<a href="index.php?p=news.index" class="btn not_logged"><i class="fa fa-reply"
+			                                                           aria-hidden="true"></i>
+				Haut de page</a>
+		</div>
+	</div>
+	
+	<!--	<div class="return_news_btn col-xs-12 col-sm-6">-->
+	<!--		<a type="button" class="news_btn" href="index.php"><i class="fa fa-home" aria-hidden="true"></i>-->
+	<!--			Accueil</a>-->
+	<!--		<a type="button" class="news_btn" href="index.php?p=news.index"><i class="fa fa-reply" aria-hidden="true"></i>-->
+	<!--			Haut de page</a>-->
+	<!--	</div>-->
 
 </div>
 
