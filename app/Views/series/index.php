@@ -1,19 +1,8 @@
 <!-- Contenu de la page d'accueil -->
 
 <div id="bloc_content">
-	<div id="visits_members" class="row">
-		<div id="visits">
-			<h3>Visiteurs</h3>
-			<p><?= $visits ?></p>
-		</div>
-		<div id="members">
-			<h3>Membres</h3>
-			<p><?= $members ?></p>
-		</div>
-	</div>
-	
 	<div id="flash_news" class="row">
-		<h2 class="col-xs-12">Flash actu</h2>
+		<h2 class="col-xs-12"><span>F</span>lash <span>A</span>ctu</h2>
 		<div class="col-xs-12">
 			<?php foreach ($lastNews as $news): ?>
 				<div class="col-xs-12">
@@ -174,4 +163,17 @@
 		</div>
 		<div id="pagination"></div>
 	</div>
+	<br>
+	<div id="visits_members" class="row">
+		<div id="visits">
+			<h3><span>V</span>isiteurs</h3>
+			<p><?= $visits ?></p>
+		</div>
+		<div id="members">
+			<h3><span>M</span>embres</h3>
+			<p><?= $members ?></p>
+		</div>
+	</div>
+
+
 </div>
