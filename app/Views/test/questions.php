@@ -1,4 +1,4 @@
-<div id="bloc_content">
+<div id="bloc_content" class="quiEsTu">
 	<div id="personality" class="form row">
 		<img id="ancre_img" src="img/stranger_things_groupe.jpg"
 		     alt="Photo des 5 enfants principaux de la série Netflix 'Stranger things'">

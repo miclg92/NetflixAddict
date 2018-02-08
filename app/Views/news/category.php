@@ -1,6 +1,6 @@
 <!-- Contenu de toutes les épisodes relatives à une catégorie spécifique -->
 
-<div id="bloc_content">
+<div id="bloc_content" class="actus">
 	
 	<div class="row">
 		<p class="col-xs-5 return"><a href="index.php?p=news.index"><i class="fas fa-reply" aria-hidden="true"></i>

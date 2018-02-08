@@ -1,7 +1,7 @@
 <?php
 if (isset($_SESSION['auth'])) {
 	?>
-	<div id="bloc_content">
+	<div id="bloc_content" class="compte">
 		<div id="edit_name" class="form">
 			<form method="post" action="">
 				<a href="index.php?p=users.account" type="button" class="close" data-dismiss="modal" aria-label="Close"><span

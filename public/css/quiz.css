@@ -56,6 +56,20 @@
 	font-size: 1.2em;
 }
 
+#countdown {
+	width: 40%;
+	background-color: #3a3a3a;
+	color: #FFF;
+	margin: 0 auto 50px;
+	font-size: 1.5em;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+#countdown span {
+	color: #f40e0e;
+}
+
 #quizz .question_nb {
 	color: #f40e0e;
 }
@@ -133,6 +147,11 @@
 		margin: auto;
 		padding: 0;
 		width: 160px;
+	}
+	
+	#countdown {
+		width: 60%;
+		font-size: 1.4em;
 	}
 	
 }

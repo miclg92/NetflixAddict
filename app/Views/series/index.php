@@ -1,6 +1,6 @@
 <!-- Contenu de la page d'accueil -->
 
-<div id="bloc_content">
+<div id="bloc_content" class="accueil">
 	<div id="flash_news" class="row">
 		<h2 class="col-xs-12"><span>F</span>lash <span>A</span>ctu</h2>
 		<div class="col-xs-12">

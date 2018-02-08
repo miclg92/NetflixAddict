@@ -1,7 +1,7 @@
 <?php
 if (isset($_SESSION['auth'])) {
 	?>
-	<div id="bloc_content">
+	<div id="bloc_content" class="compte">
 		<div id="account" class="form">
 			<?php
 			if ($_SESSION['user']->flag == 1) {

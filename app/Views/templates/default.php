@@ -142,35 +142,34 @@ if (isset($_COOKIE['remember'])) {
 	<nav class="navbar navbar-inverse .navbar-static-top">
 		<div class="container-fluid">
 			<ul id="menu" class="nav nav-justified nav-pills ">
-				<li class=" accueil
-			"><a href="index.php" class="accueil_a"><i class="fas fa-home"
-				                                       aria-hidden="true"></i>Accueil</a>
+				<li id="accueil"><a href="index.php"><i class="fas fa-home"
+				                                        aria-hidden="true"></i>Accueil</a>
 				</li>
-				<li class="nav_li"><a href="index.php?p=news.index" class="nav_link"><i class="far fa-newspaper"
-				                                                                        aria-hidden="true"></i>
+				<li id="actus"><a href="index.php?p=news.index"><i class="far fa-newspaper"
+				                                                   aria-hidden="true"></i>
 						Actus</a></li>
-				<li class="nav_li"><a href="index.php?p=quiz.start" class="nav_link"><i class="fas fa-trophy"
-				                                                                        aria-hidden="true"></i>
+				<li id="quiz"><a href="index.php?p=quiz.start"><i class="fas fa-trophy"
+				                                                  aria-hidden="true"></i>
 						Quiz</a></li>
-				<li class="nav_li"><a href="index.php?p=test.start" class="nav_link"><i class="fas fa-question-circle"
-				                                                                        aria-hidden="true"></i>
+				<li id="quiEsTu"><a href="index.php?p=test.start"><i class="fas fa-question-circle"
+				                                                     aria-hidden="true"></i>
 						Qui es tu ?</a></li>
 				<?php
 				if (isset($_SESSION['auth'])) {
 					if ($_SESSION['user']->flag == 1) {
 						?>
-						<li class="nav_li"><a href="index.php?p=series.favorites" class="nav_link"><i
+						<li id="mesSeries"><a href="index.php?p=series.favorites" class="nav_link"><i
 										class="fas fa-film"
 										aria-hidden="true"></i>
 								Mes séries</a></li>
-						<li class="nav_li"><a href="index.php?p=users.account" class="nav_link"><i class="fas fa-user"
-						                                                                           aria-hidden="true"></i>
+						<li id="compte"><a href="index.php?p=users.account"><i class="fas fa-user"
+						                                                       aria-hidden="true"></i>
 								Mon compte</a></li>
 						<?php
 					} elseif ($_SESSION['user']->flag == 2) {
 						?>
-						<li class="dropdown nav_li">
-							<a href="#" class="dropdown-toggle nav_link" data-toggle="dropdown" role="button"
+						<li id="administration" class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
 							   aria-haspopup="true" aria-expanded="false"><i class="fas fa-wrench"
 							                                                 aria-hidden="true"></i>
 								Administration du site <span class="caret"></span></a>
@@ -205,8 +204,8 @@ if (isset($_COOKIE['remember'])) {
 					}
 				}
 				?>
-				<li class="nav_li"><a href="index.php?p=users.contact" class="nav_link"><i class="fas fa-envelope"
-				                                                                           aria-hidden="true"></i>
+				<li id="contact"><a href="index.php?p=users.contact"><i class="fas fa-envelope"
+				                                                        aria-hidden="true"></i>
 						Contact</a></li>
 			</ul>
 		</div>
@@ -265,7 +264,7 @@ if (isset($_COOKIE['remember'])) {
 				'save table contextmenu directionality emoticons template paste textcolor'
 			]
 		});
-//		setActive();
+		setActive();
 		carousel_init();
 		progress_bar_init();
 		$('img').imgLazyLoad();

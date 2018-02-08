@@ -1,4 +1,4 @@
-<div id="bloc_content">
+<div id="bloc_content" class="quiz">
 	<div id="quizz" class="form row">
 		<img src="img/netflix_quiz.jpg" alt="Logo Netflix avec photos de séries'">
 		<?php

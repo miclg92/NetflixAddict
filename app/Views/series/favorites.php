@@ -2,7 +2,7 @@
 <?php
 if (isset($_SESSION['auth'])) {
 	?>
-	<div id="bloc_content">
+	<div id="bloc_content" class="mesSeries">
 		<h2>Mes séries</h2>
 		<div id="mySeries" class="row">
 			

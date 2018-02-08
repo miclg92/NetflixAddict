@@ -1,6 +1,6 @@
 <!-- Contenu de la page d'accueil des actus-->
 
-<div id="bloc_content">
+<div id="bloc_content" class="actus">
 	
 	<div class="row categories">
 		<h2 id="categories_title" class="col-xs-12">Toutes les actus relatives à Netflix</h2>

@@ -1,16 +1,17 @@
 /* BOUTON "SUIVRE CETTE SERIE" */
-#follow_serie{
+#follow_serie {
 	display: flex;
 	flex-direction: row;
 }
 
-#stop_follow_serie{
+#stop_follow_serie {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
+
 #follow_serie_btn,
-#stop_follow_serie_btn{
+#stop_follow_serie_btn {
 	width: 30px;
 	height: 30px;
 	line-height: 30px;
@@ -22,30 +23,31 @@
 	margin-bottom: 20px;
 	border: none;
 	border-radius: 50%;
+	padding: 0;
 }
 
 #follow_serie_btn:hover,
-#stop_follow_serie_btn:hover{
+#stop_follow_serie_btn:hover {
 	background-color: #FFF;
 }
 
 #follow_serie_text,
-#stop_follow_serie_text{
+#stop_follow_serie_text {
 	height: 30px;
 	line-height: 30px;
 	font-size: 1.2em;
 }
 
 /* DETAILS DE LA SERIE CONSULTEE */
-#serie{
+#serie {
 	margin-bottom: 50px;
 }
 
-#serie_details{
+#serie_details {
 	margin-top: 20px;
 }
 
-#serie_details p{
+#serie_details p {
 	font-size: 1.3em;
 	background-color: #3a3a3a;
 	color: #FFF;
@@ -53,13 +55,13 @@
 	border-radius: 20px;
 }
 
-#serie_title h2{
+#serie_title h2 {
 	font-size: 3em;
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
-#serie_description p{
+#serie_description p {
 	font-size: 1.5em;
 	font-style: italic;
 	text-align: justify;
@@ -69,10 +71,12 @@
 	font-size: 2em;
 	direction: rtl;
 }
+
 .rating input {
 	opacity: 0;
 	position: absolute;
 }
+
 .rating a,
 .rating label {
 	color: #aaa;
@@ -82,72 +86,72 @@
 	-o-transition: color .4s;
 	transition: color .4s;
 }
+
 .rating label:hover ~ label,
 .rating input:focus ~ label,
 .rating a:hover,
 .rating a:hover ~ a,
 .rating a:focus,
 .rating a:focus ~ a,
-.rating label:hover
-{
+.rating label:hover {
 	color: #f40e0e;
 	cursor: pointer;
 }
 
-#actual_rating h2{
+#actual_rating h2 {
 	margin-top: 20px;
 	color: #f40e0e;
 }
 
 /* BLOC "AJOUTER UN COMMENTAIRE" */
-#add-comment{
+#add-comment {
 	margin-bottom: 50px;
 }
 
-#add-comment h3{
+#add-comment h3 {
 	font-size: 2em;
 	margin-bottom: 20px;
 }
 
-#add-comment p{
+#add-comment p {
 	font-size: 1.5em;
 	margin-bottom: 20px;
 }
 
-#add-comment h3 span{
+#add-comment h3 span {
 	color: #f40e0e;
 }
 
-#add-comment form{
+#add-comment form {
 	width: 80%;
 	float: none;
 }
 
-#add-comment form .form-group input{
+#add-comment form .form-group input {
 	background-color: #aaa;
 }
 
-#add-comment form .btn{
+#add-comment form .btn {
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.3em;
 	margin-left: 10px;
 }
 
-#add-comment form .btn:hover{
+#add-comment form .btn:hover {
 	color: #f40e0e;
 }
 
-#add-comment #link_login_btns{
+#add-comment #link_login_btns {
 	margin-top: 0;
 }
 
 /*#login_btns{*/
-	/*margin-top: 30px;*/
-	/*margin-bottom: 30px;*/
+/*margin-top: 30px;*/
+/*margin-bottom: 30px;*/
 /*}*/
 
-#add-comment #link_login_btns .btn{
+#add-comment #link_login_btns .btn {
 	background-color: #3a3a3a;
 	color: #FFF;
 	font-size: 1.2em;
@@ -159,19 +163,19 @@
 	color: #f40e0e;
 }
 
-#add-comment #link_login_btns .register_btn a{
+#add-comment #link_login_btns .register_btn a {
 	float: right;
 }
 
-#add-comment #link_login_btns .login_btn a{
+#add-comment #link_login_btns .login_btn a {
 	float: left;
 }
 
-#add-comment a{
-	 margin: auto 5px;
- }
+#add-comment a {
+	margin: auto 5px;
+}
 
-.comments_rules{
+.comments_rules {
 	background-color: #3a3a3a;
 	margin: 50px auto;
 	padding: 10px;
@@ -179,38 +183,37 @@
 	border-radius: 10px;
 }
 
-.comments_rules p{
+.comments_rules p {
 	/*text-align: left;*/
 	/*margin-left: 30px;*/
 }
 
-.comments_rules ol li{
+.comments_rules ol li {
 	/*margin-left: 30px;*/
 	list-style: none;
 	font-size: 1.2em;
 }
 
-
 /* BLOC "AFFICHER LES COMMENTAIRES" */
-#comments h3{
+#comments h3 {
 	font-size: 2em;
 	margin-bottom: 50px;
 }
 
-#comments h3 span{
+#comments h3 span {
 	color: #f40e0e;
 }
 
-#comments p{
+#comments p {
 	font-size: 1.5em;
 	margin-bottom: 20px;
 }
 
-#full_comment{
+#full_comment {
 	margin-bottom: 20px;
 }
 
-#comments_details p{
+#comments_details p {
 	background-color: #3a3a3a;
 	margin-right: 10px;
 	margin-bottom: 0;
@@ -220,7 +223,7 @@
 	font-size: 1.2em;
 }
 
-#comments_details button{
+#comments_details button {
 	background-color: #3a3a3a;
 	color: #f40e0e;
 	margin-right: 10px;
@@ -240,50 +243,49 @@
 	text-align: left;
 }
 
-.signal_icon{
+.signal_icon {
 	color: #f40e0e;
 }
 
 /* -------------------------------- MEDIA QUERIES -------------------------------- */
 
 /* Laptop 992px to 1200px */
-@media all and (max-width: 1200px){
-
+@media all and (max-width: 1200px) {
 
 }
 
 /* Tablette 768px to 992px */
 @media all and (max-width: 992px) {
 	
-	#serie_image img{
+	#serie_image img {
 		float: none;
 		margin: 0 auto;
 	}
-
+	
 }
 
 /* Smartphone lower than 768px */
 @media all and (max-width: 768px) {
 	
-	#serie_image img{
+	#serie_image img {
 		margin-top: 40px;
 	}
 	
 	#comments h3,
-	#add-comment h3{
+	#add-comment h3 {
 		font-size: 1.5em;
 	}
 	
 	#comments p,
-	#add-comment p{
+	#add-comment p {
 		font-size: 1.2em;
 	}
 	
-	#comments_details p{
+	#comments_details p {
 		font-size: 0.9em;
 	}
 	
-	#comments_details button{
+	#comments_details button {
 		display: none;
 	}
 	

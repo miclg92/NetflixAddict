@@ -121,8 +121,9 @@ hr {
 	color: #3a3a3a;
 }
 
-#menu .active {
+#menu .active a {
 	background-color: #FFF;
+	color: #3a3a3a;
 }
 
 #searchbar .btn {

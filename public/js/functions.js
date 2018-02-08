@@ -17,7 +17,6 @@ function carousel_init() {
 		buttonRight: $(".nav > .right"),
 		autoPlay: true,
 		bringToFront: true,
-//			onRendered: showcaseUp'<a href="https://www.jqueryscript.net/time-clock/">date</a>',
 		onLoaded: function () {
 			showcase.css('visibility', 'visible');
 			showcase.css('display', 'none');
@@ -66,4 +65,23 @@ function progress_bar_init() {
 			timer(0);
 		});
 	});
+}
+
+// Onglets du menu actifs
+function setActive() {
+	if ($("#bloc_content").hasClass("accueil")) {
+		$("#accueil").addClass('active');
+	} else if ($("#bloc_content").hasClass("actus")) {
+		$("#actus").addClass('active');
+	} else if ($("#bloc_content").hasClass("quiz")) {
+		$("#quiz").addClass('active');
+	} else if ($("#bloc_content").hasClass("quiEsTu")) {
+		$("#quiEsTu").addClass('active');
+	} else if ($("#bloc_content").hasClass("mesSeries")) {
+		$("#mesSeries").addClass('active');
+	} else if ($("#bloc_content").hasClass("compte")) {
+		$("#compte").addClass('active');
+	} else if ($("#bloc_content").hasClass("contact")) {
+		$("#contact").addClass('active');
+	}
 }

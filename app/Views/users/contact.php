@@ -1,4 +1,4 @@
-<div id="bloc_content">
+<div id="bloc_content" class="contact">
 	<div id="contact" class="form">
 		<?php
 		if (isset($_SESSION['auth'])) {
