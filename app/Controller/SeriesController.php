@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Core\Controller\Controller;
 use Core\HTML\BootstrapForm;
 use Core\Functions\Visits;
 

@@ -65,10 +65,6 @@ class NewsController extends AppController
 		$errors = false;
 		$comments = $this->Comment->getNewsComments($newsId);
 		$this->render('news.show', compact('new', 'comments', 'form', 'errors'));
-
-//		$currentPost = $this->Post->find($_GET['id']);
-//		$currentId = $currentPost->id;
-//		$_SESSION['currentId'] = $currentId;
 	}
 	
 	/* Affiche la liste des catégories */

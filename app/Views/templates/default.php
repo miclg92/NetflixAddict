@@ -256,7 +256,6 @@ if (isset($_COOKIE['remember'])) {
 		
 		tinymce.init({
 			selector: '#add-news textarea,  #edit_news textarea',
-			// content_css: "css/main.css,css/admin.css",
 			menubar: false,
 			plugins: [
 				'advlist autolink link lists charmap print preview hr anchor pagebreak spellchecker',
@@ -268,8 +267,6 @@ if (isset($_COOKIE['remember'])) {
 		carousel_init();
 		progress_bar_init();
 		$('img').imgLazyLoad();
-		
-		
 	});
 </script>
 </body>

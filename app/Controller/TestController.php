@@ -44,7 +44,6 @@ class TestController extends AppController
 					$total_nb = $numberOfQuestions[0]->nbOfQuestions;
 					if ($question_nb == $total_nb) {
 						$result = array_count_values($_SESSION['answers']);
-//						$highest_result = array_keys($result, max($result));
 						$highest_result = array_search(max($result), $result);
 						$this->User->update($_SESSION['auth'], [
 							'personality' => $highest_result

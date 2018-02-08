@@ -11,7 +11,7 @@ class Controller
 	protected function render($view, $variables = [])
 	{
 		ob_start();
-		extract($variables); // Variables $posts, $categories, $comments....
+		extract($variables); // Variables $news, $categories, $comments....
 		require($this->viewPath . str_replace('.', '/', $view) . '.php');
 		$content = ob_get_clean();
 		require($this->viewPath . 'templates/' . $this->template . '.php');

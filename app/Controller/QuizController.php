@@ -36,13 +36,12 @@ class QuizController extends AppController
 			if (!isset($_SESSION['score'])) {
 				$_SESSION['score'] = 0;
 			}
-			
-			if (isset($_POST['submit_quiz'])) {
+			if (isset($_POST['question_id'])) {
 				if (empty($_POST['answer'])) {
 					$errors = true;
 				} else {
-					$question_nb = $_POST['question_id'];
-					$answer_nb = $_POST['answer'];
+					$question_nb = htmlspecialchars($_POST['question_id']);
+					$answer_nb = htmlspecialchars($_POST['answer']);
 					$correct_answer = $this->quizAnswer->correctAnswer($question_nb);
 					if ($correct_answer === $answer_nb) {
 						$_SESSION['score']++;
@@ -84,7 +83,8 @@ class QuizController extends AppController
 		$this->render('quiz.questions', compact('quizQuestions', 'quizAnswers', 'nb', 'errors'));
 	}
 	
-	public function result()
+	public
+	function result()
 	{
 		if (isset($_SESSION['auth'])) {
 			$numberOfQuestions = $this->quizQuestion->NumberOfQuestions();
@@ -96,7 +96,8 @@ class QuizController extends AppController
 		$this->render('quiz.result', compact('nb', 'quiz_correct', 'quiz_score', 'quiz_level'));
 	}
 	
-	public function answers()
+	public
+	function answers()
 	{
 		$numberOfQuestions = $this->quizQuestion->NumberOfQuestions();
 		$nb = $numberOfQuestions[0]->nbOfQuestions;

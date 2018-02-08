@@ -8,7 +8,6 @@ class UserTable extends Table
 {
 	protected $table = "users";
 	
-	
 	/**
 	 * @param $email
 	 * Récupère les caractéristiques d'un user

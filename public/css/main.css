@@ -320,13 +320,13 @@ hr {
 	border: 1px solid #ddd;
 }
 
-/* PROVISOIRE.... REGISTRATION FORM */
+/* REGISTRATION FORM */
 #registration_form,
 #login_form {
 	color: #000000;
 }
 
-/* PROVISOIRE.... BUTTON UPDATE SERIES */
+/* BUTTON UPDATE SERIES */
 #update_series {
 	float: right;
 	margin-right: 20px;
