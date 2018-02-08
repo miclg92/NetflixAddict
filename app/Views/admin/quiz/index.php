@@ -9,10 +9,10 @@ if (isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->f
 			<form method="post" action="">
 				<div>
 					<a href="?p=admin.quiz.questions" type="button" id="login_form_btn" class="btn"
-					   aria-hidden="true"><i class="fa fa-question-circle" aria-hidden="true"></i> Questions</a>
+					   aria-hidden="true"><i class="fas fa-question-circle" aria-hidden="true"></i> Questions</a>
 					<a href="?p=admin.quiz.answers" type="button" id="login_form_btn" class="btn"
 					   aria-hidden="true"><i
-								class="fa fa-registered" aria-hidden="true"></i> Réponses</a>
+								class="fas fa-registered" aria-hidden="true"></i> Réponses</a>
 				</div>
 			</form>
 		</div>

@@ -27,11 +27,11 @@
 				<div align="center" class="g-recaptcha" data-sitekey="6Lce-kMUAAAAAJVp5ZiEXgTcChhDrPsu0_W4dUhm"></div>
 				<hr>
 				<div class="text-center">
-					<button id="register_form_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fa
-					fa-envelope-o" aria-hidden="true"></i> Envoyer
+					<button id="register_form_btn" type="submit" class="btn btn-default" aria-hidden="true"><i class="fas
+					fa-envelope" aria-hidden="true"></i> Envoyer
 					</button>
 					<a href="index.php" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i
-								class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
+								class="fas fa-reply" aria-hidden="true"></i> Annuler</a>
 				</div>
 				
 				<?php if (!empty($errors)): ?>
@@ -56,10 +56,10 @@
 				<div class="text-center">
 					<a href="index.php?p=users.register" type="button" id="login_form_btn" class="btn"
 					   aria-hidden="true"><i
-								class="fa fa-user-plus" aria-hidden="true"></i> Inscription</a>
+								class="fas fa-user-plus" aria-hidden="true"></i> Inscription</a>
 					<a href="index.php?p=users.login" type="button" id="login_form_btn" class="btn"
 					   aria-hidden="true"><i
-								class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+								class="fas fa-sign-in-alt" aria-hidden="true"></i> Connexion</a>
 				</div>
 			</form>
 			<?php

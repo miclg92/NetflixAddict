@@ -38,10 +38,10 @@
 				<div class="text-center">
 					<a href="index.php?p=users.register" type="button" id="login_form_btn" class="btn"
 					   aria-hidden="true"><i
-								class="fa fa-user-plus" aria-hidden="true"></i> Inscription</a>
+								class="fas fa-user-plus" aria-hidden="true"></i> Inscription</a>
 					<a href="index.php?p=users.login" type="button" id="login_form_btn" class="btn"
 					   aria-hidden="true"><i
-								class="fa fa-sign-in" aria-hidden="true"></i> Connexion</a>
+								class="fas fa-sign-in-alt" aria-hidden="true"></i> Connexion</a>
 				</div>
 			</div>
 			<?php

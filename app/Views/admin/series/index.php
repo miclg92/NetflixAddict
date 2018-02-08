@@ -8,12 +8,12 @@ if (isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->f
 			<h3>Mise à jour des séries disponibles</h3>
 			<form method="post" action="?p=admin.series.updateSeries">
 				<div>
-					<button id="animer" type="submit" class="col-xs-12" aria-hidden="true"><i class="fa fa-spinner"
+					<button id="animer" type="submit" class="col-xs-12" aria-hidden="true"><i class="fas fa-spinner"
 					                                                                          aria-hidden="true"></i>
 						Actualiser
 					</button>
 					<a href="?p=users.account" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i
-								class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
+								class="fas fa-reply" aria-hidden="true"></i> Annuler</a>
 				</div>
 			</form>
 			

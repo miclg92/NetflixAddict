@@ -25,7 +25,7 @@
 					</ul>
 					<button id=" login_form_btn" type="submit" name="submit_quiz" class="btn btn-default"
 					        aria-hidden="true">
-						<i class="fa fa-check" aria-hidden="true"></i> Valider
+						<i class="fas fa-check" aria-hidden="true"></i> Valider
 					</button>
 					<?php if ($errors): ?>
 						<div class="errors">
@@ -39,12 +39,12 @@
 			?>
 			<div id="link_login_btns" class="col-xs-12">
 				<div class="register_btn col-xs-6">
-					<a href="index.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus"
+					<a href="index.php?p=users.register" class="btn not_logged"><i class="fas fa-user-plus"
 					                                                               aria-hidden="true"></i>
 						Inscrivez-vous</a>
 				</div>
 				<div class="login_btn col-xs-6">
-					<a href="index.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in"
+					<a href="index.php?p=users.login" class="btn not_logged"><i class="fas fa-sign-in-alt"
 					                                                            aria-hidden="true"></i>
 						Connectez-vous</a>
 				</div>

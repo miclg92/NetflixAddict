@@ -37,12 +37,12 @@
 	
 	<div id="return_news_btn" class="col-xs-12">
 		<div class="register_btn col-xs-6">
-			<a href="index.php" class="btn"><i class="fa fa-home"
+			<a href="index.php" class="btn"><i class="fas fa-home"
 			                                   aria-hidden="true"></i>
 				Accueil</a>
 		</div>
 		<div class="login_btn col-xs-6">
-			<a href="index.php?p=news.index" class="btn not_logged"><i class="fa fa-reply"
+			<a href="index.php?p=news.index" class="btn not_logged"><i class="fas fa-reply"
 			                                                           aria-hidden="true"></i>
 				Haut de page</a>
 		</div>

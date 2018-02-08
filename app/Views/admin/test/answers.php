@@ -24,7 +24,7 @@ if (isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->f
 						<td class="param_value"><?= $answer->answer_index; ?></td>
 						<td id="buttons-actions">
 							<a class="btn" href="?p=admin.test.editAnswer&id=<?= $answer->id; ?>"><i
-										class="fa fa-pencil" aria-hidden="true"></i> Modifier</a>
+										class="fas fa-pencil-alt" aria-hidden="true"></i> Modifier</a>
 						</td>
 					</tr>
 				<?php endforeach; ?>
@@ -33,7 +33,7 @@ if (isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->f
 			<hr>
 			<div class="text-center">
 				<a href="index.php?p=admin.test.index" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i
-							class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
+							class="fas fa-reply" aria-hidden="true"></i> Annuler</a>
 			</div>
 		</div>
 	</div>

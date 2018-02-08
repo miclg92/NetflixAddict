@@ -61,6 +61,7 @@ if (isset($_COOKIE['remember'])) {
 	<link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	<link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -110,7 +111,7 @@ if (isset($_COOKIE['remember'])) {
 							?>
 						</div>
 						<div class="logout_btn">
-							<a href="index.php?p=users.logout" class="btn"><i class="fa fa-sign-out"
+							<a href="index.php?p=users.logout" class="btn"><i class="fas fa-sign-out-alt"
 							                                                  aria-hidden="true"></i>
 								Deconnexion</a>
 						</div>
@@ -121,12 +122,12 @@ if (isset($_COOKIE['remember'])) {
 					?>
 					<div class="unlogged_btns">
 						<div class="register_btn">
-							<a href="index.php?p=users.register" class="btn"><i class="fa fa-user-plus"
+							<a href="index.php?p=users.register" class="btn"><i class="fas fa-user-plus"
 							                                                    aria-hidden="true"></i> Inscription</a>
 						</div>
 						
 						<div class="login_btn">
-							<a href="index.php?p=users.login" class="btn"><i class="fa fa-sign-in"
+							<a href="index.php?p=users.login" class="btn"><i class="fas fa-sign-in-alt"
 							                                                 aria-hidden="true"></i>
 								Connexion</a>
 						</div>
@@ -142,26 +143,27 @@ if (isset($_COOKIE['remember'])) {
 		<div class="container-fluid">
 			<ul id="menu" class="nav nav-justified nav-pills ">
 				<li class=" accueil
-			"><a href="index.php" class="accueil_a"><i class="fa fa-home"
+			"><a href="index.php" class="accueil_a"><i class="fas fa-home"
 				                                       aria-hidden="true"></i>Accueil</a>
 				</li>
-				<li class="nav_li"><a href="index.php?p=news.index" class="nav_link"><i class="fa fa-newspaper-o"
+				<li class="nav_li"><a href="index.php?p=news.index" class="nav_link"><i class="far fa-newspaper"
 				                                                                        aria-hidden="true"></i>
 						Actus</a></li>
-				<li class="nav_li"><a href="index.php?p=quiz.start" class="nav_link"><i class="fa fa-trophy"
+				<li class="nav_li"><a href="index.php?p=quiz.start" class="nav_link"><i class="fas fa-trophy"
 				                                                                        aria-hidden="true"></i>
 						Quiz</a></li>
-				<li class="nav_li"><a href="index.php?p=test.start" class="nav_link"><i class="fa fa-question-circle"
+				<li class="nav_li"><a href="index.php?p=test.start" class="nav_link"><i class="fas fa-question-circle"
 				                                                                        aria-hidden="true"></i>
 						Qui es tu ?</a></li>
 				<?php
 				if (isset($_SESSION['auth'])) {
 					if ($_SESSION['user']->flag == 1) {
 						?>
-						<li class="nav_li"><a href="index.php?p=series.favorites" class="nav_link"><i class="fa fa-film"
-						                                                                              aria-hidden="true"></i>
+						<li class="nav_li"><a href="index.php?p=series.favorites" class="nav_link"><i
+										class="fas fa-film"
+										aria-hidden="true"></i>
 								Mes séries</a></li>
-						<li class="nav_li"><a href="index.php?p=users.account" class="nav_link"><i class="fa fa-user"
+						<li class="nav_li"><a href="index.php?p=users.account" class="nav_link"><i class="fas fa-user"
 						                                                                           aria-hidden="true"></i>
 								Mon compte</a></li>
 						<?php
@@ -169,31 +171,32 @@ if (isset($_COOKIE['remember'])) {
 						?>
 						<li class="dropdown nav_li">
 							<a href="#" class="dropdown-toggle nav_link" data-toggle="dropdown" role="button"
-							   aria-haspopup="true" aria-expanded="false"><i class="fa fa-key" aria-hidden="true"></i>
+							   aria-haspopup="true" aria-expanded="false"><i class="fas fa-wrench"
+							                                                 aria-hidden="true"></i>
 								Administration du site <span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="index.php?p=users.account"><i class="fa fa-user" aria-hidden="true"></i>
+								<li><a href="index.php?p=users.account"><i class="fas fa-user" aria-hidden="true"></i>
 										Compte Administrateur</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="index.php?p=admin.news.index"><i class="fa fa-newspaper-o"
+								<li><a href="index.php?p=admin.news.index"><i class="fas fa-newspaper"
 								                                              aria-hidden="true"></i> Gestion des Actus</a>
 								</li>
-								<li><a href="index.php?p=admin.newsCategories.index"><i class="fa fa-window-restore"
+								<li><a href="index.php?p=admin.newsCategories.index"><i class="fas fa-window-restore"
 								                                                        aria-hidden="true"></i> Gestion
 										des Catégories</a></li>
-								<li><a href="index.php?p=admin.comments.index"><i class="fa fa-commenting-o"
+								<li><a href="index.php?p=admin.comments.index"><i class="fas fa-comment-alt"
 								                                                  aria-hidden="true"></i> Gestion des
 										Commentaires</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="index.php?p=admin.quiz.index"><i class="fa fa-trophy"
+								<li><a href="index.php?p=admin.quiz.index"><i class="fas fa-trophy"
 								                                              aria-hidden="true"></i> Gestion du
 										Quiz</a>
 								</li>
-								<li><a href="index.php?p=admin.test.index"><i class="fa fa-question-circle"
+								<li><a href="index.php?p=admin.test.index"><i class="fas fa-question-circle"
 								                                              aria-hidden="true"></i> Gestion
 										du Test</a></li>
 								<li role="separator" class="divider"></li>
-								<li><a href="index.php?p=admin.series.index"><i class="fa fa-spinner"
+								<li><a href="index.php?p=admin.series.index"><i class="fas fa-spinner"
 								                                                aria-hidden="true"></i>
 										Mise à jour des Séries</a></li>
 							</ul>
@@ -202,7 +205,7 @@ if (isset($_COOKIE['remember'])) {
 					}
 				}
 				?>
-				<li class="nav_li"><a href="index.php?p=users.contact" class="nav_link"><i class="fa fa-envelope-o"
+				<li class="nav_li"><a href="index.php?p=users.contact" class="nav_link"><i class="fas fa-envelope"
 				                                                                           aria-hidden="true"></i>
 						Contact</a></li>
 			</ul>
@@ -228,7 +231,7 @@ if (isset($_COOKIE['remember'])) {
 	
 	<footer>
 		<div class="row">
-			<p class="col-lg-12"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2018</p>
+			<p class="col-lg-12"><i class="fas fa-copyright" aria-hidden="true"></i> Copyright 2018</p>
 			<p class="col-lg-12">Données "Séries" recueillies auprès de <a href="https://www.betaseries.com/api/">Betaseries</a>
 				(API).</p>
 			<p class="col-lg-12">Les Séries et films présentés sont la propriété de <a

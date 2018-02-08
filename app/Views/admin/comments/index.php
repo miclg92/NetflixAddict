@@ -50,11 +50,12 @@ if (isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->f
 							<td class="td_comment"><?= $comment->comment; ?></td>
 							<td id="buttons-actions">
 								<a class="btn" href="?p=admin.comments.edit&id=<?= $comment->id; ?>"><i
-											class="fa fa-pencil" aria-hidden="true"></i> Modérer</a>
+											class="fas fa-pencil-alt" aria-hidden="true"></i> Modérer</a>
 								<form action="?p=admin.comments.delete" method="post" onclick="return confirm_delete();"
 								      style="display: inline;">
 									<input type="hidden" name="id" value="<?= $comment->id ?>">
-									<button type="submit" class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i>
+									<button type="submit" class="btn"><i class="fas fa-trash-alt"
+									                                     aria-hidden="true"></i>
 										Supprimer
 									</button>
 								</form>
@@ -111,11 +112,12 @@ if (isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->f
 							<td class="td_comment"><?= $comment->comment; ?></td>
 							<td id="buttons-actions">
 								<a class="btn" href="?p=admin.comments.edit&id=<?= $comment->id; ?>"><i
-											class="fa fa-pencil" aria-hidden="true"></i> Modérer</a>
+											class="fas fa-pencil-alt" aria-hidden="true"></i> Modérer</a>
 								<form action="?p=admin.comments.delete" method="post" onclick="return confirm_delete();"
 								      style="display: inline;">
 									<input type="hidden" name="id" value="<?= $comment->id ?>">
-									<button type="submit" class="btn"><i class="fa fa-trash-o" aria-hidden="true"></i>
+									<button type="submit" class="btn"><i class="fas fa-trash-alt"
+									                                     aria-hidden="true"></i>
 										Supprimer
 									</button>
 								</form>
@@ -130,7 +132,7 @@ if (isset($_SESSION['auth']) && isset($_SESSION['user']) && $_SESSION['user']->f
 			<hr>
 			<div class="text-center">
 				<a href="index.php?p=users.account" type="button" id="login_form_btn" class="btn" aria-hidden="true"><i
-							class="fa fa-reply" aria-hidden="true"></i> Annuler</a>
+							class="fas fa-reply" aria-hidden="true"></i> Annuler</a>
 			</div>
 		</div>
 	</div>

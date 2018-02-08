@@ -3,7 +3,7 @@
 <div id="bloc_content">
 	
 	<div class="row">
-		<p class="col-xs-5 return"><a href="index.php"><i class="fa fa-reply" aria-hidden="true"></i>
+		<p class="col-xs-5 return"><a href="index.php"><i class="fas fa-reply" aria-hidden="true"></i>
 				Retour</a></p>
 	</div>
 	
@@ -165,12 +165,12 @@
 			<br>
 			<div id="link_login_btns" class="col-xs-12">
 				<div class="register_btn col-xs-6">
-					<a href="index.php?p=users.register" class="btn not_logged"><i class="fa fa-user-plus"
+					<a href="index.php?p=users.register" class="btn not_logged"><i class="fas fa-user-plus"
 					                                                               aria-hidden="true"></i>
 						Inscrivez-vous</a>
 				</div>
 				<div class="login_btn col-xs-6">
-					<a href="index.php?p=users.login" class="btn not_logged"><i class="fa fa-sign-in"
+					<a href="index.php?p=users.login" class="btn not_logged"><i class="fas fa-sign-in-alt"
 					                                                            aria-hidden="true"></i>
 						Connectez-vous</a>
 				</div>
@@ -193,9 +193,9 @@
 					<input type="hidden" name="id" value="<?= $comment->id ?>">
 					<div id="full_comment" class="col-xs-12">
 						<div id="comments_details" class="col-xs-12">
-							<p class="col-sm-2 col-xs-4"><i class="fa fa-user"
+							<p class="col-sm-2 col-xs-4"><i class="fas fa-user"
 							                                aria-hidden="true"></i> <?= $comment->author ?></p>
-							<p class="col-md-3 col-sm-4 col-xs-7"><i class="fa fa-calendar" aria-hidden="true"></i>
+							<p class="col-md-3 col-sm-4 col-xs-7"><i class="far fa-calendar-alt" aria-hidden="true"></i>
 								<?= $comment->date_comment ?></p>
 							<?php
 							if (isset($_SESSION['user'])) {
@@ -203,14 +203,14 @@
 									?>
 									<button type="submit" name="signal_comment" disabled
 									        class="btn-signal col-md-3 col-sm-4 col-xs-4"><i
-												class="fa fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
+												class="fas fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
 										Commentaire signalé
 									</button>
 									<?php
 								} else {
 									?>
 									<button type="submit" name="signal_comment" class="btn-signal col-sm-2 col-xs-2"><i
-												class="fa fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
+												class="fas fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
 										Signaler
 									</button>
 									<?php
@@ -219,7 +219,7 @@
 								?>
 								<button type="submit" name="signal_comment" disabled
 								        class="btn-signal col-lg-5 col-md-6 col-xs-8"><i
-											class="fa fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
+											class="fas fa-exclamation-triangle signal_icon" aria-hidden="true"></i>
 									Pour signaler ce commentaire, veuillez vous connecter
 								</button>
 								<?php

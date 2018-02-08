@@ -112,7 +112,7 @@
 	<form method="get" action="#ancre_tri">
 		<div id="searchbar" class="form-group">
 			<input type="search" name="search" class="input-sm form-control" placeholder="Rechercher une série">
-			<button type="submit" class="btn btn-sm"><i class="fa fa-search" aria-hidden="true"></i>
+			<button type="submit" class="btn btn-sm"><i class="fas fa-search" aria-hidden="true"></i>
 				Go
 			</button>
 		</div>
@@ -134,19 +134,19 @@
 			</button>
 			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 				<li>
-					<i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+					<i class="fas fa-sort-alpha-down" aria-hidden="true"></i>
 					<input type="submit" name="alphabetic" value="De A à Z">
 				</li>
 				<li>
-					<i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+					<i class="fas fa-sort-alpha-up" aria-hidden="true"></i>
 					<input type="submit" name="alphabeticDesc" value="De Z à A">
 				</li>
 				<li>
-					<i class="fa fa-hacker-news" aria-hidden="true"></i>
+					<i class="fab fa-hacker-news" aria-hidden="true"></i>
 					<input type="submit" name="year" value="Les plus récentes">
 				</li>
 				<li>
-					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fas fa-heart" aria-hidden="true"></i>
 					<input type="submit" name="popularity" value="Les plus populaires">
 				</li>
 			</ul>
