@@ -401,6 +401,12 @@ class UsersController extends AppController
 		if (!empty($_POST)) {
 			$errors = array();
 			
+			if (!isset($_SESSION['auth'])) {
+				if (empty($_POST['mail'])) {
+					$errors['mail'] = "Veuillez indiquer votre adresse email.";
+				}
+			}
+			
 			if (empty($_POST['sujet'])) {
 				$errors['sujet'] = "Veuillez indiquer le sujet de votre message.";
 			}
@@ -417,11 +423,16 @@ class UsersController extends AppController
 				// Envoi d'un email à l'administrateur
 				$receiver = 'miclg92@gmail.com';
 				$senderName = htmlspecialchars($_SESSION['user']->username);
+				$senderNoName = htmlspecialchars($_POST['mail']);
 				$from = htmlspecialchars($_SESSION['user']->email);
 				$subject = htmlspecialchars($_POST['sujet']);
 				$message = htmlspecialchars($_POST['message']);
 				$headers = 'De: ' . $from . "\n";
-				$headers .= 'Répondre à: ' . $senderName . ' < ' . $from . ' >' . "\n";
+				if (isset($_SESSION['auth'])) {
+					$headers .= 'Répondre à: ' . $senderName . ' - Email: ' . $from . "\n";
+				} else {
+					$headers .= 'Répondre à: ' . $senderNoName . "\n";
+				}
 				mail($receiver, $subject, $message, $headers);
 				
 				$_SESSION['flash']['success'] = "Votre message a bien été envoyé. Une réponse vous sera adressée rapidement.";
